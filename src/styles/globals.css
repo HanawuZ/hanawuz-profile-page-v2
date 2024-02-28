@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.background {
+  background: rgb(255, 255, 255);
+  background: linear-gradient(30deg, rgba(255, 255, 255, 1) 0%, rgba(138, 157, 168, 1) 49%, rgba(246, 231, 213, 1) 100%);
+}
+
 .about-me-desc div:nth-of-type(even) {
   /* Apply styles for odd paragraphs */
   background-color: none;
@@ -9,17 +14,17 @@
 
 .about-me-desc div:nth-of-type(odd) {
   /* Apply styles for even paragraphs */
-  background-color:rgba(0, 0, 0, 0.10);
+  background-color: rgba(0, 0, 0, 0.10);
 }
 
-.detailButton{
+.detailButton {
   color: black;
   text-align: center;
   font-size: 18px;
   width: 100%;
   border: solid 1px;
   height: 2rem;
-  border-color:black;
+  border-color: black;
   border-radius: 2rem;
   transition: all 0.2s;
 }
@@ -31,7 +36,7 @@
   transform: scale(1.025);
 }
 
-.detailButton:active{
+.detailButton:active {
   border: solid 1px;
   background: linear-gradient(45deg, #e52e71, #ff8a00);
   color: white;
@@ -46,7 +51,7 @@
   width: 100%;
   border: none;
   height: 2rem;
-  border-color:black;
+  border-color: black;
   border-radius: 2rem;
   transition: all 0.2s;
 }

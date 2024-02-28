@@ -11,9 +11,9 @@ const SidebarMenu = () => {
 
   const { screenWidth } = useProfileContext();
   return (
-    <div className="z-40 fixed h-lvh">
+    <div className={`z-40 fixed h-lvh ${styles.sidebarMenuBox}`}>
       <div className="min-[768px]:ms-20 h-lvh bg-blue-500 flex items-center">
-        <div className={`grid gap-y-3  ${styles.sidebarMenuBox}`}>
+        <div className={`grid gap-y-3`}>
           <Link href="/" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
             <div
               className={`py-1 px-2 flex items-center`}

@@ -10,7 +10,7 @@ const barlow = Barlow({ subsets: ["latin"], weight: "400", })
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ProfileContextProvider>
-      <div className={`${barlow.className} bg-slate-600 overflow-auto w-full`}>
+      <div className={`${barlow.className} background overflow-auto h-full w-full`}>
         <Layout Component={Component} pageProps={pageProps} />
       </div>
     </ProfileContextProvider>
@@ -23,8 +23,7 @@ function Layout({ Component, pageProps }: any) {
   const { screenWidth } = useProfileContext()
   return (
     <>
-      {screenWidth >= 768 && <SidebarMenu />}
-
+      {/* {screenWidth >= 768 && <SidebarMenu />} */}
       <Component {...pageProps} />
     </>
   )
