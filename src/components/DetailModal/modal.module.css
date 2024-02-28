@@ -1,0 +1,236 @@
+/* .modal-background-shadow {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+ 
+ }
+ 
+ .rotate-block {
+    height: 10px;
+    margin-top: 2.15rem;
+    width: 10px;
+    background-color: #ffffff;
+    transform: rotate(-45deg);
+    flex-shrink: 0;
+    user-select: none;
+ }
+ 
+ @media (min-width: 425px) and (max-width:1000px) {
+ 
+    .title-line,
+    .title-line-left,
+    .title-line-right {
+       width: 40%;
+       margin-top: 2.325rem;
+       border-top: 2px solid #ffffff;
+       border-bottom: 2px solid #ffffff;
+    }
+ 
+    .title-line-right {
+       margin-right: 5rem;
+    }
+ 
+    .title-line-left {
+       margin-left: 5rem;
+    }
+ }
+ 
+ @media (min-width:1000px) {
+ 
+    .title-line,
+    .title-line-left,
+    .title-line-right {
+       width: 40%;
+       margin-top: 2.325rem;
+       border-top: 2px solid #ffffff;
+       border-bottom: 2px solid #ffffff;
+    }
+ 
+    .title-line-right {
+       margin-right: 15%;
+    }
+ 
+    .title-line-left {
+       margin-left: 15%;
+    }
+ }
+ 
+ .modal-scroll::-webkit-scrollbar {
+    width: 8px;
+ }
+ 
+ .modal-scroll::-webkit-scrollbar-track {
+    margin: 1.5rem;
+    background: none;
+ }
+ 
+ .modal-scroll::-webkit-scrollbar-thumb {
+    background: #ececec;
+ }
+ 
+ .modal-scroll::-webkit-scrollbar-thumb:hover {
+    background: #555;
+ }
+ 
+ .close-button {
+    color: #ffffff;
+    font-weight: bolder;
+    transition: 0.2s;
+ }
+ 
+ .close-button:hover {
+    transform: scale(1.1);
+ 
+ }
+ 
+ .detail-modal {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+ }
+ 
+ @media (min-width: 730px) {
+    .detail-modal {
+       padding-left: 3.25rem;
+       padding-right: 3.25rem;
+    }
+ 
+ }
+ 
+ .detail-modal-name {
+    font-family: 'Ropa Sans', sans-serif;
+ }
+ 
+ .detail-modal-role {
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 20px;
+    background-color: #B8B8B8;
+    border-radius: 20px;
+    padding: 0.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+ }
+ 
+ 
+ 
+ .detail-interests {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+ }
+ 
+ @keyframes rotateAnimation {
+    0% {
+       background-position: top var(--b) right var(--b), bottom var(--b) left var(--b);
+    }
+    100% {
+       background-position: top var(--b) right var(--b), bottom var(--b) left var(--b);
+       transform: rotate(360deg);
+    }
+ }
+ 
+ .interest-card {
+    --c: #ffffff;
+    --b: 2px;
+    margin: 1rem;
+    position: relative;
+    border: 1px solid #888888;
+    transition: 0.4s;
+    height: 300px;
+    padding: calc(var(--g) + var(--b));
+    --_g: #0000 25%, var(--c) 0;
+    background:
+       conic-gradient(from 180deg at top var(--b) right var(--b), var(--_g)) var(--_i, 200%) 0 /200% var(--_i, var(--b)) no-repeat,
+       conic-gradient(at bottom var(--b) left var(--b), var(--_g)) 0 var(--_i, 200%)/var(--_i, var(--b)) 200% no-repeat;
+    transition: .3s, background-position .3s .3s;
+    overflow: hidden; 
+    display: inline-block; 
+ }
+ .interest-card:hover {
+    background-color: gray;
+    --_i: 100%;
+    transition: .3s, background-size .3s .3s;
+ }
+ 
+ @media (min-width: 1600px) {
+    .interest-card  {
+       width: 350px;
+       justify-self: center;
+    }
+ }
+ 
+ @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+ 
+ .fade-in-text {
+    transform: scale(1.15);
+    font-size: 20px;
+    animation: fadeIn 0.5s, textGrow 0.5s;
+    -webkit-animation: fadeIn 0.5s,  textGrow 0.5s;
+    -moz-animation: fadeIn 0.5s,  textGrow 0.5s;
+    -o-animation: fadeIn 0.5s,  textGrow 0.5s;
+    -ms-animation: fadeIn 0.5s,  textGrow 0.5s;
+    transition: transform 0.5s; 
+ 
+  }
+ 
+  @keyframes textGrow {
+    from {
+       transform: scale(1);
+    } to {
+       transform: scale(1.15);
+    }
+  }
+ 
+ 
+ .detail-modal-desc {
+    font-family: 'Ropa Sans', sans-serif;
+    margin-top: 1.5rem;
+    font-size: 18px;
+ 
+ }
+ 
+ @media only screen and (min-width: 768px) {
+    .detail-modal-desc {
+       font-size: 22px;
+ 
+    }
+ 
+    .detail-modal-desc .intoduction {
+       margin-left: 1.5rem;
+       margin-right: 1.5rem;
+    }
+ }
+ 
+ 
+ 
+ .link,
+ .phone-number {
+    padding-top: 0.6rem;
+    transition: 0.3s;
+ 
+ }
+ 
+ .link:hover {
+    color: #237DF3;
+ } */

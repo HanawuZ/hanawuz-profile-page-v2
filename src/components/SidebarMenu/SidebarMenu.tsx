@@ -9,17 +9,11 @@ import styles from "./sidebar-menu.module.css";
 const SidebarMenu = () => {
   const pathname = usePathname();
 
-  const sidebarLinkStyle = {
-    background: pathname === '/' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
-    transform: pathname === '/' ? 'scale(1.05)' : '',
-    transition: '0.3s'
-  }
-
   const { screenWidth } = useProfileContext();
   return (
     <div className="z-40 fixed h-lvh">
-      <div className="ms-20 h-lvh border border-sky-500 container mx-auto flex items-center">
-        <div className={`grid gap-y-3 border border-sky-500 ${styles.sidebarMenuBox}`}>
+      <div className="min-[768px]:ms-20 h-lvh bg-blue-500 flex items-center">
+        <div className={`grid gap-y-3  ${styles.sidebarMenuBox}`}>
           <Link href="/" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
             <div
               className={`py-1 px-2 flex items-center`}
@@ -32,6 +26,21 @@ const SidebarMenu = () => {
             >
               <AiFillExclamationCircle size={40} />
               <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>About me</div>
+            </div>
+          </Link>
+          <Link href="/detail" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
+            <div
+              className={`py-1 px-2 flex items-center`}
+              style={{
+                background: pathname === '/detail' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
+                transform: pathname === '/detail' ? 'scale(1.05)' : '',
+                color: pathname === '/detail' ? 'white' : '',
+                transition: '0.2s',
+              }}
+            >
+              <AiFillExclamationCircle size={40} />
+              <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Detail</div>
+
             </div>
           </Link>
           <Link href="/experiences" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>

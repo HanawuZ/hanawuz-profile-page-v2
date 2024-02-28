@@ -1,11 +1,10 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
 import { IoPerson } from "react-icons/io5";
 import { FaBookOpen } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { useState } from "react";
-
+import { useProfileContext } from "@/context/ProfileContext";
+import Link from "next/link";
 const InfoRecord = ({ icon, label, value }: { icon: JSX.Element, label: string, value: string }) => {
   return (
     <div className="grid grid-cols-2">
@@ -19,6 +18,7 @@ const InfoRecord = ({ icon, label, value }: { icon: JSX.Element, label: string, 
 };
 
 const Home = () => {
+  const { modalShow, setModalShow } = useProfileContext()
   const [showBio, setShowBio] = useState<boolean>(true)
   const [showAboutMe, setShowAboutMe] = useState<boolean>(false)
 
@@ -33,13 +33,13 @@ const Home = () => {
 
   return (
     <div className="bg-slate-600 w-full">
-      <div className="container mx-auto">
-        <div className="md:h-lvh grid items-center">
-          <div className="grid border rounded-3xl bg-slate-400 md:grid-cols-5">
-            <div className=""> </div>
-            <div className="flex items-center col-span-2 justify-center py-2 border h-full"
-            >
+      <div className="flex items-center justify-center">
+        <div className="md:h-lvh w-full grid max-[768px]:grid-cols-1 min-[900px]:grid-cols-12 min-[768px]:grid-cols-9">
+          <div className="min-[900px]:col-span-2 min-[768px]:col-span-1"></div>
+          <div className="min-[900px]:col-span-9  min-[768px]:col-span-8 mx-5 sm:mx-16 lg:my-20 my-2 grid border rounded-3xl bg-slate-400 md:grid-cols-8">
+            <div className="md:col-span-3 grid items-center">
               <Image
+                className="justify-self-center rounded-full"
                 src={"/images/portrait-dummy.png"}
                 alt="image"
                 width={300}
@@ -47,12 +47,25 @@ const Home = () => {
               >
               </Image>
             </div>
-            <div className="col-span-2 p-5 border border-sky-600 flex items-center ">
-              <div className="w-full border">
-                <div className="border border-sky-600 p-4 w-full h-80 max-sm:mx-1 max-md:mx-12">
+            <div className="md:col-span-5 border w-full"> Grif2 </div>
+          </div>
+          {/* 
+            <div className="flex items-center col-span-3 justify-center py-2 border h-full">
+              <Image
+                className="justify-self-center rounded-full"
+                src={"/images/portrait-dummy.png"}
+                alt="image"
+                width={300}
+                height={300}
+              >
+              </Image>
+            </div>
+            <div className="col-span-4 p-5 flex">
+              <div className="w-full">
+                <div className=" p-6 md:pt-20 w-full h-full max-sm:mx-1">
                   <div className="text-3xl font-bold">Thanawut Tuamprajak</div>
                   <div>Intern</div>
-                  <div className="my-2 border rounded-2xl grid grid-cols-2 gap-2">
+                  <div className="my-2 rounded-2xl grid grid-cols-2 gap-2">
                     <button
                       className="linkButton"
                       onClick={toggleBio}
@@ -78,26 +91,25 @@ const Home = () => {
                     </button>
                   </div>
                   {showBio ?
-                    <div id="personal-info" className="about-me-desc">
+                    <div id="personal-info" className="about-me-desc pt-2">
                       <InfoRecord icon={<IoPerson />} label="Age" value="12" />
                       <InfoRecord icon={<FaBookOpen />} label="Education" value="Bachelor degree" />
                       <InfoRecord icon={<BsFillTelephoneFill />} label="Phone" value="+669-9434-5245" />
                       <InfoRecord icon={<IoPerson />} label="Age" value="12" />
                     </div>
                     :
-                    <div id="about-me">
+                    <div id="about-me" className="pt-2">
                       <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies ac leo ac tempus. Aenean dictum eget massa at finibus. Phasellus nisl arcu, rutrum quis egestas euismod, bibendum id massa. Quisque at mi non sapien imperdiet eleifend id ac felis.
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies ac leo ac tempus. Aenean dictum eget massa at finibus. Phasellus nisl arcu, rutrum quis egestas euismod, bibendum id massa. Quisque at mi non sapien imperdiet eleifend id ac felis.
                       </p>
                     </div>
                   }
                 </div>
-                <div className="pt-3 mt-1">
-                  <button type="button" className="detailButton">Detail</button>
-                </div>
               </div>
             </div>
-          </div>
+          </div> 
+          */}
         </div>
       </div>
     </div >

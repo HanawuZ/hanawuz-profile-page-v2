@@ -1,5 +1,5 @@
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1024px) {
    .sidebarMenuBox {
       width: 100%;
    }
@@ -26,7 +26,7 @@
 }
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
    .sidebarMenuLabel {
       /* Hidden */
       display: none;
