@@ -10,7 +10,7 @@ const barlow = Barlow({ subsets: ["latin"], weight: "400", })
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <ProfileContextProvider>
-      <div className={`${barlow.className}`}>
+      <div className={`${barlow.className} bg-slate-600 overflow-auto w-full`}>
         <Layout Component={Component} pageProps={pageProps} />
       </div>
     </ProfileContextProvider>
