@@ -62,4 +62,20 @@
   color: white;
 }
 
+.link {
+  color: black;
+  text-decoration: underline;
+  font-size: 15px;
+  width: 100%;
+  border: none;
+  height: 2rem;
+  border-color: black;
+  border-radius: 2rem;
+  transition: all 0.2s;
+}
+
+.link:hover {
+  color: white;
+}
+
 /* ---------------------+ Card Space +-------------------- */

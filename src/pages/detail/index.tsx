@@ -1,5 +1,4 @@
-
-
+import styles from "./styles.module.css"
 
 const Detail = () => {
   return (
@@ -9,6 +8,25 @@ const Detail = () => {
         <div className="overflow-y-auto md:max-h-[80vh] md:px-10 px-5 border border-slate-700 w-full grid justify-self-center md:col-span-5">
           <div className="my-5">
             <text className="text-3xl"> Skills </text>
+            <div className="border md:px-20 lg:px-32 py-10 mt-3 gap-x-10 gap-y-3 grid lg:grid-cols-3 md:grid-cols-2">
+              <div className={`py-8 border border-blue-500 grid justify-center ${styles.skillCard}`}>
+                <img width="96" height="96" src="https://img.icons8.com/color/96/python--v1.png" alt="python--v1" />
+                <div className="border text-center text-xl"> Grid </div>
+              </div>
+              <div className={`py-8 border border-blue-500 grid justify-center ${styles.skillCard}`}>
+                <img width="96" height="96" src="https://img.icons8.com/color/96/python--v1.png" alt="python--v1" />
+                <div className="border text-center text-xl"> Grid </div>
+              </div>
+              <div className={`py-8 border border-blue-500 grid justify-center ${styles.skillCard}`}>
+                <img width="96" height="96" src="https://img.icons8.com/color/96/python--v1.png" alt="python--v1" />
+                <div className="border text-center text-xl"> Grid </div>
+              </div>
+              <div className={`py-8 border border-blue-500 grid justify-center ${styles.skillCard}`}>
+                <img width="96" height="96" src="https://img.icons8.com/color/96/python--v1.png" alt="python--v1" />
+                <div className="border text-center text-xl"> Grid </div>
+              </div>
+            </div>
+            {/* 
             <div className="mt-3">
               <text className="text-xl"> Front-end development</text>
               <div className="ml-5">
@@ -58,10 +76,11 @@ const Detail = () => {
                 </ul>
 
               </div>
-            </div>
+            </div> 
+            */}
           </div>
 
-          <div className="my-5">
+          {/* <div className="my-5">
             <text className="text-3xl"> Work Experiences</text>
             <div className="mt-3">
               <div className="border border-slate-700">
@@ -105,7 +124,7 @@ const Detail = () => {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

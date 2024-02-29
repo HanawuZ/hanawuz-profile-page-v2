@@ -25,7 +25,7 @@ function Layout({ Component, pageProps }: any) {
   return (
     <>
       <Header />
-      {/* {screenWidth >= 768 && <SidebarMenu />} */}
+      {screenWidth >= 768 && <SidebarMenu />}
       <Component {...pageProps} />
     </>
   )
