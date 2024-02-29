@@ -118,7 +118,7 @@ const Home = () => {
   */
 
   return (
-    <div className="h-screen grid items-center">
+    <div className="z-10 h-screen grid items-center">
       <div className="container mx-auto grid md:grid-cols-6">
         <div className=""> </div>
         <div className="grid justify-self-center md:col-span-2">
@@ -137,9 +137,9 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className=" md:col-span-3">
+        <div className=" md:col-span-3 border-slate-500">
           <div className="">
-            <div className="mt-5 flex justify-between px-4 bg-slate-300 py-1">
+            <div className="flex mt-5 justify-between px-4 bg-slate-300 py-1">
               <text className="text-3xl"> Thanawut </text>
               <div className="text-sm text-slate-400 font-bold">
                 <div>BIRTHDATE</div>
@@ -157,14 +157,14 @@ const Home = () => {
                 <div className="border border-slate-500 rounded-2xl grid grid-cols-2 gap-2">
                   <button
                     className="linkButton"
-                    onClick={toggleBio}
                     style={{
+                      pointerEvents: "none",  
                       background: showBio
                         ? 'linear-gradient(45deg, #e52e71, #ff8a00)'
                         : 'linear-gradient(45deg, #ff8a00, #e52e71)',
-                      color: showBio ? 'white' : '',
+                      color: 'white',
                       transform: !showBio ? 'translateX(105%)' : 'translateX(0)',
-                      transition: 'background 0.3s ease, transform 0.3s ease',
+                      // transition: 'background 0.3s ease, transform 0.3s ease',
                     }}
                   >
                     {showBio ? 'Link1' : 'Link2'}
@@ -206,13 +206,13 @@ const Home = () => {
                 </div>
               </div>
               :
-              <div id="about-me" className="h-80 mt-5 py-5 px-5 text-justify">
-                <text className="font-bold text-2xl"> About me </text>                
+              <div id="about-me" className="h-80 py-5 px-5 text-justify">
+                <text className="font-bold text-2xl"> About me </text>
                 <p
-                  className="p-2 mt-2 py-3"  
+                  className="p-2 mt-2 py-3"
                   style={{
                     background: 'rgba(255, 255, 255, 0.3)',
-                    clipPath:"polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%)"
+                    clipPath: "polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%)"
                   }}
                 >
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies ac leo ac tempus. Aenean dictum eget massa at finibus. Phasellus nisl arcu, rutrum quis egestas euismod, bibendum id massa. Quisque at mi non sapien imperdiet eleifend id ac felis.
