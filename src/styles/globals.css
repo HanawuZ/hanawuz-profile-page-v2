@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 .background {
+  background-image: linear-gradient(to right top, #7e7e7e, #939393, #a9a9a9, #bfbfbf, #d6d6d6, #dedfe4, #e3e8f1, #e6f2ff, #ccf3ff, #a9f6ff, #82f9ff, #5ffbf1);
   background: rgb(255, 255, 255);
   background: linear-gradient(30deg, rgba(255, 255, 255, 1) 0%, rgba(138, 157, 168, 1) 49%, rgba(246, 231, 213, 1) 100%);
 }
