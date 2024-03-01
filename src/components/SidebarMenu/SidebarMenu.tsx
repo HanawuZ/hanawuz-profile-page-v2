@@ -28,18 +28,18 @@ const SidebarMenu = () => {
                 <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>About me</div>
               </div>
             </Link>
-            <Link href="/detail" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
+            <Link href="/skills" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
               <div
                 className={`py-1 px-2 flex items-center`}
                 style={{
-                  background: pathname === '/detail' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
-                  transform: pathname === '/detail' ? 'scale(1.05)' : '',
-                  color: pathname === '/detail' ? 'white' : '',
+                  background: pathname === '/skills' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
+                  transform: pathname === '/skills' ? 'scale(1.05)' : '',
+                  color: pathname === '/skills' ? 'white' : '',
                   transition: '0.2s',
                 }}
               >
                 <AiFillExclamationCircle size={40} />
-                <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Detail</div>
+                <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Skills</div>
 
               </div>
             </Link>
