@@ -1,27 +1,84 @@
 import styles from "./styles.module.css"
+import { FaServer } from "react-icons/fa";
+import { FaCode } from "react-icons/fa6";
+import { MdOutlineMonitor } from "react-icons/md";
+import { IoIosMore } from "react-icons/io";
+
+const SkillCard = ({ imgSrc, title }: { imgSrc: string, title: string }) => (
+  <div className={`py-5 grid justify-center ${styles.skillCard}`}>
+    <div className="flex justify-center">
+      <img className="" width="80" height="80" src={imgSrc} alt="Icon" />
+    </div>
+    <div className="font-bold text-center max-md:text-lg text-xl"> {title} </div>
+  </div>
+)
 
 const Detail = () => {
   return (
     <div className="h-screen grid items-center">
-      <div className="border border-sky-500 container mx-auto grid md:grid-cols-6">
-        <div className="border border-cyan-500"> Sidebar </div>
-        <div className="overflow-y-auto md:max-h-[80vh] md:px-10 px-5 border border-slate-700 w-full grid justify-self-center md:col-span-5">
+      <div className="container mx-auto grid md:grid-cols-5">
+        <div className=""> </div>
+        <div 
+          className="rounded-xl overflow-y-auto md:max-h-[80vh] md:px-10 px-5 w-full grid justify-self-center md:col-span-4"
+          style={{
+            background: "rgb(255, 255, 255, 0.2)",
+          }}
+        >
           <div className="my-5">
-            <text className="text-3xl"> Skills </text>
-            <div className="border md:px-2 py-10 mt-3  gap-y-3 grid lg:grid-cols-3 md:grid-cols-2">
-              <div className={`py-12 border border-blue-500 grid justify-center ${styles.skillCard}`}>
-                <img width="96" height="96" src="https://img.icons8.com/color/96/python--v1.png" alt="python--v1" />
-                <div className="border text-center text-xl"> Grid </div>
+            <text className="text-4xl max-md:text-3xl font-bold"> Skills </text>
+            <div className="mt-3">
+              <div className="flex items-center my-3">
+                <MdOutlineMonitor size={30} />
+                <text className="ms-2 text-xl"> Front-end development</text>
               </div>
-              <div className={`py-12 border border-blue-500 grid justify-center ${styles.skillCard}`}>
-                <img width="96" height="96" src="https://img.icons8.com/color/96/python--v1.png" alt="python--v1" />
-                <div className="border text-center text-xl"> Grid </div>
+              <div className={`border-2 py-5 max-sm:px-4 md:px-3 lg:px-10 ${styles.skillsGrid}`}>
+                <SkillCard imgSrc="images\icons\html5-icon.png" title="HTML" />
+                <SkillCard imgSrc="images\icons\css-icon.png" title="CSS" />
+                <SkillCard imgSrc="images\icons\react-icon.png" title="React" />
+                <SkillCard imgSrc="images\icons\nextjs-icon.png" title="Next.js" />
+                <SkillCard imgSrc="images\icons\typescript-icon.png" title="Typescript" />
+                <SkillCard imgSrc="images\icons\tailwind-css-icon.png" title="Tailwind CSS" />
+                <SkillCard imgSrc="images\icons\vuejs-icon.png" title="Vue.js" />
+                <SkillCard imgSrc="images\icons\angular-icon.png" title="Angular" />
+                <SkillCard imgSrc="images\icons\bootstrap5-icon.png" title="Bootstrap 5" />
+                <SkillCard imgSrc="images\icons\figma-icon.png" title="Figma" />
               </div>
-              <div className={`py-12 border border-blue-500 grid justify-center ${styles.skillCard}`}>
-                <img width="96" height="96" src="https://img.icons8.com/color/96/python--v1.png" alt="python--v1" />
-                <div className="border text-center text-xl"> Grid </div>
+            </div>
+            <div className="mt-7">
+              <div className="flex items-center my-3">
+                <FaServer size={30} />
+                <text className="ms-2 text-xl"> Back-end development</text>
               </div>
-              
+              <div className={`border-2 py-5 max-sm:px-4 md:px-3 lg:px-10 ${styles.skillsGrid}`}>
+                <SkillCard imgSrc="images\icons\nodejs-icon.png" title="Node.js" />
+                <SkillCard imgSrc="images\icons\expressjs-icon.png" title="Express.js" />
+                <SkillCard imgSrc="images\icons\golang-icon.png" title="Golang" />
+                <SkillCard imgSrc="images\icons\mysql-icon.png" title="MySQL" />
+                <SkillCard imgSrc="images\icons\postgresql-icon.png" title="PostgreSQL" />
+                <SkillCard imgSrc="images\icons\mongodb-icon.png" title="MongoDB" />
+              </div>
+            </div>
+            <div className="mt-7">
+              <div className="flex items-center my-3">
+                <FaCode size={30} />
+                <text className="ms-2 text-xl"> Programming Languages</text>
+              </div>
+              <div className={`border-2 py-5 max-sm:px-4 md:px-3 lg:px-10 ${styles.skillsGrid}`}>
+                <SkillCard imgSrc="images\icons\cpp-icon.png" title="C/C++" />
+                <SkillCard imgSrc="images\icons\javascript-icon.png" title="JavaScript" />
+                <SkillCard imgSrc="images\icons\python-icon.png" title="Python" />
+                <SkillCard imgSrc="images\icons\java-icon.png" title="Java" />
+              </div>
+            </div>
+            <div className="mt-7">
+              <div className="flex items-center my-3">
+                <IoIosMore size={30} />
+                <text className="ms-2 text-xl"> Other Skills</text>
+              </div>
+              <div className={`border-2 py-5 max-sm:px-4 md:px-3 lg:px-10 ${styles.skillsGrid}`}>
+                <SkillCard imgSrc="images\icons\latex-icon.png" title="LaTeX" />
+                <SkillCard imgSrc="images\icons\git-icon.png" title="Git Control" />
+              </div>
             </div>
             {/* 
             <div className="mt-3">
@@ -76,52 +133,6 @@ const Detail = () => {
             </div> 
             */}
           </div>
-
-          {/* <div className="my-5">
-            <text className="text-3xl"> Work Experiences</text>
-            <div className="mt-3">
-              <div className="border border-slate-700">
-                <div className="flex justify-between">
-                  <text className="text-xl"> Cooperative Operation </text>
-                  <text className="text-xl text-slate-600"> 13<sup>th</sup> November 2023 -- 1<sup>st</sup> March 2024 </text>
-                </div>
-                <text className="text-lg"> T.C.C. Technology Co. Ltd, Bangkok, Thailand </text>
-                <ul className="list-disc text-lg ml-5 text-justify">
-                  <li>
-                    Cooperative operation as Back-end developer.
-                  </li>
-                  <li>
-                    Develop back-end application for DMS system utilizing Golang with Fiber framework.
-                  </li>
-                  <li>
-                    Responsible for analyzing, designing, developing and testing back-end system.
-                  </li>
-                  <li>
-                    Unit test the DMS backend system using Ginkgo library.
-                  </li>
-                  <li>
-                    Create DMS Web backoffice frontend unit test using Jest and React testing library by implementing BDD practice.
-                  </li>
-                </ul>
-              </div>
-              <div className="border border-slate-700 mt-5">
-                <div className="flex justify-between">
-                  <text className="text-xl"> Research Assistant</text>
-                  <text className="text-xl text-slate-600">September 2022 –- October 2023</text>
-                </div>
-                <text className="text-lg"> School of Physics, Suranaree University of Technology, Nakhon Ratchasima, Thailand </text>
-                <ul className="list-disc text-lg ml-5 text-justify">
-                  <li>
-                    Collaborated with Physics associate professor on researching, developing a user-friendly GUI for capillary refill
-                    evaluation and visualizing results in line graphs.
-                  </li>
-                  <li>
-                    Responsible for designing and developing the GUI using python Tkinter.
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

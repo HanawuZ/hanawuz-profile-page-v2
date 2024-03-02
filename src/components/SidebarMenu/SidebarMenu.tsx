@@ -3,7 +3,10 @@ import { AiFillExclamationCircle } from 'react-icons/ai';
 import { usePathname } from 'next/navigation';
 import { useProfileContext } from '@/context/ProfileContext';
 import styles from "./styles.module.css";
-
+import { FaBriefcase } from "react-icons/fa";
+import { PiProjectorScreenChart } from "react-icons/pi";
+import { BiSolidLike } from "react-icons/bi";
+import { IoCodeSlashSharp } from "react-icons/io5";
 
 
 const SidebarMenu = () => {
@@ -11,12 +14,12 @@ const SidebarMenu = () => {
   const { screenWidth } = useProfileContext();
   return (
     <>
-      <div className={`border border-yellow-600 ps-5 w-1/5 absolute h-lvh`}>
-        <div className='border border-green-600 mt-24'>
-          <div className={`grid gap-y-3 border border-slate-700`}>
-            <Link href="/" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
+      <div className={`xl:mt-10 ps-5 w-1/5 absolute h-lvh`}>
+        <div className='mt-20'>
+          <div className={`grid gap-y-3`}>
+            <Link href="/" className={`${screenWidth > 980 ? `` : 'grid justify-center'}`}>
               <div
-                className={`py-1 px-2 flex items-center`}
+                className={`py-1 px-2 flex items-center  ${styles.sidebarMenu}`}
                 style={{
                   background: pathname === '/' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
                   transform: pathname === '/' ? 'scale(1.05)' : '',
@@ -28,9 +31,9 @@ const SidebarMenu = () => {
                 <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>About me</div>
               </div>
             </Link>
-            <Link href="/skills" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
+            <Link href="/skills" className={`${screenWidth > 980 ? `` : 'grid justify-center'}`}>
               <div
-                className={`py-1 px-2 flex items-center`}
+                className={`py-1 px-2 flex items-center ${styles.sidebarMenu}`}
                 style={{
                   background: pathname === '/skills' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
                   transform: pathname === '/skills' ? 'scale(1.05)' : '',
@@ -38,14 +41,29 @@ const SidebarMenu = () => {
                   transition: '0.2s',
                 }}
               >
-                <AiFillExclamationCircle size={40} />
+                <IoCodeSlashSharp size={40} />
                 <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Skills</div>
 
               </div>
             </Link>
-            <Link href="/projects" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
+            <Link href="/experiences" className={`${screenWidth > 980 ? `${styles.sidebarMenu}` : 'grid justify-center'}`}>
               <div
-                className={`py-1 px-2 flex items-center`}
+                className={`py-1 px-2 flex items-center ${screenWidth > 980 ? '' : `${styles.sidebarMenu}`}`}
+                style={{
+                  background: pathname === '/experiences' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
+                  transform: pathname === '/experiences' ? 'scale(1.05)' : '',
+                  color: pathname === '/experiences' ? 'white' : '',
+                  transition: '0.2s',
+                }}
+              >
+                <FaBriefcase size={40} />
+                <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Experiences</div>
+
+              </div>
+            </Link>
+            <Link href="/projects" className={`${screenWidth > 980 ? `${styles.sidebarMenu}` : 'grid justify-center'}`}>
+              <div
+                className={`py-1 px-2 flex items-center ${screenWidth > 980 ? '' : `${styles.sidebarMenu}`}`}
                 style={{
                   background: pathname === '/projects' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
                   transform: pathname === '/projects' ? 'scale(1.05)' : '',
@@ -53,72 +71,27 @@ const SidebarMenu = () => {
                   transition: '0.2s',
                 }}
               >
-                <AiFillExclamationCircle size={40} />
+                <PiProjectorScreenChart  size={40} />
                 <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Projects</div>
               </div>
             </Link>
+            <Link href="/acknowledgement" className={`${screenWidth > 980 ? `${styles.sidebarMenu}` : 'grid justify-center'}`}>
+              <div
+                className={`py-1 px-2 flex items-center ${screenWidth > 980 ? '' : `${styles.sidebarMenu}`}`}
+                style={{
+                  background: pathname === '/acknowledgement' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
+                  transform: pathname === '/acknowledgement' ? 'scale(1.05)' : '',
+                  color: pathname === '/acknowledgement' ? 'white' : '',
+                  transition: '0.2s',
+                }}
+              >
+                <BiSolidLike size={40} />
+                <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Acknowledgement</div>
+              </div>
+            </Link> 
           </div>
         </div>
       </div>
-      {/* 
-    <div className={`ps-5 absolute w-full h-lvh`}>
-      <div className='grid grid-cols-5 w-full h-lvh' style={{ zIndex: "" }}>
-        <div className='border border-green-600 mt-24'>
-          <div className={`grid gap-y-3 border border-slate-700`}>
-            <Link href="/" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
-              <div
-                className={`py-1 px-2 flex items-center`}
-                style={{
-                  background: pathname === '/' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
-                  transform: pathname === '/' ? 'scale(1.05)' : '',
-                  color: pathname === '/' ? 'white' : '',
-                  transition: '0.2s',
-                }}
-              >
-                <AiFillExclamationCircle size={40} />
-                <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>About me</div>
-              </div>
-            </Link>
-            <Link href="/detail" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
-              <div
-                className={`py-1 px-2 flex items-center`}
-                style={{
-                  background: pathname === '/detail' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
-                  transform: pathname === '/detail' ? 'scale(1.05)' : '',
-                  color: pathname === '/detail' ? 'white' : '',
-                  transition: '0.2s',
-                }}
-              >
-                <AiFillExclamationCircle size={40} />
-                <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Detail</div>
-
-              </div>
-            </Link>
-            <Link href="/projects" className={`${screenWidth > 900 ? '' : 'grid justify-center'} ${styles.sidebarMenu}`}>
-              <div
-                className={`py-1 px-2 flex items-center`}
-                style={{
-                  background: pathname === '/projects' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
-                  transform: pathname === '/projects' ? 'scale(1.05)' : '',
-                  color: pathname === '/projects' ? 'white' : '',
-                  transition: '0.2s',
-                }}
-              >
-                <AiFillExclamationCircle size={40} />
-                <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Projects</div>
-              </div>
-            </Link>
-          </div>
-        </div>
-        <div className='col-span-4 border border-green-600'
-          style={{
-            zIndex: "-1"
-          }}>
-
-        </div>
-      </div>
-    </div> 
-    */}
     </>
   );
 };

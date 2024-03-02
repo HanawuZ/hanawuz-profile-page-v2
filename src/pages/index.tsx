@@ -117,13 +117,13 @@ const Home = () => {
                         ? 'linear-gradient(45deg, #e52e71, #ff8a00)'
                         : 'linear-gradient(45deg, #ff8a00, #e52e71)',
                       color: 'white',
-                      transform: !showBio ? 'translateX(105%)' : 'translateX(0)',
-                      // transition: 'background 0.3s ease, transform 0.3s ease',
+                      transform: !showBio ? 'translateX(105%)' : 'translateX(0)',                      
                     }}
                   >
                     {showBio ? 'Personal Info' : 'About Me'}
                   </button>
                   <button
+                    className="test"
                     onClick={toggleBio}
                     style={{
                       width: "100%", fontSize: "18px",
@@ -155,14 +155,11 @@ const Home = () => {
                     <InfoCard icon={<FaGithub size={30} />} label="Github" value="HanawuZ" href="https://github.com/HanawuZ" />
                     <InfoCard icon={<FaLinkedin size={30} />} label="Linkedin" value="Thanawut Tuamprajak" href="www.linkedin.com/in/thanawut-tuamprajak-479144262" />
                     <InfoCard icon={<FaMedium size={30} />} label="Medium" value="Thanawut Tuamprajak" href="https://medium.com/@thanawut.tuam" />
-                    {/* <InfoCard icon={<FaBookOpen size={30} />} label="Education" value="Bachelor degree" /> */}
-                    {/* <InfoCard icon={<BsFillTelephoneFill size={30} />} label="Phone" value="+669-9434-5245" /> */}
-                    {/* <InfoCard icon={<IoPerson size={30} />} label="Age" value="12" /> */}
                   </div>
                 </div>
               </div>
               :
-              <div id="about-me" className="h-80 py-5 px-5 text-justify">
+              <div id="about-me" className="h-80 mt-5 px-5 text-justify">
                 <text className="font-bold text-2xl"> About me </text>
                 <p
                   className="p-2 mt-2 py-3"
