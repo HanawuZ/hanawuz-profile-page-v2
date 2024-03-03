@@ -4,20 +4,20 @@ import { BiSolidLike } from "react-icons/bi";
 const Acknowledgement = () => {
   return (
     <div className="h-screen grid items-center">
-      <div className="container mx-auto grid md:grid-cols-5" style={{ zIndex: 1 }}>
+      <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
         <div className="max-sm:h-[10vh]"></div>
-        <div className='w-full grid justify-self-center md:col-span-4 border border-slate-700'>
+        <div className='w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700'>
           <div
             className="ps-5 text-xl max-md:text-xl font-bold max-md:text-xl text-white p-2"
             style={{
               background: "rgba(0, 0, 0, 0.35)",
             }}
           > Acknowledgements </div>
-          <div className='md:overflow-y-auto mx-5 md:h-[70vh] pb-4' style={{ background: "rgb(255, 255, 255, 0.2)", }}>
+          <div className='md:overflow-y-auto md:h-[70vh] pb-4' style={{ background: "rgb(255, 255, 255, 0.5)", }}>
             <div className="mt-3">
               <div className="grid p-5">
                 <FaQuoteLeft color="#7e7e7e" size={20} />
-                <p className="text-center text-lg md:mx-10">
+                <p className="text-center text-md md:mx-14">
                   I could not have undertaken this journey without my senior supervisor. I am also grateful to my classmates and office mates for their assistant and moral support.
                   Lastly, I would be remiss in not mentioning my family, especially my mother. Their belief in me has kept my spirits and motivation high during this process. I would also like to thank my cat for all the entertainment and emotional support.
                 </p>
@@ -26,7 +26,7 @@ const Acknowledgement = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full flex justify-end pt-4">
+            <div className="w-full flex justify-end pt-4 pe-10">
               <div className="text-center">
                 <div className="text-lg"> Thanawut Tuamprajak </div>
                 <text className="">Best sincerely </text>

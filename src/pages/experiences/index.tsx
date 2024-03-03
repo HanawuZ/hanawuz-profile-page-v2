@@ -3,27 +3,27 @@ import styles from './styles.module.css'
 const Experiences = () => {
   return (
     <div className="h-screen grid items-center">
-      <div className="container mx-auto grid md:grid-cols-5 "
+      <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4"
         style={{
           zIndex: 1
         }}
       >
         <div className="max-sm:h-[10vh]"></div>
-        <div className='w-full grid justify-self-center md:col-span-4 border border-slate-700'>
+        <div className='w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700'>
           <div
-            className="ps-5 text-3xl max-md:text-xl font-bold max-md:text-xl text-white p-2"
+            className="ps-5 text-xl font-bold max-md:text-xl text-white p-2"
             style={{
               background: "rgba(0, 0, 0, 0.35)",
             }}
           > Experiences </div>
           <div className='md:overflow-y-auto md:h-[70vh]  pb-4' style={{ background: "rgb(255, 255, 255, 0.2)", }}>
             <div className="mx-4 md:mx-8 my-4 border border-slate-700">
-              <div className="text-2xl max-md:text-xl text-white bg-neutral-600 ps-2"> Cooperative Operation </div>
+              <div className="text-xl max-md:text-lg text-white bg-neutral-600 ps-2"> Cooperative Operation </div>
               <div className=' mx-2 mt-2 grid md:grid-cols-2'>
-                <text className="text-lg"> T.C.C. Technology Co. Ltd, Bangkok, Thailand </text>
-                <text className="max-sm:text-sm text-lg text-slate-600 md:text-end"> 13<sup>th</sup> November 2023 -- 1<sup>st</sup> March 2024 </text>
+                <text className=""> T.C.C. Technology Co. Ltd, Bangkok, Thailand </text>
+                <text className="max-sm:text-sm text-slate-600 md:text-end"> 13<sup>th</sup> November 2023 - 1<sup>st</sup> March 2024 </text>
               </div>
-              <ul className="mt-3 list-disc text-lg ps-10 pe-5 mb-4">
+              <ul className="mt-3 list-disc  ps-10 pe-5 mb-4">
                 <li>
                   Cooperative operation as Back-end developer.
                 </li>
@@ -43,12 +43,12 @@ const Experiences = () => {
             </div>
 
             <div className="mx-4 md:mx-8 my-4 border border-slate-700">
-              <div className="text-2xl max-md:text-xl text-white bg-neutral-600 ps-2"> Research Assistant </div>
+              <div className="text-xl max-md:text-lg text-white bg-neutral-600 ps-2"> Research Assistant </div>
               <div className='mx-2 mt-2 grid md:grid-cols-2'>
-                <text className="text-lg"> School of Physics, Suranaree University of Technology, Nakhon Ratchasima, Thailand </text>
-                <text className="max-sm:text-sm text-lg text-slate-600 md:text-end"> September 2022 –- October 2023 </text>
+                <text className=""> School of Physics, Suranaree University of Technology, Nakhon Ratchasima, Thailand </text>
+                <text className="max-sm:text-sm text-slate-600 md:text-end"> September 2022 – October 2023 </text>
               </div>
-              <ul className="mt-3 list-disc text-lg ps-10 pe-5 mb-4">
+              <ul className="mt-3 list-disc  ps-10 pe-5 mb-4">
                 <li>
                   Collaborated with Physics associate professor on researching, developing a user-friendly GUI for capillary refill
                   evaluation and visualizing results in line graphs.

@@ -1,3 +1,6 @@
+import styles from "./styles.module.css"
+import { useProfileContext } from "@/context/ProfileContext"
+
 type ProjectCardProbs = {
   index: number;
   projectName: string;
@@ -7,7 +10,8 @@ type ProjectCardProbs = {
   projectLink: string;
 }
 
-const ProjectCard = ({ imgUrl, projectName, projectTimeRange, description, projectLink }: ProjectCardProbs) => {
+const ProjectCard = ({ index, imgUrl, projectName, projectTimeRange, description, projectLink }: ProjectCardProbs) => {
+  const { setProjectModalIndex } = useProfileContext();
   return (
     <div className="m-2 border border-slate-800 flex justify-center">
       <div className="p-4 flex flex-col">
@@ -16,16 +20,17 @@ const ProjectCard = ({ imgUrl, projectName, projectTimeRange, description, proje
           src={imgUrl}
           alt="Project Image"
         />
-        <div className="text-center">
-          <text className="text-lg font-bold"> {projectName} </text>
+        <div className="text-center pt-3">
+          <text className="text-lg font-bold p"> {projectName} </text>
           <div className="text-sm text-slate-500"> {projectTimeRange} </div>
-          <p className="text-justify h-48 overflow-y-auto">
+          <p className="mt-4 text-justify h-48 overflow-y-auto">
             {description}
           </p>
         </div>
         <div className="p-3 w-full">
           <button
-            className="linkButton"
+            onClick={() => setProjectModalIndex(index)}
+            className={styles.linkButton}
             style={{
               border: 'solid 1px',
             }}
@@ -40,12 +45,12 @@ const ProjectCard = ({ imgUrl, projectName, projectTimeRange, description, proje
 
 const Projects = () => {
   return (
-    <div className="h-screen grid items-center">
-      <div className="container mx-auto grid md:grid-cols-5" style={{ zIndex: 1 }}>
+    <div className="h-screen grid items-center" >
+      <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
         <div className="max-sm:h-[10vh]"></div>
-        <div className='w-full grid justify-self-center md:col-span-4 border border-slate-700'>
+        <div className='w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700'>
           <div
-            className="ps-5 text-xl max-md:text-xl font-bold max-md:text-xl text-white p-2"
+            className="ps-5 text-xl font-bold max-md:text-xl text-white p-2"
             style={{
               background: "rgba(0, 0, 0, 0.35)",
             }}
@@ -55,7 +60,7 @@ const Projects = () => {
               <ProjectCard
                 index={1}
                 projectName="Prompt Lab AI"
-                imgUrl="images\promt-lab.jpg"
+                imgUrl="images\prompt-lab.jpg"
                 projectTimeRange="2023 - Present"
                 description="Prompt Lab is a website that unlocks your creativity with AI assistance for generating sales posts. I'm using Next.js with Bootstrap for CSS frameworks."
                 projectLink="https://promptlabai.com/"
@@ -70,7 +75,7 @@ const Projects = () => {
               />
               <ProjectCard
                 index={3}
-                projectName="FoodFinder Chatbot Backend"
+                projectName="FoodFinder Backend"
                 imgUrl="images\food-image.jpg"
                 projectTimeRange="May 2023 - June 2023"
                 description="The back-end system for the LINE chatbot, which involves Natural Language Processing, is developed using Node.js with the Express.js. This system is connected to a MySQL Database."

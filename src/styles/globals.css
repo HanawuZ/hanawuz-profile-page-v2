@@ -14,16 +14,6 @@
   opacity: 0.1;
 }
 
-.about-me-desc div:nth-of-type(even) {
-  /* Apply styles for odd paragraphs */
-  background-color: none;
-}
-
-.about-me-desc div:nth-of-type(odd) {
-  /* Apply styles for even paragraphs */
-  background-color: rgba(0, 0, 0, 0.10);
-}
-
 .linkButton {
   color: black;
   text-align: center;
@@ -49,7 +39,7 @@
 }
 
 .link:hover {
-  color: white;
+  color: #ff8a00
 }
 
 ::-webkit-scrollbar {
