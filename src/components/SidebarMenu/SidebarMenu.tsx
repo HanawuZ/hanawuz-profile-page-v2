@@ -14,7 +14,7 @@ const SidebarMenu = () => {
   const { screenWidth } = useProfileContext();
   return (
     <>
-      <div className={`xl:mt-10 ps-5 w-1/5 absolute h-lvh`}>
+      <div className={`ps-5 w-1/5 absolute h-lvh`} style={{ zIndex:2 }}>
         <div className='mt-20'>
           <div className={`grid gap-y-3`}>
             <Link href="/" className={`${screenWidth > 980 ? `` : 'grid justify-center'}`}>

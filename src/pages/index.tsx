@@ -73,7 +73,11 @@ const Home = () => {
 
   return (
     <div className="z-10 h-screen grid items-center">
-      <div className="container mx-auto grid md:grid-cols-6">
+      <div className="container mx-auto grid md:grid-cols-6"
+        style={{
+          zIndex: 1
+        }}
+      >
         <div className=""> </div>
         <div className="grid justify-self-center md:col-span-2">
           <div className="items-center grid p-3"
@@ -117,7 +121,7 @@ const Home = () => {
                         ? 'linear-gradient(45deg, #e52e71, #ff8a00)'
                         : 'linear-gradient(45deg, #ff8a00, #e52e71)',
                       color: 'white',
-                      transform: !showBio ? 'translateX(105%)' : 'translateX(0)',                      
+                      transform: !showBio ? 'translateX(105%)' : 'translateX(0)',
                     }}
                   >
                     {showBio ? 'Personal Info' : 'About Me'}
