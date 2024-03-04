@@ -10,3 +10,24 @@
     background: rgba(255, 255, 255, 0.3);
     clip-path: polygon(9% 0, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 9%);
 }
+
+.experiencePage {
+    animation: fadeInAndGrow 0.15s;
+}
+
+
+@keyframes fadeInAndGrow {
+    from {
+        opacity: 0;
+        /* Start opacity */
+        transform: scale(0.8);
+        /* Start shrink effect */
+    }
+
+    to {
+        opacity: 1;
+        /* End opacity */
+        transform: scale(1);
+        /* End growth effect */
+    }
+}

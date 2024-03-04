@@ -9,14 +9,14 @@ const Experiences = () => {
         }}
       >
         <div className="max-sm:h-[10vh]"></div>
-        <div className='w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700'>
+        <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.experiencePage}`}>
           <div
             className="ps-5 text-xl font-bold max-md:text-xl text-white p-2"
             style={{
               background: "rgba(0, 0, 0, 0.35)",
             }}
           > Experiences </div>
-          <div className='md:overflow-y-auto md:h-[70vh]  pb-4' style={{ background: "rgb(255, 255, 255, 0.2)", }}>
+          <div className='md:overflow-y-auto md:h-[70vh] md:max-h-[720px] pb-4' style={{ background: "rgb(255, 255, 255, 0.2)", }}>
             <div className="mx-4 md:mx-8 my-4 border border-slate-700">
               <div className="text-xl max-md:text-lg text-white bg-neutral-600 ps-2"> Cooperative Operation </div>
               <div className=' mx-2 mt-2 grid md:grid-cols-2'>

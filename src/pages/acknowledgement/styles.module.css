@@ -1,24 +1,6 @@
-.linkButton {
-    color: black;
-    text-align: center;
-    font-size: 18px;
-    width: 100%;
-    border: none;
-    height: 2rem;
-    border-color: black;
-    border-radius: 2rem;
-    transition: all 0.2s;
-}
-
-.linkButton:hover {
-    background-image: linear-gradient(45deg, #e52e71, #ff8a00)
-}
-
-
-.projectPage {
+.acknowledgementPage {
     animation: fadeInAndGrow 0.15s;
 }
-
 
 @keyframes fadeInAndGrow {
     from {

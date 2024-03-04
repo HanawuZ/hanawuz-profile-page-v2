@@ -14,9 +14,10 @@ const SidebarMenu = () => {
   const { screenWidth } = useProfileContext();
   return (
     <>
-      <div className={`ps-5 w-1/5 absolute h-lvh`} style={{ zIndex:2 }}>
+      <div className={`ps-5 w-1/5 absolute h-lvh`} style={{ zIndex: 2 }}>
         <div className='mt-20'>
           <div className={`grid gap-y-3`}>
+
             <Link href="/" className={`${screenWidth > 980 ? `` : 'grid justify-center'}`}>
               <div
                 className={`py-1 px-2 flex items-center  ${styles.sidebarMenu}`}
@@ -53,6 +54,7 @@ const SidebarMenu = () => {
                   background: pathname === '/experiences' ? 'linear-gradient(45deg, #e52e71, #ff8a00)' : '',
                   transform: pathname === '/experiences' ? 'scale(1.05)' : '',
                   color: pathname === '/experiences' ? 'white' : '',
+                  pointerEvents: 'none',
                   transition: '0.2s',
                 }}
               >
@@ -71,7 +73,7 @@ const SidebarMenu = () => {
                   transition: '0.2s',
                 }}
               >
-                <PiProjectorScreenChart  size={40} />
+                <PiProjectorScreenChart size={40} />
                 <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Projects</div>
               </div>
             </Link>
@@ -88,7 +90,7 @@ const SidebarMenu = () => {
                 <BiSolidLike size={40} />
                 <div className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}>Acknowledgement</div>
               </div>
-            </Link> 
+            </Link>
           </div>
         </div>
       </div>

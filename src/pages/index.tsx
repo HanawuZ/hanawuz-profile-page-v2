@@ -53,10 +53,6 @@ const InfoCard = ({ icon, label, value, href }: { icon: JSX.Element, label: stri
   );
 };
 
-
-
-
-
 const Home = () => {
   const { screenWidth } = useProfileContext()
   const [showBio, setShowBio] = useState<boolean>(true)

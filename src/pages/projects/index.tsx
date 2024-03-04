@@ -48,14 +48,14 @@ const Projects = () => {
     <div className="h-screen grid items-center" >
       <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
         <div className="max-sm:h-[10vh]"></div>
-        <div className='w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700'>
+        <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.projectPage}`}>
           <div
             className="ps-5 text-xl font-bold max-md:text-xl text-white p-2"
             style={{
               background: "rgba(0, 0, 0, 0.35)",
             }}
           > Projects </div>
-          <div className='md:overflow-y-auto md:h-[70vh] pb-4' style={{ background: "rgb(255, 255, 255, 0.2)", }}>
+          <div className='md:overflow-y-auto md:h-[70vh] md:max-h-[720px] pb-4' style={{ background: "rgb(255, 255, 255, 0.2)", }}>
             <div className="mt-2 mx-2 grid lg:grid-cols-3 md:grid-cols-2">
               <ProjectCard
                 index={1}

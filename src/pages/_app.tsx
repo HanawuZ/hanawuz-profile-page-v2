@@ -72,7 +72,7 @@ function Layout({ Component, pageProps }: any) {
   */
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       {/* <div
         style={{
           backgroundImage: `url(images/dummy-wallpaper.jpg)`,

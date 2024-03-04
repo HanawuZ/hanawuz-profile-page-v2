@@ -1,19 +1,18 @@
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
-import { BiSolidLike } from "react-icons/bi";
-
+import styles from "./styles.module.css";
 const Acknowledgement = () => {
   return (
     <div className="h-screen grid items-center">
       <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
         <div className="max-sm:h-[10vh]"></div>
-        <div className='w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700'>
+        <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.acknowledgementPage}`}>
           <div
             className="ps-5 text-xl max-md:text-xl font-bold max-md:text-xl text-white p-2"
             style={{
               background: "rgba(0, 0, 0, 0.35)",
             }}
           > Acknowledgements </div>
-          <div className='md:overflow-y-auto md:h-[70vh] pb-4' style={{ background: "rgb(255, 255, 255, 0.5)", }}>
+          <div className='md:overflow-y-auto md:h-[70vh] md:max-h-[720px] pb-4' style={{ background: "rgb(255, 255, 255, 0.5)", }}>
             <div className="mt-3">
               <div className="grid p-5">
                 <FaQuoteLeft color="#7e7e7e" size={20} />
