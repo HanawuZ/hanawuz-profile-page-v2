@@ -15,14 +15,14 @@ const SkillCard = ({ imgSrc, title }: { imgSrc: string, title: string }) => (
 
 const Detail = () => {
   return (
-    <div className="h-screen grid items-center">
+    <div className="h-screen grid items-center max-md:ms-2">
       <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4"
         style={{
           zIndex: 1
         }}
       >
-        <div className="max-sm:h-[10vh]"></div>
-        <div className={` w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.skillsPage}`}>
+        <div className="max-md:h-[10vh]"></div>
+        <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.skillsPage}`}>
           <div
             className="ps-5 text-xl font-bold text-white p-2"
             style={{
@@ -35,6 +35,7 @@ const Detail = () => {
                 <MdOutlineMonitor size={30} />
                 <text className="ms-2 text-md"> Front-end development</text>
               </div>
+              
               <div className={`border-2 border-slate-300 py-3 max-sm:px-4 md:px-3 lg:px-10 ${styles.skillsGrid}`}>
                 <SkillCard imgSrc="images\icons\html5-icon.png" title="HTML" />
                 <SkillCard imgSrc="images\icons\css-icon.png" title="CSS" />

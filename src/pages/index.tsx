@@ -38,7 +38,7 @@ const InfoCard = ({ icon, label, value, href }: { icon: JSX.Element, label: stri
         }}
       />
       <div className="grid">
-        <span>{label}</span>
+        <span className="text-sm">{label}</span>
         {href ?
           <Link
             className={`link`}
@@ -68,33 +68,103 @@ const Home = () => {
   }
 
   return (
-    <div className="z-10 h-screen grid items-center">
+    <div className="max-md:mt-5 z-10 h-screen grid items-center">
       <div className="container mx-auto grid md:grid-cols-6"
         style={{
           zIndex: 1
         }}
       >
         <div className=""> </div>
-        <div className="grid justify-self-center md:col-span-2">
-          <div className="items-center grid p-3"
+        <div className="justify-self-center md:col-span-2">
+          <div className="items-center  grid p-3"
             style={{
               marginTop: "1rem",
               marginBottom: "1rem"
             }}
           >
             <Image
-              className="rounded-full"
-              src={"/images/portrait-dummy.png"}
+              // className="rounded-full"
+              src={"/images/me-2.png"}
               alt="image"
-              width={400}
-              height={400}
+              width={300}
+              height={300}
+              style={{
+                zIndex: 2,
+                // clipPath:"polygon(0 0, 100% 0, 100% 85%, 75% 100%, 25% 100%, 0 85%)"
+              }}
             />
+            <div
+              className="relative max-sm:w-[200px] w-[200px] h-[200px]"
+              style={{
+                background: "rgba(0, 0, 0, 0.15)",
+                marginTop:"-30rem",
+                zIndex: 0
+              }}>
+            </div>
+            <div
+              className="relative w-[70px] h-[70px]"
+              style={{
+                background: "rgba(0, 0, 0, 0.15)",
+                marginTop:"-10rem",
+                marginLeft:"-4rem",
+                zIndex: 0
+              }}>
+            </div>
+            <div
+              className="relative w-[200px] h-[200px]"
+              style={{
+                background: "rgba(0, 0, 0, 0.15)",
+                marginTop:"-40rem",
+                marginLeft:"5rem",
+                zIndex: 0
+              }}>
+            </div>
+            <div
+              className="relative w-[100px] h-[100px]"
+              style={{
+                background: "rgba(0, 0, 0, 0.15)",
+                marginTop:"-10rem",
+                marginLeft:"12rem",
+                zIndex: 0
+              }}>
+            </div>
+            <div
+              className="relative w-[70px] h-[70px]"
+              style={{
+                background: "rgba(0, 0, 0, 0.15)",
+                marginTop:"-60rem",
+                marginLeft:"12rem",
+                zIndex: 0
+              }}>
+            </div>
+            <div
+              className="relative w-[40px] h-[40px]"
+              style={{
+                background: "rgba(0, 0, 0, 0.15)",
+                marginTop:"-62rem",
+                marginLeft:"5rem",
+                zIndex: 0
+              }}>
+            </div>
+            <div
+              className="relative w-[20px] h-[20px]"
+              style={{
+                background: "rgba(0, 0, 0, 0.15)",
+                marginTop:"-65rem",
+                marginLeft:"8rem",
+                zIndex: 0
+              }}>
+            </div>
           </div>
         </div>
-        <div className=" md:col-span-3">
+        <div className="homePage md:col-span-3 ms-2" style={{ zIndex: 1 }}>
           <div className="">
-            <div className="flex mt-5 justify-between px-4 bg-slate-300 py-1">
-              <text className="text-3xl"> Thanawut Tuamprajak</text>
+            <div className="flex mt-5 justify-between px-4 py-1"
+              style={{
+                backgroundColor: "rgba(0, 0, 0, 0.15)",
+              }}
+            >
+              <text className="text-2xl self-center"> Thanawut Tuamprajak</text>
               <div className="text-sm text-gray-400 font-bold">
                 <div>BIRTHDATE</div>
                 <div className="flex w-full justify-end">11/10</div>
@@ -123,10 +193,9 @@ const Home = () => {
                     {showBio ? 'Personal Info' : 'About Me'}
                   </button>
                   <button
-                    className="test"
                     onClick={toggleBio}
                     style={{
-                      width: "100%", fontSize: "18px",
+                      width: "100%", fontSize: "16px",
                       transform: !showBio ? 'translateX(-100%)' : 'translateX(0)',
                     }}
                   >
@@ -149,7 +218,7 @@ const Home = () => {
                     {/* <InfoCard icon={<IoPerson size={30} />} label="Age" value="12" /> */}
                   </div>
                 </div>
-                <div className="mt-5">
+                <div className="mt-5 max-md:pb-5">
                   <text className="ps-3 font-bold text-2xl"> Links </text>
                   <div className="grid md:grid-cols-2 justify-items-center">
                     <InfoCard icon={<FaGithub size={30} />} label="Github" value="HanawuZ" href="https://github.com/HanawuZ" />

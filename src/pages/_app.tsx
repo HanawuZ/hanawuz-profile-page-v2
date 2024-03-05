@@ -4,6 +4,7 @@ import { ProfileContextProvider } from "@/context/ProfileContext";
 import { useProfileContext } from "@/context/ProfileContext";
 import { Barlow } from "next/font/google";
 import SidebarMenu from "@/components/SidebarMenu/SidebarMenu";
+import SidebarMenuMobile from "@/components/SidebarMenu/SidebarMenuMobile";
 import { Header } from "@/components/Header";
 import { ProjectDetailModal } from "@/components/ProjectDetailModal";
 import localFont from 'next/font/local'
@@ -42,7 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <SidebarMenu />
         </div>
         <div className="md:hidden absolute border border-slate-700 w-full flex justify-center">
-          Sidebar Menu Mobile here
+          <SidebarMenuMobile />
         </div>
         <Layout Component={Component} pageProps={pageProps} />
         {/* <Component {...pageProps} /> */}

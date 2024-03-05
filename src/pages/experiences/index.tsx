@@ -2,13 +2,13 @@ import styles from './styles.module.css'
 
 const Experiences = () => {
   return (
-    <div className="h-screen grid items-center">
+    <div className="h-screen grid items-center max-md:ms-2">
       <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4"
         style={{
           zIndex: 1
         }}
       >
-        <div className="max-sm:h-[10vh]"></div>
+        <div className="max-md:h-[10vh]"></div>
         <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.experiencePage}`}>
           <div
             className="ps-5 text-xl font-bold max-md:text-xl text-white p-2"

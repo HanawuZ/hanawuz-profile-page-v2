@@ -17,7 +17,7 @@
 .linkButton {
   color: black;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   width: 100%;
   border: none;
   height: 2rem;
@@ -29,7 +29,7 @@
 .link {
   color: black;
   text-decoration: underline;
-  font-size: 15px;
+  font-size: 14px;
   width: 100%;
   border: none;
   height: 2rem;
@@ -128,4 +128,26 @@
 
 .triangle-float3 {
   animation: float3 6s infinite;
+}
+
+
+.homePage {
+  animation: fadeInAndGrow 0.15s;
+}
+
+
+@keyframes fadeInAndGrow {
+  from {
+      opacity: 0;
+      /* Start opacity */
+      transform: scale(0.8);
+      /* Start shrink effect */
+  }
+
+  to {
+      opacity: 1;
+      /* End opacity */
+      transform: scale(1);
+      /* End growth effect */
+  }
 }

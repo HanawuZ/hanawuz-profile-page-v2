@@ -15,7 +15,7 @@ const CloseButton = () => {
 
   return (
     <div className="flex justify-end w-full pe-4 py-1">
-      <button className="text-white bg-transparent text-2xl" onClick={closeProjectModal} >
+      <button className="text-white bg-transparent text-lg" onClick={closeProjectModal} >
         &#9587;
       </button>
     </div>
@@ -30,7 +30,7 @@ const FoodFinderBackend = () => (
     <div className="border w-full overflow-y-auto md:max-h-[70vh] max-h-[90vh] grid overflow-x-hidden bg-white">
       <div className={`mb-5  md:mx-10 mt-5 ${styles.projectCarouselContainer} `}>
         <Carousel
-          className="border border-slate-700"
+          className=""
           leftControl={<div className="text-3xl"> &#60; </div>}
           rightControl={<div className="text-3xl"> &#62; </div>}
           slideInterval={5000}
@@ -76,33 +76,32 @@ const SoftwareEngineering = () => {
       <div className="w-full overflow-y-auto md:max-h-[70vh] max-h-[90vh] grid overflow-x-hidden bg-white">
         <div className={`mb-5  md:mx-10 mt-5 ${styles.projectCarouselContainer} `}>
           <Carousel
-            className="border border-slate-700"
+            className="border border-slate-600 rounded-lg"
             leftControl={<div className="text-3xl"> &#60; </div>}
             rightControl={<div className="text-3xl"> &#62; </div>}
             slideInterval={5000}
             indicators={false}
           >
-            <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
-            <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
-            <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
-            <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
-            <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
-            {/*
             <img
-              className="object-cover px-3 lg:px-8"
-              src="images\se-pic-1.png"
+              className="object-cover"
+              src="images\projects\SoftwareEngineering\Se0.png"
               alt="SE1"
             />
             <img
-              className="object-cover px-3 lg:px-8"
-              src="images\se-pic-1.png"
+              className="object-cover"
+              src="images\projects\SoftwareEngineering\Se1.png"
               alt="SE1"
             />
             <img
-              className="object-cover px-3 lg:px-8"
-              src="images\se-pic-1.png"
+              className="object-cover"
+              src="images\projects\SoftwareEngineering\Se2.png"
               alt="SE1"
-            /> */}
+            />
+            <img
+              className="object-cover"
+              src="images\projects\SoftwareEngineering\Se3.png"
+              alt="SE1"
+            />
           </Carousel>
         </div>
         <div className="w-full grid lg:grid-cols-2">
@@ -140,11 +139,12 @@ const PromptLabAI = () => {
         <CloseButton />
       </div>
       <div className="border w-full overflow-y-auto md:max-h-[70vh] max-h-[90vh] grid overflow-x-hidden bg-white">
-        <div className="md:mx-20 mt-8 mb-4 flex justify-center">
+        <div className="rounded-lg md:mx-20 mt-8 mb-4 flex justify-center">
           <img
-            className="object-cover px-3 lg:px-8"
+            className="object-cover border border-slate-600 mx-3 lg:mx-8"
             src="images\prompt-lab-overview.png"
             alt="Prompt Lab AI"
+            style={{ borderRadius: "10px" }}
           />
         </div>
         <div className="w-full grid lg:grid-cols-2">
