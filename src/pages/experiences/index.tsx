@@ -1,15 +1,24 @@
+import { useProfileContext } from '@/context/ProfileContext'
 import styles from './styles.module.css'
+import { motion } from "framer-motion"
 
 const Experiences = () => {
+  const { screenWidth } = useProfileContext()
   return (
-    <div className="h-screen grid items-center max-md:ms-2">
+    <div className="h-screen grid items-center max-md:ms-2 pt-3">
       <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4"
         style={{
           zIndex: 1
         }}
       >
         <div className="max-md:h-[10vh]"></div>
-        <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.experiencePage}`}>
+        <motion.div
+          className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${screenWidth > 768 ? styles.experiencePage : ''}`}
+          initial={screenWidth > 768 ? {} : { opacity: 0, x: -100 }}
+          animate={screenWidth > 768 ? {} : { opacity: 1, x: 0 }}
+          exit={screenWidth > 768 ? {} : { opacity: 0, x: 100 }}
+          transition={{ type: 'tween', duration: 0.25 }}
+        >
           <div
             className="ps-5 text-xl font-bold max-md:text-xl text-white p-2"
             style={{
@@ -67,6 +76,9 @@ const Experiences = () => {
               <text className='text-2xl text-neutral-400 max-md:text-xl text-center'> Waiting for more experiences.</text>
             </div> */}
           </div>
+        </motion.div>
+        <div >
+
         </div>
       </div>
     </div>

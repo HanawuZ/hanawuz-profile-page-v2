@@ -3,6 +3,8 @@ import { FaServer } from "react-icons/fa";
 import { FaCode } from "react-icons/fa6";
 import { MdOutlineMonitor } from "react-icons/md";
 import { IoIosMore } from "react-icons/io";
+import { motion, } from "framer-motion"
+import { useProfileContext } from "@/context/ProfileContext";
 
 const SkillCard = ({ imgSrc, title }: { imgSrc: string, title: string }) => (
   <div className={`py-5 grid justify-center ${styles.skillCard}`}>
@@ -13,16 +15,23 @@ const SkillCard = ({ imgSrc, title }: { imgSrc: string, title: string }) => (
   </div>
 )
 
-const Detail = () => {
+const Skills = () => {
+  const { screenWidth } = useProfileContext()
   return (
-    <div className="h-screen grid items-center max-md:ms-2">
+    <div className="h-screen grid items-center max-md:ms-2 pt-3">
       <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4"
         style={{
           zIndex: 1
         }}
       >
         <div className="max-md:h-[10vh]"></div>
-        <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.skillsPage}`}>
+        <motion.div
+          className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${screenWidth > 768 ? styles.skillsPage : ''}`}
+          initial={screenWidth > 768 ? {} : { opacity: 0, x: -100 }}
+          animate={screenWidth > 768 ? {} : { opacity: 1, x: 0 }}
+          exit={screenWidth > 768 ? {} : { opacity: 0, x: 100 }}
+          transition={{ type: 'tween', duration: 0.25 }}
+        >
           <div
             className="ps-5 text-xl font-bold text-white p-2"
             style={{
@@ -35,7 +44,7 @@ const Detail = () => {
                 <MdOutlineMonitor size={30} />
                 <text className="ms-2 text-md"> Front-end development</text>
               </div>
-              
+
               <div className={`border-2 border-slate-300 py-3 max-sm:px-4 md:px-3 lg:px-10 ${styles.skillsGrid}`}>
                 <SkillCard imgSrc="images\icons\html5-icon.png" title="HTML" />
                 <SkillCard imgSrc="images\icons\css-icon.png" title="CSS" />
@@ -86,10 +95,10 @@ const Detail = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
 }
 
-export default Detail
+export default Skills

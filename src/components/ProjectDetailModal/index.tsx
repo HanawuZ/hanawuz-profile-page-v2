@@ -6,6 +6,7 @@ import { IoMdMail } from "react-icons/io"
 import { Carousel } from 'flowbite-react';
 import { Button } from 'flowbite-react';
 
+
 const CloseButton = () => {
   const { setProjectModalIndex } = useProfileContext();
 
@@ -36,11 +37,16 @@ const FoodFinderBackend = () => (
           slideInterval={5000}
           indicators={false}
         >
-          <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg" alt="..." />
-          <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg" alt="..." />
-          <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg" alt="..." />
-          <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg" alt="..." />
-          <img src="https://flowbite.com/docs/images/carousel/carousel-5.svg" alt="..." />
+          <img
+            className="object-cover"
+            src="images\projects\FoodFinder\food-1.jpg"
+            alt="SE1"
+          />
+          <img
+            className="object-cover"
+            src="images\projects\FoodFinder\food-2.jpg"
+            alt="SE1"
+          />
         </Carousel>
       </div>
       <div className="w-full grid lg:grid-cols-2">

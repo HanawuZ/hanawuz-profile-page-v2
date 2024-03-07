@@ -8,6 +8,8 @@ import SidebarMenuMobile from "@/components/SidebarMenu/SidebarMenuMobile";
 import { Header } from "@/components/Header";
 import { ProjectDetailModal } from "@/components/ProjectDetailModal";
 import localFont from 'next/font/local'
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/router";
 
 const barlow = Barlow({ subsets: ["latin"], weight: "400", })
 const kodeMono = localFont({
@@ -62,6 +64,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
 function Layout({ Component, pageProps }: any) {
   const { screenWidth, screenHeight, projectModalIndex } = useProfileContext()
+  const router = useRouter()
+  const pageKey = router.asPath
+
   const bodyStyle = {
     overflow: projectModalIndex !== -1 ? 'hidden' : 'auto',
     height: '100%',
@@ -74,21 +79,11 @@ function Layout({ Component, pageProps }: any) {
   return (
     <>
       <Header />
-      {/* <div
-        style={{
-          backgroundImage: `url(images/dummy-wallpaper.jpg)`,
-          backgroundSize: "cover",
-          height:"100%",
-          width:"100%",
-          position: "fixed",
-          top: 0,
-          opacity: 0.5,
-          filter: "blur(0.5rem)",
-        }}
-      /> */}
       {projectModalIndex !== -1 && <ProjectDetailModal />}
       <div style={bodyStyle}>
-        <Component {...pageProps} />
+        <AnimatePresence mode="wait">
+          <Component key={pageKey} {...pageProps} />
+        </AnimatePresence>
       </div>
       <svg className="h-full w-full fixed top-0" xmlns="http://www.w3.org/2000/svg" version="1.1" width="1920" height="1080" preserveAspectRatio="none" viewBox="0 0 1920 1080">
         <g mask="url(&quot;#SvgjsMask1534&quot;)" fill="none">

@@ -1,5 +1,6 @@
 import styles from "./styles.module.css"
 import { useProfileContext } from "@/context/ProfileContext"
+import { motion, } from "framer-motion"
 
 type ProjectCardProbs = {
   index: number;
@@ -50,11 +51,19 @@ const ProjectCard = ({ index, imgUrl, projectName, projectTimeRange, description
 }
 
 const Projects = () => {
+  const { screenWidth } = useProfileContext()
+
   return (
-    <div className="h-screen grid items-center max-md:ms-2" >
+    <div className="h-screen grid items-center max-md:ms-2 pt-3" >
       <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
         <div className="max-md:h-[10vh]"></div>
-        <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.projectPage}`}>
+        <motion.div
+          className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${screenWidth > 768 ? styles.projectPage : ''}`}
+          initial={screenWidth > 768 ? {} : { opacity: 0, x: -100 }}
+          animate={screenWidth > 768 ? {} : { opacity: 1, x: 0 }}
+          exit={screenWidth > 768 ? {} : { opacity: 0, x: 100 }}
+          transition={{ type: 'tween', duration: 0.25 }}
+        >
           <div
             className="ps-5 text-xl font-bold max-md:text-xl text-white p-2"
             style={{
@@ -89,10 +98,12 @@ const Projects = () => {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
+        {/* <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.projectPage}`}>
+          
+        </div> */}
       </div>
-    </div>
-  )
+    </div>)
 }
 
 export default Projects

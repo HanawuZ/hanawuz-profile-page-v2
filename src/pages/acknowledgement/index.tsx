@@ -1,11 +1,21 @@
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { useProfileContext } from "@/context/ProfileContext";
 import styles from "./styles.module.css";
+import { motion } from "framer-motion"
+
 const Acknowledgement = () => {
+  const { screenWidth } = useProfileContext()
   return (
-    <div className="h-screen grid items-center max-md:mx-2">
+    <div className="h-screen grid items-center max-md:mx-2 pt-3 max-md:ps-2">
       <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
         <div className="max-md:h-[10vh]"></div>
-        <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.acknowledgementPage}`}>
+        <motion.div
+          className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${screenWidth > 768 ? styles.acknowledgementPage : ''}`}
+          initial={screenWidth > 768 ? {} : { opacity: 0, x: -100 }}
+          animate={screenWidth > 768 ? {} : { opacity: 1, x: 0 }}
+          exit={screenWidth > 768 ? {} : { opacity: 0, x: 100 }}
+          transition={{ type: 'tween', duration: 0.25 }}
+        >
           <div
             className="ps-5 text-xl max-md:text-xl font-bold max-md:text-xl text-white p-2"
             style={{
@@ -32,6 +42,9 @@ const Acknowledgement = () => {
               </div>
             </div>
           </div>
+        </motion.div>
+        <div >
+
         </div>
         {/* <div className="">  </div>
         <div className="overflow-y-auto md:max-h-[80vh] md:px-10 px-5 border border-slate-700 w-full grid justify-self-center md:col-span-5">

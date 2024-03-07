@@ -76,7 +76,7 @@ const Home = () => {
       >
         <div className=""> </div>
         <div className="justify-self-center md:col-span-2">
-          <div className="items-center  grid p-3"
+          <div className="items-center slide-top grid p-3"
             style={{
               marginTop: "1rem",
               marginBottom: "1rem"
