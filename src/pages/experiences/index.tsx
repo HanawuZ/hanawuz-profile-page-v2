@@ -7,7 +7,7 @@ const Experiences = () => {
   const { screenWidth } = useProfileContext()
   return (
     <>
-     <Head>
+      <Head>
         <title>Thanawut - Experience</title>
       </Head>
       <div className="h-screen grid items-center max-md:ms-2 pt-3">
@@ -31,6 +31,26 @@ const Experiences = () => {
               }}
             > Experiences </div>
             <div className='md:overflow-y-auto md:h-[70vh] md:max-h-[720px] pb-4' style={{ background: "rgb(255, 255, 255, 0.2)", }}>
+              <div className="mx-4 md:mx-8 my-4 border border-slate-700">
+                <div className="text-xl max-md:text-lg text-white bg-neutral-600 ps-2"> Application Development Associate </div>
+                <div className=' mx-2 mt-2 grid md:grid-cols-2'>
+                  <text className=""> T.C.C. Technology Co. Ltd, Bangkok, Thailand </text>
+                  <text className="max-sm:text-sm text-slate-600 md:text-end"> 15<sup>th</sup> March 2024 - Now </text>
+                </div>
+                <ul className="mt-3 list-disc ps-10 pe-5 mb-4">
+                  <li>
+                    Assist senior officer to develop and maintain the DMS backoffice website.
+                  </li>
+                  <li>
+                    Implement APIs, logic, and databases for the DMS system.
+                  </li>
+                  <li>
+                    Create new features in the DMS Web backoffice front-end using React.
+                  </li>
+                </ul>
+              </div>
+
+
               <div className="mx-4 md:mx-8 my-4 border border-slate-700">
                 <div className="text-xl max-md:text-lg text-white bg-neutral-600 ps-2"> Cooperative Operation </div>
                 <div className=' mx-2 mt-2 grid md:grid-cols-2'>

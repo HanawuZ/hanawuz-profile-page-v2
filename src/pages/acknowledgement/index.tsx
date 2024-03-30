@@ -32,8 +32,8 @@ const Acknowledgement = () => {
                 <div className="grid p-5">
                   <FaQuoteLeft color="#7e7e7e" size={20} />
                   <p className="text-center text-md md:mx-14">
-                    I could not have undertaken this journey without my senior supervisor. I am also grateful to my classmates and office mates for their assistant and moral support.
-                    Lastly, I would be remiss in not mentioning my family, especially my mother. Their belief in me has kept my spirits and motivation high during this process. I would also like to thank my cat for all the entertainment and emotional support.
+                  🌟 Special Thanks - I would like to take a moment to express my heartfelt gratitude to all those who have contributed, inspired, or supported me along the journey. Your encouragement, feedback, and shared enthusiasm have been invaluable.
+                   Many thanks to my mentor for their invaluable guidance and feedback throughout this journey. Lastly, thank you to my family for believing in me, even when I doubted myself.
                   </p>
                   <div className="flex justify-end">
                     <FaQuoteRight color="#7e7e7e" size={20} />
@@ -48,19 +48,6 @@ const Acknowledgement = () => {
               </div>
             </div>
           </motion.div>
-          <div >
-
-          </div>
-          {/* <div className="">  </div>
-        <div className="overflow-y-auto md:max-h-[80vh] md:px-10 px-5 border border-slate-700 w-full grid justify-self-center md:col-span-5">
-          <div className="my-5">
-            <div className="flex items-center">
-              <BiSolidLike size={35} />
-              <text className="ms-2 text-4xl max-md:text-3xl"> Acknowledgements </text>
-            </div>
-            
-          </div>
-        </div> */}
         </div>
       </div>
     </>

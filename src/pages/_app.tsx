@@ -5,7 +5,6 @@ import { useProfileContext } from "@/context/ProfileContext";
 import { Barlow } from "next/font/google";
 import SidebarMenu from "@/components/SidebarMenu/SidebarMenu";
 import SidebarMenuMobile from "@/components/SidebarMenu/SidebarMenuMobile";
-import { Header } from "@/components/Header";
 import { ProjectDetailModal } from "@/components/ProjectDetailModal";
 import localFont from 'next/font/local'
 import { AnimatePresence } from "framer-motion";
@@ -48,13 +47,6 @@ export default function App({ Component, pageProps }: AppProps) {
           <SidebarMenuMobile />
         </div>
         <Layout Component={Component} pageProps={pageProps} />
-        {/* <Component {...pageProps} /> */}
-        {/* 
-        <div className="grid-bg h-full overflow-auto w-full fixed top-0"/>
-        <div className="background overflow-auto h-full w-full fixed top-0"
-          style={{ zIndex: -1 }}
-        /> 
-        */}
       </div>
     </ProfileContextProvider>
   )
@@ -63,7 +55,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
 
 function Layout({ Component, pageProps }: any) {
-  const { screenWidth, screenHeight, projectModalIndex } = useProfileContext()
+  const { screenWidth, projectModalIndex } = useProfileContext()
   const router = useRouter()
   const pageKey = router.asPath
 
@@ -72,13 +64,9 @@ function Layout({ Component, pageProps }: any) {
     height: '100%',
     width: '100%',
   };
-  /* 
-  <Backgroud1 screenWidth={screenWidth} screenHeight={screenHeight} />
-  <div className="background overflow-auto h-full w-full fixed top-0" style={{ zIndex: -1 }} /> 
-  */
+  
   return (
     <>
-      <Header />
       {projectModalIndex !== -1 && <ProjectDetailModal />}
       <div style={bodyStyle}>
         <AnimatePresence mode="wait">

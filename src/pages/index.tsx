@@ -4,24 +4,92 @@ import { BsFillTelephoneFill, BsFillCake2Fill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 import { useState } from "react";
-import { useProfileContext } from "@/context/ProfileContext";
 import Image from "next/image";
 import Link from "next/link";
 import Head from 'next/head'
 
-const InfoRecord = ({ icon, label, value }: { icon: JSX.Element, label: string, value: string }) => {
-  return (
-    <div className="grid grid-cols-2">
-      <span className="flex items-center">
-        {icon}
-        <span className="ms-2 text-lg">{label}</span>
-      </span>
-      <p className="justify-self-end text-lg">{value}</p>
+const ImageSection = () => (
+  <div className="items-center slide-top grid p-3"
+    style={{
+      marginTop: "1rem",
+      marginBottom: "1rem"
+    }}
+  >
+    <Image
+      // className="rounded-full"
+      src={"/images/me-2.png"}
+      alt="image"
+      width={300}
+      height={300}
+      style={{
+        zIndex: 2,
+        // clipPath:"polygon(0 0, 100% 0, 100% 85%, 75% 100%, 25% 100%, 0 85%)"
+      }}
+    />
+    <div
+      className="relative max-sm:w-[200px] w-[200px] h-[200px]"
+      style={{
+        background: "rgba(0, 0, 0, 0.15)",
+        marginTop: "-30rem",
+        zIndex: 0
+      }}>
     </div>
-  );
-};
-
-
+    <div
+      className="relative w-[70px] h-[70px]"
+      style={{
+        background: "rgba(0, 0, 0, 0.15)",
+        marginTop: "-10rem",
+        marginLeft: "-4rem",
+        zIndex: 0
+      }}>
+    </div>
+    <div
+      className="relative w-[200px] h-[200px]"
+      style={{
+        background: "rgba(0, 0, 0, 0.15)",
+        marginTop: "-40rem",
+        marginLeft: "5rem",
+        zIndex: 0
+      }}>
+    </div>
+    <div
+      className="relative w-[100px] h-[100px]"
+      style={{
+        background: "rgba(0, 0, 0, 0.15)",
+        marginTop: "-10rem",
+        marginLeft: "12rem",
+        zIndex: 0
+      }}>
+    </div>
+    <div
+      className="relative w-[70px] h-[70px]"
+      style={{
+        background: "rgba(0, 0, 0, 0.15)",
+        marginTop: "-60rem",
+        marginLeft: "12rem",
+        zIndex: 0
+      }}>
+    </div>
+    <div
+      className="relative w-[40px] h-[40px]"
+      style={{
+        background: "rgba(0, 0, 0, 0.15)",
+        marginTop: "-62rem",
+        marginLeft: "5rem",
+        zIndex: 0
+      }}>
+    </div>
+    <div
+      className="relative w-[20px] h-[20px]"
+      style={{
+        background: "rgba(0, 0, 0, 0.15)",
+        marginTop: "-65rem",
+        marginLeft: "8rem",
+        zIndex: 0
+      }}>
+    </div>
+  </div>
+);
 const InfoCard = ({ icon, label, value, href }: { icon: JSX.Element, label: string, value: string, href: string }) => {
   return (
     <div className="w-full ps-5 flex items-center">
@@ -53,17 +121,10 @@ const InfoCard = ({ icon, label, value, href }: { icon: JSX.Element, label: stri
 };
 
 const Home = () => {
-  const { screenWidth } = useProfileContext()
   const [showBio, setShowBio] = useState<boolean>(true)
-  const [showAboutMe, setShowAboutMe] = useState<boolean>(false)
 
   function toggleBio() {
     setShowBio(!showBio)
-    setShowAboutMe(false)
-  }
-  function toggleAboutMe() {
-    setShowAboutMe(!showAboutMe)
-    setShowBio(false)
   }
 
   return (
@@ -79,86 +140,7 @@ const Home = () => {
         >
           <div className=""> </div>
           <div className="justify-self-center md:col-span-2">
-            <div className="items-center slide-top grid p-3"
-              style={{
-                marginTop: "1rem",
-                marginBottom: "1rem"
-              }}
-            >
-              <Image
-                // className="rounded-full"
-                src={"/images/me-2.png"}
-                alt="image"
-                width={300}
-                height={300}
-                style={{
-                  zIndex: 2,
-                  // clipPath:"polygon(0 0, 100% 0, 100% 85%, 75% 100%, 25% 100%, 0 85%)"
-                }}
-              />
-              <div
-                className="relative max-sm:w-[200px] w-[200px] h-[200px]"
-                style={{
-                  background: "rgba(0, 0, 0, 0.15)",
-                  marginTop: "-30rem",
-                  zIndex: 0
-                }}>
-              </div>
-              <div
-                className="relative w-[70px] h-[70px]"
-                style={{
-                  background: "rgba(0, 0, 0, 0.15)",
-                  marginTop: "-10rem",
-                  marginLeft: "-4rem",
-                  zIndex: 0
-                }}>
-              </div>
-              <div
-                className="relative w-[200px] h-[200px]"
-                style={{
-                  background: "rgba(0, 0, 0, 0.15)",
-                  marginTop: "-40rem",
-                  marginLeft: "5rem",
-                  zIndex: 0
-                }}>
-              </div>
-              <div
-                className="relative w-[100px] h-[100px]"
-                style={{
-                  background: "rgba(0, 0, 0, 0.15)",
-                  marginTop: "-10rem",
-                  marginLeft: "12rem",
-                  zIndex: 0
-                }}>
-              </div>
-              <div
-                className="relative w-[70px] h-[70px]"
-                style={{
-                  background: "rgba(0, 0, 0, 0.15)",
-                  marginTop: "-60rem",
-                  marginLeft: "12rem",
-                  zIndex: 0
-                }}>
-              </div>
-              <div
-                className="relative w-[40px] h-[40px]"
-                style={{
-                  background: "rgba(0, 0, 0, 0.15)",
-                  marginTop: "-62rem",
-                  marginLeft: "5rem",
-                  zIndex: 0
-                }}>
-              </div>
-              <div
-                className="relative w-[20px] h-[20px]"
-                style={{
-                  background: "rgba(0, 0, 0, 0.15)",
-                  marginTop: "-65rem",
-                  marginLeft: "8rem",
-                  zIndex: 0
-                }}>
-              </div>
-            </div>
+            <ImageSection />
           </div>
           <div className="homePage md:col-span-3 ms-2" style={{ zIndex: 1 }}>
             <div className="">
@@ -216,9 +198,6 @@ const Home = () => {
                       <InfoCard icon={<BsFillTelephoneFill size={30} />} label="Phone" value="+669-9434-5245" href="" />
                       <InfoCard icon={<BsFillCake2Fill size={30} />} label="Date of birth" value="10/11/2000" href="" />
                       <InfoCard icon={<MdEmail size={30} />} label="Email" value="thanawut.tuam@gmail.com" href="" />
-                      {/* <InfoCard icon={<IoPerson size={30} />} label="Age" value="12" /> */}
-                      {/* <InfoCard icon={<IoPerson size={30} />} label="Age" value="12" /> */}
-                      {/* <InfoCard icon={<IoPerson size={30} />} label="Age" value="12" /> */}
                     </div>
                   </div>
                   <div className="mt-5 max-md:pb-5">
