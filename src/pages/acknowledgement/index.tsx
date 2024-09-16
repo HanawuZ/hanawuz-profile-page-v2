@@ -12,7 +12,7 @@ const Acknowledgement = () => {
         <title>Thanawut - Acknowledgement</title>
       </Head>
       <div className="h-screen grid items-center max-md:mx-2 pt-3 max-md:ps-2">
-        <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
+        {/* <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
           <div className="max-md:h-[10vh]"></div>
           <motion.div
             className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${screenWidth > 768 ? styles.acknowledgementPage : ''}`}
@@ -48,7 +48,7 @@ const Acknowledgement = () => {
               </div>
             </div>
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </>
   )

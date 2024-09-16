@@ -133,7 +133,7 @@ const Home = () => {
         <title>Thanawut</title>
       </Head>
       <div className="max-md:mt-5 z-10 h-screen grid items-center">
-        <div className="container mx-auto grid md:grid-cols-6"
+        {/* <div className="container mx-auto grid md:grid-cols-6"
           style={{
             zIndex: 1
           }}
@@ -228,7 +228,7 @@ const Home = () => {
               }
             </div>
           </div>
-        </div>
+        </div> */}
       </div >
     </>
   );

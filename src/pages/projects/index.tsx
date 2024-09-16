@@ -60,7 +60,7 @@ const Projects = () => {
         <title>Thanawut - Projects</title>
       </Head>
       <div className="h-screen grid items-center max-md:ms-2 pt-3" >
-        <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
+        {/* <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
           <div className="max-md:h-[10vh]"></div>
           <motion.div
             className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${screenWidth > 768 ? styles.projectPage : ''}`}
@@ -104,10 +104,7 @@ const Projects = () => {
               </div>
             </div>
           </motion.div>
-          {/* <div className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${styles.projectPage}`}>
-          
         </div> */}
-        </div>
       </div>
     </>
   )

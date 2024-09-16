@@ -30,7 +30,7 @@ const Skills = () => {
         <title>Thanawut - Skills</title>
       </Head>
       <div className="h-screen grid items-center max-md:ms-2 pt-3">
-        <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4"
+        {/* <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4"
           style={{
             zIndex: 1
           }}
@@ -107,7 +107,7 @@ const Skills = () => {
               </div> 
             </div>
           </motion.div>
-        </div>
+        </div> */}
       </div>
     </>
   )
