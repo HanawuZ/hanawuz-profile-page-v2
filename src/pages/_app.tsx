@@ -2,15 +2,14 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { ProfileContextProvider } from "@/context/ProfileContext";
 import { useProfileContext } from "@/context/ProfileContext";
-import { Barlow } from "next/font/google";
 import SidebarMenu from "@/components/SidebarMenu/SidebarMenu";
 import SidebarMenuMobile from "@/components/SidebarMenu/SidebarMenuMobile";
 import { ProjectDetailModal } from "@/components/ProjectDetailModal";
 import localFont from "next/font/local";
 import { AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
+import { NextComponentType, NextPageContext } from "next";
 
-const barlow = Barlow({ subsets: ["latin"], weight: "400" });
 const kodeMono = localFont({
   src: [
     {
@@ -18,68 +17,53 @@ const kodeMono = localFont({
       weight: "400",
       style: "normal",
     },
-    // {
-    //   path: './Roboto-Italic.woff2',
-    //   weight: '400',
-    //   style: 'italic',
-    // },
-    // {
-    //   path: './Roboto-Bold.woff2',
-    //   weight: '700',
-    //   style: 'normal',
-    // },
-    // {
-    //   path: './Roboto-BoldItalic.woff2',
-    //   weight: '700',
-    //   style: 'italic',
-    // },
   ],
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ProfileContextProvider>
-      <div className={`${kodeMono.className} h-full w-full`}>
+      <Layout Component={Component} pageProps={pageProps} />
+      {/* <div className={`${kodeMono.className} h-full w-full`}>
         <div className="max-md:hidden fixed">
           <SidebarMenu />
         </div>
-        {/* md:hidden absolute w-full flex justify-center h-full */}
-        <div className="md:hidden fixed w-full h-full border border-slate-700 justify-center flex items-end">
-          <div className="border border-blue-700 w-full flex justify-center py-4">
-            <SidebarMenuMobile />
-          </div>
-          {/* <div className="text-3xl border border-blue-700 flex">Icon 1</div> */}
-          {/* <div className="text-3xl border border-slate-700 align-bottom">ff</div> */}
-          {/* <SidebarMenuMobile /> */}
-        </div>
-        {/* 
-        </div>
-        <div className="md:hidden absolute border border-slate-700 w-full flex justify-center">
-          <SidebarMenuMobile />
-        </div> 
-        */}
         <Layout Component={Component} pageProps={pageProps} />
-      </div>
+        <div className="md:hidden w-full flex justify-center py-4">
+          <SidebarMenuMobile />
+        </div>
+      </div> */}
     </ProfileContextProvider>
   );
-}
+};
 
-function Layout({ Component, pageProps }: any) {
+const Layout = ({
+  Component,
+  pageProps,
+}: {
+  Component: NextComponentType<NextPageContext, any, any>;
+  pageProps: any;
+}) => {
   const { screenWidth, projectModalIndex } = useProfileContext();
   const router = useRouter();
   const pageKey = router.asPath;
 
-  const bodyStyle = {
-    overflow: projectModalIndex !== -1 ? "hidden" : "auto",
-    height: "100%",
-    width: "100%",
-  };
 
   return (
-    <>
-      <div style={bodyStyle}>
+    <div className={`${kodeMono.className} h-full w-full`}>
+      {projectModalIndex !== -1 && <ProjectDetailModal />}
+      <SidebarMenu />
+      <div style={{
+        overflow: projectModalIndex !== -1 ? "hidden" : "auto",
+        maxHeight: projectModalIndex !== -1 ? "100vh" : "auto", 
+      }}>
         <Component key={pageKey} {...pageProps} />
       </div>
+      <SidebarMenuMobile />
+      {/* {projectModalIndex !== -1 && <ProjectDetailModal />}
+      <div style={bodyStyle}>
+        <Component key={pageKey} {...pageProps} />
+      </div> */}
       {/* {projectModalIndex !== -1 && <ProjectDetailModal />}
       <div style={bodyStyle}>
         <AnimatePresence mode="wait">
@@ -158,6 +142,8 @@ function Layout({ Component, pageProps }: any) {
           </defs>
         </svg>
       </div> */}
-    </>
+    </div>
   );
-}
+};
+
+export default App;

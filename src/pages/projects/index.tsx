@@ -1,66 +1,19 @@
 import styles from "./styles.module.css"
 import { useProfileContext } from "@/context/ProfileContext"
 import { motion, } from "framer-motion"
-import Head from 'next/head'
-
-type ProjectCardProbs = {
-  index: number;
-  projectName: string;
-  imgUrl?: string;
-  projectTimeRange?: string
-  description: string;
-  projectLink: string;
-}
-
-const ProjectCard = ({ index, imgUrl, projectName, projectTimeRange, description, projectLink }: ProjectCardProbs) => {
-  const { setProjectModalIndex } = useProfileContext();
-  return (
-    <div className="m-2 border border-slate-800 flex max-md:mx-5 justify-center"
-      style={{
-        background: "rgb(208, 208, 208, 0.2)",
-      }}
-    >
-      <div className="p-4 flex flex-col">
-        <div className="w-full   flex justify-center">
-          <img
-            className="justify-self-center max-md:w-[50vw] w-[15vw]"
-            src={imgUrl}
-            alt="Project Image"
-          />
-        </div>
-        <div className="text-center pt-3">
-          <text className="text-lg font-bold p"> {projectName} </text>
-          <div className="text-sm text-slate-500"> {projectTimeRange} </div>
-          <p className="mt-4 h-48 overflow-y-auto">
-            {description}
-          </p>
-        </div>
-        <div className="p-3 w-full">
-          <button
-            onClick={() => setProjectModalIndex(index)}
-            className={styles.linkButton}
-            style={{
-              border: 'solid 1px',
-            }}
-          >
-            View Details
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
+import { WebHeader } from "@/components/WebHeader"
+import { ProjectBody } from "./components/ProjectBody"
 
 const Projects = () => {
   const { screenWidth } = useProfileContext()
 
   return (
     <>
-      <Head>
-        <title>Thanawut - Projects</title>
-      </Head>
+      <WebHeader title="Thanawut - Projects" />
+      <ProjectBody />
+        {/* 
       <div className="h-screen grid items-center max-md:ms-2 pt-3" >
-        {/* <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
+        <div className="container mx-auto grid md:grid-cols-5 lg:grid-cols-4" style={{ zIndex: 1 }}>
           <div className="max-md:h-[10vh]"></div>
           <motion.div
             className={`w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-700 ${screenWidth > 768 ? styles.projectPage : ''}`}
@@ -104,8 +57,8 @@ const Projects = () => {
               </div>
             </div>
           </motion.div>
-        </div> */}
       </div>
+        </div> */}
     </>
   )
 }

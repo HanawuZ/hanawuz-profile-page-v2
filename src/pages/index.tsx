@@ -6,18 +6,19 @@ import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Head from 'next/head'
+import { WebHeader } from "@/components/WebHeader";
 
 const ImageSection = () => (
-  <div className="items-center slide-top grid p-3"
+  <div
+    className="items-center slide-top grid p-3"
     style={{
       marginTop: "1rem",
-      marginBottom: "1rem"
+      marginBottom: "1rem",
     }}
   >
     <Image
       // className="rounded-full"
-      src={"/images/me-2.png"}
+      src={"/images/portrait-dummy.png"}
       alt="image"
       width={300}
       height={300}
@@ -31,109 +32,135 @@ const ImageSection = () => (
       style={{
         background: "rgba(0, 0, 0, 0.15)",
         marginTop: "-30rem",
-        zIndex: 0
-      }}>
-    </div>
+        zIndex: 0,
+      }}
+    ></div>
     <div
       className="relative w-[70px] h-[70px]"
       style={{
         background: "rgba(0, 0, 0, 0.15)",
         marginTop: "-10rem",
         marginLeft: "-4rem",
-        zIndex: 0
-      }}>
-    </div>
+        zIndex: 0,
+      }}
+    ></div>
     <div
       className="relative w-[200px] h-[200px]"
       style={{
         background: "rgba(0, 0, 0, 0.15)",
         marginTop: "-40rem",
         marginLeft: "5rem",
-        zIndex: 0
-      }}>
-    </div>
+        zIndex: 0,
+      }}
+    ></div>
     <div
       className="relative w-[100px] h-[100px]"
       style={{
         background: "rgba(0, 0, 0, 0.15)",
         marginTop: "-10rem",
         marginLeft: "12rem",
-        zIndex: 0
-      }}>
-    </div>
+        zIndex: 0,
+      }}
+    ></div>
     <div
       className="relative w-[70px] h-[70px]"
       style={{
         background: "rgba(0, 0, 0, 0.15)",
         marginTop: "-60rem",
         marginLeft: "12rem",
-        zIndex: 0
-      }}>
-    </div>
+        zIndex: 0,
+      }}
+    ></div>
     <div
       className="relative w-[40px] h-[40px]"
       style={{
         background: "rgba(0, 0, 0, 0.15)",
         marginTop: "-62rem",
         marginLeft: "5rem",
-        zIndex: 0
-      }}>
-    </div>
+        zIndex: 0,
+      }}
+    ></div>
     <div
       className="relative w-[20px] h-[20px]"
       style={{
         background: "rgba(0, 0, 0, 0.15)",
         marginTop: "-65rem",
         marginLeft: "8rem",
-        zIndex: 0
-      }}>
-    </div>
+        zIndex: 0,
+      }}
+    ></div>
   </div>
 );
-const InfoCard = ({ icon, label, value, href }: { icon: JSX.Element, label: string, value: string, href: string }) => {
+const InfoCard = ({
+  icon,
+  label,
+  value,
+  href,
+}: {
+  icon: JSX.Element;
+  label: string;
+  value: string;
+  href: string;
+}) => {
   return (
     <div className="w-full ps-5 flex items-center">
-      <div className="me-2">
-        {icon}
-      </div>
+      <div className="me-2">{icon}</div>
       <div
         style={{
           marginRight: "0.5rem",
           width: "2px",
           height: "80%",
-          background: 'black',
+          background: "black",
         }}
       />
       <div className="grid">
         <span className="text-sm">{label}</span>
-        {href ?
+        {href ? (
           <Link
             className={`link`}
             href={href}
-          // Add hover effeect
-          >{value}</Link>
-          :
+            // Add hover effeect
+          >
+            {value}
+          </Link>
+        ) : (
           <span className="text-sm text-slate-700">{value}</span>
-        }
+        )}
       </div>
     </div>
   );
 };
 
 const Home = () => {
-  const [showBio, setShowBio] = useState<boolean>(true)
+  const [showBio, setShowBio] = useState<boolean>(true);
 
   function toggleBio() {
-    setShowBio(!showBio)
+    setShowBio(!showBio);
   }
 
   return (
     <>
-      <Head>
-        <title>Thanawut</title>
-      </Head>
+      <WebHeader title="Thanawut - My website" />
+      <div className="h-90vh md:overflow-y-auto sm:px-8 max-sm:mt-6">
+        <div
+          className="grid md:grid-cols-5 lg:grid-cols-4 max-md:pb-20 "
+          style={{
+            zIndex: 100,
+          }}
+        >
+          <div></div>
+          <div className="w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-600">
+            <div className="md:self-centerw-full border border-slate-600">
+              <ImageSection />
+              <AboutMe />
+              <LetsConnect />
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* 
       <div className="max-md:mt-5 z-10 h-screen grid items-center">
-        {/* <div className="container mx-auto grid md:grid-cols-6"
+        <div className="container mx-auto grid md:grid-cols-6"
           style={{
             zIndex: 1
           }}
@@ -228,10 +255,56 @@ const Home = () => {
               }
             </div>
           </div>
-        </div> */}
       </div >
+        </div> */}
     </>
   );
-}
+};
 
-export default Home
+const AboutMe = () => (
+  <div id="about-me">
+    <text className="text-2xl text-center font-bold sm:mt-10 max-md:ms-3">
+      ABOUT ME{" "}
+    </text>
+    <ul className="max-md:text-sm mt-3 list-disc mx-10 break-all">
+      <li>
+        👷‍♂️ I&apos;m currently working as Application developer associate at T.C.C.
+        Technology Co., Ltd.
+      </li>
+      <li>
+        🤓 Presently learning back-end development with various languages such
+        as ♨️ Java spring boot, and learning software development design such as
+        Clean architecture, React design patterns.
+      </li>
+    </ul>
+  </div>
+);
+
+const LetsConnect = () => (
+  <div className="mt-10" id="lets-connect">
+    <text className="text-2xl text-center font-bold sm:mt-10 max-md:ms-3">
+      LET&apos; CONNECT{" "}
+    </text>
+    <div className="grid md:grid-cols-2 justify-items-center mt-4">
+      <InfoCard
+        icon={<FaGithub size={30} />}
+        label="Github"
+        value="HanawuZ"
+        href="https://github.com/HanawuZ"
+      />
+      <InfoCard
+        icon={<FaLinkedin size={30} />}
+        label="Linkedin"
+        value="Thanawut Tuamprajak"
+        href="www.linkedin.com/in/thanawut-tuamprajak-479144262"
+      />
+      <InfoCard
+        icon={<FaMedium size={30} />}
+        label="Medium"
+        value="Thanawut Tuamprajak"
+        href="https://medium.com/@thanawut.tuam"
+      />
+    </div>
+  </div>
+);
+export default Home;

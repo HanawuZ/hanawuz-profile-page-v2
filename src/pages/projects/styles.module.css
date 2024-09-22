@@ -1,8 +1,8 @@
 .linkButton {
     color: black;
     text-align: center;
-    font-size: 18px;
-    width: 100%;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     border: none;
     height: 2rem;
     border-color: black;
