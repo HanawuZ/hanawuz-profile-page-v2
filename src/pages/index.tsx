@@ -7,14 +7,10 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { WebHeader } from "@/components/WebHeader";
-
+import { SkillBadge } from "@/components/SkillBadge";
 const ImageSection = () => (
   <div
-    className="items-center slide-top grid p-3"
-    style={{
-      marginTop: "1rem",
-      marginBottom: "1rem",
-    }}
+    className="items-center slide-top grid p-3 justify-items-center"
   >
     <Image
       // className="rounded-full"
@@ -143,14 +139,14 @@ const Home = () => {
       <WebHeader title="Thanawut - My website" />
       <div className="h-90vh md:overflow-y-auto sm:px-8 max-sm:mt-6">
         <div
-          className="grid md:grid-cols-5 lg:grid-cols-4 max-md:pb-20 "
+          className="grid md:grid-cols-5 lg:grid-cols-4 max-md:pb-20 border border-slate-300"
           style={{
             zIndex: 100,
           }}
         >
           <div></div>
           <div className="w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-600">
-            <div className="md:self-centerw-full border border-slate-600">
+            <div className="md:self-center w-full px-2">
               <ImageSection />
               <AboutMe />
               <LetsConnect />
@@ -283,27 +279,27 @@ const AboutMe = () => (
 const LetsConnect = () => (
   <div className="mt-10" id="lets-connect">
     <text className="text-2xl text-center font-bold sm:mt-10 max-md:ms-3">
-      LET&apos; CONNECT{" "}
+      LET&apos;S CONNECT{" "}
     </text>
-    <div className="grid md:grid-cols-2 justify-items-center mt-4">
-      <InfoCard
-        icon={<FaGithub size={30} />}
-        label="Github"
-        value="HanawuZ"
-        href="https://github.com/HanawuZ"
-      />
-      <InfoCard
-        icon={<FaLinkedin size={30} />}
-        label="Linkedin"
-        value="Thanawut Tuamprajak"
-        href="www.linkedin.com/in/thanawut-tuamprajak-479144262"
-      />
-      <InfoCard
-        icon={<FaMedium size={30} />}
-        label="Medium"
-        value="Thanawut Tuamprajak"
-        href="https://medium.com/@thanawut.tuam"
-      />
+    <div className="flex justify-center m-5">
+      <div className="grid gap-3 max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3">        
+        <div className="flex items-center gap-3 p-1 px-3 text-white bg-[#24292e]">
+          <FaGithub size={24} />
+          <span className="text-sm"> HanawuZ </span>
+        </div>
+        <div className="flex items-center gap-3 p-1 px-3 text-white bg-[#0072b1]">
+          <FaLinkedin size={24} />
+          <span className="text-sm"> Thanawut Tuamprajak </span>
+        </div>
+        <div className="flex items-center gap-3 p-1 px-3 text-white bg-[#d44638]">
+          <MdEmail size={24} />
+          <span className="text-sm"> thanawut.tuam@gmail.com </span>
+        </div>
+        <div className="flex items-center gap-3 p-1 px-3 text-white bg-black">
+          <FaMedium size={24} />
+          <span className="text-sm"> Thanawut Tuamprajak </span>
+        </div>
+      </div>
     </div>
   </div>
 );

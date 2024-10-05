@@ -15,20 +15,9 @@ const ProjectBody = () => {
             <div className="text-2xl font-bold sm:mt-10 max-md:ms-3 text-center">
               PROJECTS
             </div>
-            <div className="grid gap-3 p-4 mt-4">
-              <div className="justify-self-center">
-                <ProjectCard
-                  index={1}
-                  projectName="Prompt Lab AI"
-                  imgUrl="images\prompt-lab.jpg"
-                  projectTimeRange="2023 - Present"
-                  description={`
-                  Prompt Lab is a website that unlocks your creativity with AI assistance for generating sales posts. 
-                  I collaborating with my friend to develop this site using Next.js with Bootstrap for CSS frameworks.
-                `}
-                  projectLink="https://promptlabai.com/"
-                  skills={[REACT, NEXT, TYPESCRIPT, BOOTSTRAP]}
-                />
+            <div className="grid gap-3 p-4 mt-4 justify-center">
+                <ProjectCard projectKey="prompt-lab" />
+                <ProjectCard projectKey="se-project" />
                 {/* <ProjectCard
                 index={1}
                 projectName="Prompt Lab AI"
@@ -65,7 +54,6 @@ const ProjectBody = () => {
                 projectLink="https://promptlabai.com/"
                 skills={[REACT, NEXT, TYPESCRIPT, BOOTSTRAP]}
               /> */}
-              </div>
             </div>
           </div>
         </div>

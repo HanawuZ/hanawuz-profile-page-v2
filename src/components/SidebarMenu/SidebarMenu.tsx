@@ -42,7 +42,7 @@ const SidebarMenu = () => {
             </Link>
             <Link
               href="/skills"
-              className={`${screenWidth > 980 ? `` : "grid justify-center"}`}
+              className={`${screenWidth <= 980  && "grid justify-center"}`}
             >
               <div
                 className={`py-1 px-2 flex items-center ${styles.sidebarMenu}`}
@@ -74,7 +74,7 @@ const SidebarMenu = () => {
             >
               <div
                 className={`py-1 px-2 flex items-center ${
-                  screenWidth > 980 ? "" : `${styles.sidebarMenu}`
+                  screenWidth <= 980  && `${styles.sidebarMenu}`
                 }`}
                 style={{
                   background:
@@ -105,7 +105,7 @@ const SidebarMenu = () => {
             >
               <div
                 className={`py-1 px-2 flex items-center ${
-                  screenWidth > 980 ? "" : `${styles.sidebarMenu}`
+                  screenWidth <= 980 && `${styles.sidebarMenu}`
                 }`}
                 style={{
                   background:
@@ -135,7 +135,7 @@ const SidebarMenu = () => {
             >
               <div
                 className={`py-1 px-2 flex items-center ${
-                  screenWidth > 980 ? "" : `${styles.sidebarMenu}`
+                  screenWidth <= 980 && `${styles.sidebarMenu}`
                 }`}
                 style={{
                   background:

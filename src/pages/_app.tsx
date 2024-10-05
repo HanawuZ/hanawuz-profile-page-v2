@@ -44,18 +44,18 @@ const Layout = ({
   Component: NextComponentType<NextPageContext, any, any>;
   pageProps: any;
 }) => {
-  const { screenWidth, projectModalIndex } = useProfileContext();
+  const { screenWidth, projectKey } = useProfileContext();
   const router = useRouter();
   const pageKey = router.asPath;
 
 
   return (
     <div className={`${kodeMono.className} h-full w-full`}>
-      {projectModalIndex !== -1 && <ProjectDetailModal />}
+      {projectKey !== "" && <ProjectDetailModal />}
       <SidebarMenu />
       <div style={{
-        overflow: projectModalIndex !== -1 ? "hidden" : "auto",
-        maxHeight: projectModalIndex !== -1 ? "100vh" : "auto", 
+        overflow: projectKey !== "" ? "hidden" : "auto",
+        maxHeight: projectKey !== "" ? "100vh" : "auto", 
       }}>
         <Component key={pageKey} {...pageProps} />
       </div>

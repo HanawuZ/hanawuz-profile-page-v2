@@ -1,4 +1,3 @@
-
 import { SkillBadgeProps } from "@/components/SkillBadge/type";
 
 /* 
@@ -42,18 +41,20 @@ import { SkillBadgeProps } from "@/components/SkillBadge/type";
 //   popupMessage: "JavaScript",
 // };
 
+// ------------------+ PROGRAMMING LANGUAGES +------------------
 const TYPESCRIPT: SkillBadgeProps = {
   src: "https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white",
   alt: "TypeScript logo",
   popupMessage: "TypeScript",
 };
 
-// const PYTHON: SkillBadgeProps = {
-//   src: "https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54",
-//   alt: "Python logo",
-//   popupMessage: "Python",
-// };
+const PYTHON: SkillBadgeProps = {
+  src: "https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54",
+  alt: "Python logo",
+  popupMessage: "Python",
+};
 
+// ------------------+ FRONT END +------------------
 const REACT: SkillBadgeProps = {
   src: "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
   alt: "React logo",
@@ -66,6 +67,18 @@ const NEXT: SkillBadgeProps = {
   popupMessage: "Next",
 };
 
+// ------------------+ BACK END +------------------
+const GO: SkillBadgeProps = {
+  src: "https://img.shields.io/badge/go-%2300ADD8.svg?style=for-the-badge&logo=go&logoColor=white",
+  alt: "Go logo",
+  popupMessage: "Go",
+};
+
+const GIN: SkillBadgeProps = {
+  src: "https://img.shields.io/static/v1?label=&message=Gin&color=%23008ECF&style=for-the-badge&logo=gin&logoColor=white",
+  alt: "Gin logo",
+  popupMessage: "Gin",
+};
 // const HTML: SkillBadgeProps = {
 //   src: "https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white",
 //   alt: "HTML logo",
@@ -76,9 +89,9 @@ const NEXT: SkillBadgeProps = {
 //   src: "https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white",
 //   alt: "CSS logo",
 //   popupMessage: "CSS",
-// };  
+// };
 
-// const TAILWIND: SkillBadgeProps = { 
+// const TAILWIND: SkillBadgeProps = {
 //   src: "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
 //   alt: "Tailwind logo",
 //   popupMessage: "Tailwind",
@@ -90,11 +103,11 @@ const NEXT: SkillBadgeProps = {
 //   popupMessage: "Angular",
 // };
 
-// const MUI: SkillBadgeProps = {
-//   src: "https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white",
-//   alt: "Material UI logo",
-//   popupMessage: "Material UI",
-// };
+const MUI: SkillBadgeProps = {
+  src: "https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white",
+  alt: "Material UI logo",
+  popupMessage: "Material UI",
+};
 
 // const VUE: SkillBadgeProps = {
 //   src: "https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D",
@@ -106,7 +119,7 @@ const BOOTSTRAP: SkillBadgeProps = {
   src: "https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white",
   alt: "Bootstrap logo",
   popupMessage: "Bootstrap",
-};  
+};
 
 // const EXPRESSJS: SkillBadgeProps = {
 //   src: "https://img.shields.io/badge/ExpressJS-%23404d59.svg?style=for-the-badge&logo=express&logoColor=white",
@@ -120,5 +133,4 @@ const BOOTSTRAP: SkillBadgeProps = {
 //   popupMessage: "MySQL",
 // };
 
-
-export { REACT, NEXT, BOOTSTRAP, TYPESCRIPT };
+export { REACT, NEXT, BOOTSTRAP, TYPESCRIPT, MUI, PYTHON, GO, GIN };

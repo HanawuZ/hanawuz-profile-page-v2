@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 import styles from "./styles.module.css";
 
 interface ListItemProps {
-    className?: string;
-    children?: ReactNode;
+  className?: string;
+  children?: ReactNode;
 }
 
 const ListItem = ({ children, className }: ListItemProps) => (
@@ -11,4 +11,3 @@ const ListItem = ({ children, className }: ListItemProps) => (
 );
 
 export default ListItem;
-
