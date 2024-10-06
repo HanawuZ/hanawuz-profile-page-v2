@@ -10,8 +10,17 @@ const SidebarMenuMobile = () => {
   const pathname = usePathname();
 
   return (
-    <div className="md:hidden w-full flex justify-center">
-      <div className="fixed bottom-0 flex mt-2 gap-2 py-6" style={{ zIndex: 100 }}>
+    <div 
+      className="md:hidden w-full flex justify-center" 
+      style={{ 
+        zIndex: 999,
+        position: "absolute",
+        bottom: 0
+      }}>
+      <div
+        className="flex mt-2 gap-2 py-6"
+      >
+        {" "}
         <MenuItem
           href="/"
           currentPath={pathname}

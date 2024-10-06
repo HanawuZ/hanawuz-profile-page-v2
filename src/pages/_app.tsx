@@ -10,7 +10,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { NextComponentType, NextPageContext } from "next";
 import { PAGE_INDEXES } from "@/constants/pageIndex";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
+import { useSwipeable } from "react-swipeable";
 
 const kodeMono = localFont({
   src: [
@@ -42,69 +43,38 @@ const Layout = ({
   Component: NextComponentType<NextPageContext, any, any>;
   pageProps: any;
 }) => {
-  const { screenWidth, projectKey } = useProfileContext();
+  const { projectKey } = useProfileContext();
   const router = useRouter();
   const pageKey = router.asPath;
-  const [direction, setDirection] = useState(0); 
   const currentPath = router.pathname;
-
-  const handleRouteChange = (url: string) => {
-    console.log("\nCurrent Path", currentPath, "New Path", url);
-    const newDirection = getDirection(currentPath, url);
-    console.log("Newdirection from handleRouteChange", newDirection);
-    setDirection(newDirection);
-    // console.log("Old Direction", direction.current);
-    // direction.current = newDirection;
-    // console.log("New Direction", direction.current);
-  };
-
-  /* 
-  variants={{
-            initialState: {
-              opacity: 0,
-              x:
-                screenWidth > 768
-                  ? direction.current > 0
-                    ? 100
-                    : -100
-                  : direction.current > 0
-                  ? screenWidth
-                  : -screenWidth,          
-            },
-            animateState: {
-              opacity: 1,
-              x: 0,
-              transition: {
-                type: "spring",
-                stiffness: 100,
-                damping: 20,
-                mass: 0.5,
-                velocity: 0.5,
-              },
-            },
-            exitState: {
-              opacity: 0,
-              x:
-                screenWidth > 768
-                  ? direction.current > 0
-                    ? -100
-                    : 100
-                  : direction.current > 0
-                  ? -screenWidth
-                  : screenWidth,
-              transition: {
-                type: "spring",
-                stiffness: 100,
-                damping: 20,
-                mass: 0.5,
-                velocity: 0.5,
-              },
-            },
-          }}
-  */
-
+  const [direction, setDirection] = useState(0);
+  const pageIndex = PAGE_INDEXES[currentPath]; // Get the current page's index
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      // Swipe left should navigate to the next page
+      const nextPage = Object.keys(PAGE_INDEXES).find(
+        (key) => PAGE_INDEXES[key] === pageIndex + 1
+      );
+      if (nextPage) {
+        router.push(nextPage);
+      }
+    },
+    onSwipedRight: () => {
+      // Swipe right should navigate to the previous page
+      const prevPage = Object.keys(PAGE_INDEXES).find(
+        (key) => PAGE_INDEXES[key] === pageIndex - 1
+      );
+      if (prevPage) {
+        router.push(prevPage);
+      }
+    },
+  });
   // Track changes in path and update direction
   useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      const newDirection = getDirection(currentPath, url);
+      setDirection(newDirection);
+    };
     // Listen to route changes
     router.events.on("routeChangeStart", handleRouteChange);
 
@@ -114,9 +84,10 @@ const Layout = ({
   }, [router, currentPath]);
 
   return (
-    <div className={`${kodeMono.className}`}>
+    <div className={`${kodeMono.className}`} {...handlers}>
       {projectKey !== "" && <ProjectDetailModal />}
       <SidebarMenu />
+      <SidebarMenuMobile />
       <AnimatePresence mode="popLayout">
         <motion.div
           key={router.route}
@@ -148,13 +119,13 @@ const Layout = ({
           }}
           style={{
             overflow: projectKey !== "" ? "hidden" : "auto",
-            maxHeight: projectKey !== "" ? "100vh" : "auto",
+            maxHeight: "100vh"
+            // maxHeight: projectKey !== "" ? "100vh" : "auto",
           }}
         >
           <Component key={pageKey} {...pageProps} />
         </motion.div>
       </AnimatePresence>
-      <SidebarMenuMobile />
     </div>
   );
 };
