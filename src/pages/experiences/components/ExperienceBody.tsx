@@ -11,16 +11,18 @@ const ExperienceBody = () => {
         }}
       >
         <div />
-        <div className="grid justify-self-center md:col-span-4 lg:col-span-3 min-h-[100vh] md:pb-6">
-          <text className="text-2xl text-center font-bold sm:mt-10 max-md:ms-3">
-            EXPERIENCES
-          </text>
+        <div className="justify-self-center md:col-span-4 lg:col-span-3 min-h-[96vh] md:pb-6">
+          <div className="w-full flex justify-center">
+            <text className="text-2xl text-center font-bold max-md:mt-5 mt-10 max-md:ms-3">
+              EXPERIENCES
+            </text>
+          </div>
           <div className="mt-6">
             <ExperienceContainer
               className="mx-4"
               workplace="T.C.C. Technology Co. Ltd."
               location="Bangkok, Thailand"
-              position="Application Development Associate"
+              position="Application Developer Associate"
               period="March 2024 - Present"
             >
               <ul className="max-md:text-sm mt-3 list-disc mx-10 break-all">

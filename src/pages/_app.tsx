@@ -6,9 +6,11 @@ import SidebarMenu from "@/components/SidebarMenu/SidebarMenu";
 import SidebarMenuMobile from "@/components/SidebarMenu/SidebarMenuMobile";
 import { ProjectDetailModal } from "@/components/ProjectDetailModal";
 import localFont from "next/font/local";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { NextComponentType, NextPageContext } from "next";
+import { PAGE_INDEXES } from "@/constants/pageIndex";
+import { useEffect, useState, useRef } from "react";
 
 const kodeMono = localFont({
   src: [
@@ -20,19 +22,15 @@ const kodeMono = localFont({
   ],
 });
 
+// Define the direction based on page index differences
+const getDirection = (currentPage: string, nextPage: string) => {
+  return PAGE_INDEXES[nextPage] - PAGE_INDEXES[currentPage];
+};
+
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ProfileContextProvider>
       <Layout Component={Component} pageProps={pageProps} />
-      {/* <div className={`${kodeMono.className} h-full w-full`}>
-        <div className="max-md:hidden fixed">
-          <SidebarMenu />
-        </div>
-        <Layout Component={Component} pageProps={pageProps} />
-        <div className="md:hidden w-full flex justify-center py-4">
-          <SidebarMenuMobile />
-        </div>
-      </div> */}
     </ProfileContextProvider>
   );
 };
@@ -47,23 +45,125 @@ const Layout = ({
   const { screenWidth, projectKey } = useProfileContext();
   const router = useRouter();
   const pageKey = router.asPath;
+  const [direction, setDirection] = useState(0); 
+  const currentPath = router.pathname;
 
+  const handleRouteChange = (url: string) => {
+    console.log("\nCurrent Path", currentPath, "New Path", url);
+    const newDirection = getDirection(currentPath, url);
+    console.log("Newdirection from handleRouteChange", newDirection);
+    setDirection(newDirection);
+    // console.log("Old Direction", direction.current);
+    // direction.current = newDirection;
+    // console.log("New Direction", direction.current);
+  };
+
+  /* 
+  variants={{
+            initialState: {
+              opacity: 0,
+              x:
+                screenWidth > 768
+                  ? direction.current > 0
+                    ? 100
+                    : -100
+                  : direction.current > 0
+                  ? screenWidth
+                  : -screenWidth,          
+            },
+            animateState: {
+              opacity: 1,
+              x: 0,
+              transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                mass: 0.5,
+                velocity: 0.5,
+              },
+            },
+            exitState: {
+              opacity: 0,
+              x:
+                screenWidth > 768
+                  ? direction.current > 0
+                    ? -100
+                    : 100
+                  : direction.current > 0
+                  ? -screenWidth
+                  : screenWidth,
+              transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 20,
+                mass: 0.5,
+                velocity: 0.5,
+              },
+            },
+          }}
+  */
+
+  // Track changes in path and update direction
+  useEffect(() => {
+    // Listen to route changes
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router, currentPath]);
 
   return (
-    <div className={`${kodeMono.className} h-full w-full`}>
+    <div className={`${kodeMono.className}`}>
       {projectKey !== "" && <ProjectDetailModal />}
       <SidebarMenu />
-      <div style={{
-        overflow: projectKey !== "" ? "hidden" : "auto",
-        maxHeight: projectKey !== "" ? "100vh" : "auto", 
-      }}>
-        <Component key={pageKey} {...pageProps} />
-      </div>
+      <AnimatePresence mode="popLayout">
+        <motion.div
+          key={router.route}
+          initial="initialState"
+          animate="animateState"
+          exit="exitState"
+          variants={{
+            initialState: {
+              opacity: 0,
+              x: direction > 0 ? 100 : -100,
+              transition: {
+                delay: 0.1,
+              },
+            },
+            animateState: {
+              opacity: 1,
+              x: 0,
+              transition: {
+                delay: 0.1,
+              },
+            },
+            exitState: {
+              opacity: 0,
+              x: direction > 0 ? -100 : 100,
+              transition: {
+                delay: 0.1,
+              },
+            },
+          }}
+          style={{
+            overflow: projectKey !== "" ? "hidden" : "auto",
+            maxHeight: projectKey !== "" ? "100vh" : "auto",
+          }}
+        >
+          <Component key={pageKey} {...pageProps} />
+        </motion.div>
+      </AnimatePresence>
       <SidebarMenuMobile />
-      {/* {projectModalIndex !== -1 && <ProjectDetailModal />}
+    </div>
+  );
+};
+
+/* 
+ {/* {projectModalIndex !== -1 && <ProjectDetailModal />}
       <div style={bodyStyle}>
         <Component key={pageKey} {...pageProps} />
-      </div> */}
+      </div> 
       {/* {projectModalIndex !== -1 && <ProjectDetailModal />}
       <div style={bodyStyle}>
         <AnimatePresence mode="wait">
@@ -141,9 +241,7 @@ const Layout = ({
             </linearGradient>
           </defs>
         </svg>
-      </div> */}
-    </div>
-  );
-};
+      </div>
+*/
 
 export default App;

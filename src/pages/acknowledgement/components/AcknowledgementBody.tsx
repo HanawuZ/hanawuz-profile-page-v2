@@ -10,10 +10,12 @@ const AcknowledgementBody = () => {
         }}
       >
         <div></div>
-        <div className="w-full grid justify-self-center md:col-span-4 lg:col-span-3 min-h-[100vh]">
-          <text className="text-2xl font-bold sm:mt-10 max-md:ms-3 text-center">
-            ACKNOWLEDGEMENT
-          </text>
+        <div className="w-full grid justify-self-center md:col-span-4 lg:col-span-3 min-h-[90vh]">
+          <div className="w-full flex justify-center">
+            <text className="text-2xl text-center font-bold max-md:mt-5 mt-10 max-md:ms-3">
+              ACKNOWLEDGEMENTS
+            </text>
+          </div>
           <div className="">
             <div className="mt-3">
               <div className="grid p-5">

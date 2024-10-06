@@ -60,11 +60,11 @@ const ProgrammingLanguages = () => (
         src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54"
         alt="Python logo"
       />
-      <SkillBadge 
+      <SkillBadge
         src="https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white"
         alt="C"
       />
-      <SkillBadge 
+      <SkillBadge
         src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white"
         alt="Cpp"
       />
@@ -130,7 +130,7 @@ const BackendDevelopment = () => (
       Back-end Development
     </div>
     <div className="flex flex-wrap gap-2 mt-2">
-      <SkillBadge 
+      <SkillBadge
         src="https://img.shields.io/static/v1?label=&message=Gin&color=%23008ECF&style=for-the-badge&logo=gin&logoColor=white"
         alt="Gin logo"
       />
@@ -171,7 +171,7 @@ const Tools = () => (
         src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white"
         alt="Git logo"
       />
-      <SkillBadge 
+      <SkillBadge
         src="https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white"
         alt="GitLab logo"
       />
@@ -201,16 +201,16 @@ const Others = () => (
         alt="Markdown logo"
       />
 
-      <SkillBadge 
+      <SkillBadge
         src="https://img.shields.io/badge/Mermaid-FF3670?style=for-the-badge&logo=mermaid&logoColor=white"
         alt="Mermaid logo"
       />
 
-      <SkillBadge 
+      <SkillBadge
         src="https://img.shields.io/static/v1?label=&message=Superset&color=%2320A6C9&style=for-the-badge&logo=apachesuperset&logoColor=white"
         alt="Superset logo"
       />
-      
+
       <SkillBadge
         src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white"
         alt="Pandas logo"
@@ -232,11 +232,13 @@ const SkillsBody = () => {
           zIndex: 100,
         }}
       >
-        <div></div>
-        <div className="w-full grid justify-self-center md:col-span-4 lg:col-span-3 ">
+        <div />
+        <div className="w-full justify-self-center md:col-span-4 lg:col-span-3 min-h-[90vh]">
           <div className="md:self-center	w-full ">
-            <div className="text-2xl text-center font-bold sm:mt-10 max-md:ms-3">
-              SKILLS &#38; PROFICIENCES
+            <div className="sm:mt-10 max-md:ms-3 flex justify-center">
+              <text className="text-2xl font-bold max-md:mt-5 mt-10 max-md:ms-3">
+                SKILLS &#38; PROFICIENCES
+              </text>
             </div>
             <div className="grid gap-5 max-md:mx-4">
               <CurrentlyLearning />

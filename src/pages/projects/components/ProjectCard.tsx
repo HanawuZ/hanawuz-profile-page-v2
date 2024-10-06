@@ -4,7 +4,6 @@ import PROJECTS from "@/context/ProfileContext/constant";
 
 const ProjectCard = ({ projectKey }: { projectKey: string } ) => {
   const { setProjectKey } = useProfileContext();
-  console.log(projectKey)
   const project = PROJECTS[projectKey];
   const { projectCardImageUrl, name, projectTimeRange, description, overview } = project ?? {
     imageUrl: "",
@@ -13,11 +12,11 @@ const ProjectCard = ({ projectKey }: { projectKey: string } ) => {
     description: [],
   };
   return (
-    <div className=" border border-slate-800 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">
+    <div className="border border-slate-800 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-3xl">
       <div className="md:flex">
         <div className="md:shrink-0">
           <img
-            className="h-56 w-full object-cover md:h-full md:w-56"
+            className="max-md:h-48 w-full object-cover md:h-full md:w-56"
             src={projectCardImageUrl}
           />
         </div>

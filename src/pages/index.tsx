@@ -10,7 +10,7 @@ import { WebHeader } from "@/components/WebHeader";
 import { SkillBadge } from "@/components/SkillBadge";
 const ImageSection = () => (
   <div
-    className="items-center slide-top grid p-3 justify-items-center"
+    className="items-center grid p-3 justify-items-center"
   >
     <Image
       // className="rounded-full"
@@ -130,10 +130,6 @@ const InfoCard = ({
 const Home = () => {
   const [showBio, setShowBio] = useState<boolean>(true);
 
-  function toggleBio() {
-    setShowBio(!showBio);
-  }
-
   return (
     <>
       <WebHeader title="Thanawut - My website" />
@@ -145,8 +141,8 @@ const Home = () => {
           }}
         >
           <div></div>
-          <div className="w-full grid justify-self-center md:col-span-4 lg:col-span-3 border border-slate-600">
-            <div className="md:self-center w-full px-2">
+          <div className="w-full grid justify-self-center md:col-span-4 lg:col-span-3 min-h-[90vh]">
+            <div className="md:self-center w-full px-2 max-md:mt-5 mt-10">
               <ImageSection />
               <AboutMe />
               <LetsConnect />
