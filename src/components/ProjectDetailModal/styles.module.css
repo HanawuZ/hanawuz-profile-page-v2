@@ -35,20 +35,17 @@
   }
 }
 
-.projectDetailModal {
+/* .projectDetailModal {
   opacity: 0;
-  /* Start with 0 opacity */
   transform: scale(0.8);
-  /* Start with slight shrink effect */
   animation: fadeInAndGrow 0.15s ease-in-out forwards;
-  /* Apply the combined animation */
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .disappearProjectDetailModal {
+  opacity: 1;
   animation: fadeOutAndShrink 0.15s ease-in-out;
-  /* Apply the combined animation */
-}
+} */
 
 
 @keyframes fadeOutAndShrink {

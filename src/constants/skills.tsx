@@ -5,7 +5,7 @@ import { FaGolang } from "react-icons/fa6";
 import { FaJava } from "react-icons/fa6";
 import { SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
-import { FaPython } from "react-icons/fa";
+import { FaGithub, FaPython } from "react-icons/fa";
 import { FaReact } from "react-icons/fa6";
 import { SiNextdotjs } from "react-icons/si";
 import { SiMui } from "react-icons/si";
@@ -63,8 +63,8 @@ const TYPESCRIPT: BadgeProps = {
 
 const JAVASCRIPT: BadgeProps = {
   title: "JavaScript",
-  icon: <IoLogoJavascript color="#FFFFFF" size={24} />,
-  backgroundColor: "#F0DB4F",
+  icon: <IoLogoJavascript color="#F0DB4F" size={24} />,
+  backgroundColor: "#323330",
   textColor: "#FFFFFF",
   border: "none",
 };
@@ -133,7 +133,7 @@ const CSS: BadgeProps = {
 const MUI: BadgeProps = {
   title: "Material UI",
   icon: <SiMui color="#FFFFFF" size={24} />,
-  backgroundColor: "#3F51B5",
+  backgroundColor: "#1FA6CA",
   textColor: "#FFFFFF",
   border: "none",
 };
@@ -163,7 +163,7 @@ const ANGULAR: BadgeProps = {
 };
 
 const VUE: BadgeProps = {
-  title: "Vue.js",
+  title: "Vue",
   icon: <FaVuejs color="#FFFFFF" size={24} />,
   backgroundColor: "#41B883",
   textColor: "#FFFFFF",
@@ -251,6 +251,14 @@ const GIT: BadgeProps = {
   border: "none",
 };
 
+const GITHUB: BadgeProps = {
+  title: "GitHub",
+  icon: <FaGithub color="#FFFFFF" size={24} />,
+  backgroundColor: "#333333",
+  textColor: "#FFFFFF",
+  border: "none",
+}
+
 const GITLAB: BadgeProps = {
   title: "GitLab",
   icon: <FaGitlab color="#FFFFFF" size={24} />,
@@ -333,7 +341,7 @@ const PANDAS: BadgeProps = {
   title: "Pandas",
   icon: <SiPandas color="#FFFFFF" size={24} />,
   textColor: "#FFFFFF",
-  backgroundColor: "#7e7e7e",
+  backgroundColor: "#130754",
   border: "none",
 };
 
@@ -402,4 +410,5 @@ export {
   OVERLEAF,
   SEQUELIZE,
   CPP,
+  GITHUB
 };

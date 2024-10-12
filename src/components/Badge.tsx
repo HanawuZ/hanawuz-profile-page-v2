@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation";
+
 export interface BadgeProps {
   icon?: JSX.Element;
   title: string;
@@ -16,17 +18,29 @@ const Badge = (props: BadgeProps) => {
     backgroundColor = "#ffffff",
     border = "1px solid #000000",
   } = props;
+
+  const handleRedirect = () => {
+    if (link) {
+        window.location.href = link;
+    }
+  };
   return (
-    <div
+    <button
       className="flex items-center gap-3 p-1 px-3"
-      style={{ backgroundColor: backgroundColor, border: border }}
+      style={{
+        backgroundColor: backgroundColor,
+        border: border,
+        cursor: link ? "pointer" : "default",
+        pointerEvents: link ? "auto" : "none",
+      }}
+      onClick={handleRedirect}
     >
       {icon}
-      <span className="text-sm" style={{ color: textColor }}>
+      <span className="text-xs sm:text-sm" style={{ color: textColor }}>
         {" "}
         {title}{" "}
       </span>
-    </div>
+    </button>
   );
 };
 

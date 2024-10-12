@@ -1,14 +1,14 @@
-import { useProfileContext } from "@/context/ProfileContext";
-import styles from "./styles.module.css";
-import { motion } from "framer-motion";
 import { WebHeader } from "@/components/WebHeader";
 import { ExperienceBody } from "./components/ExperienceBody";
+import PageLayout from "@/components/layout/PageLayout";
+
 const Experiences = () => {
-  const { screenWidth } = useProfileContext();
   return (
     <>
       <WebHeader title="Thanawut - Experiences" />
-      <ExperienceBody />
+      <PageLayout title="EXPERIENCES">
+        <ExperienceBody />
+      </PageLayout>
     </>
   );
 };

@@ -49,26 +49,31 @@ const Layout = ({
   const currentPath = router.pathname;
   const [direction, setDirection] = useState(0);
   const pageIndex = PAGE_INDEXES[currentPath]; // Get the current page's index
-  const handlers = useSwipeable({
-    onSwipedLeft: () => {
-      // Swipe left should navigate to the next page
-      const nextPage = Object.keys(PAGE_INDEXES).find(
-        (key) => PAGE_INDEXES[key] === pageIndex + 1
-      );
-      if (nextPage) {
-        router.push(nextPage);
-      }
-    },
-    onSwipedRight: () => {
-      // Swipe right should navigate to the previous page
-      const prevPage = Object.keys(PAGE_INDEXES).find(
-        (key) => PAGE_INDEXES[key] === pageIndex - 1
-      );
-      if (prevPage) {
-        router.push(prevPage);
-      }
-    },
-  });
+  const handlers = useSwipeable(
+    projectKey === ""
+      ? {
+          onSwipedLeft: () => {
+            // Swipe left should navigate to the next page
+            const nextPage = Object.keys(PAGE_INDEXES).find(
+              (key) => PAGE_INDEXES[key] === pageIndex + 1
+            );
+            if (nextPage) {
+              router.push(nextPage);
+            }
+          },
+          onSwipedRight: () => {
+            // Swipe right should navigate to the previous page
+            const prevPage = Object.keys(PAGE_INDEXES).find(
+              (key) => PAGE_INDEXES[key] === pageIndex - 1
+            );
+            if (prevPage) {
+              router.push(prevPage);
+            }
+          },
+        }
+      : {}
+  );
+
   // Track changes in path and update direction
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -85,7 +90,7 @@ const Layout = ({
 
   return (
     <div className={`${kodeMono.className}`} {...handlers}>
-      {projectKey !== "" && <ProjectDetailModal />}
+      <ProjectDetailModal />
       <SidebarMenu />
       <SidebarMenuMobile />
       <AnimatePresence mode="popLayout">

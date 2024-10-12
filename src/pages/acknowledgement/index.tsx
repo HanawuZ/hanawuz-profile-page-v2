@@ -1,8 +1,7 @@
 
-import styles from "./styles.module.css";
-import Head from "next/head";
 import { AcknowledgementBody } from "./components/AcknowledgementBody";
 import { WebHeader } from "@/components/WebHeader";
+import PageLayout from "@/components/layout/PageLayout";
 const Acknowledgement = () => {
   return (
     <>
@@ -10,7 +9,9 @@ const Acknowledgement = () => {
         title="Thanawut - Acknowledgements"
         description="This is my acknowledgements page"
       />
-      <AcknowledgementBody />
+      <PageLayout title="ACKNOWLEDGEMENT">
+        <AcknowledgementBody />
+      </PageLayout>
     </>
   );
 };

@@ -13,7 +13,7 @@ const SidebarMenuMobile = () => {
     <div 
       className="md:hidden w-full flex justify-center" 
       style={{ 
-        zIndex: 999,
+        zIndex: 100,
         position: "absolute",
         bottom: 0
       }}>

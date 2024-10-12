@@ -1,5 +1,5 @@
 import { SkillBadgeProps } from "@/components/SkillBadge/type";
-
+import { BadgeProps } from "@/components/Badge";
 export interface ProjectDetailModalProps {
   name: string;
   role?: string;
@@ -8,7 +8,7 @@ export interface ProjectDetailModalProps {
   projectCardImageUrl?: string;
   imageUrls?: string[];
   description?: string[];
-  techologies?: SkillBadgeProps[];
+  techologies?: BadgeProps[];
   projectUrl?: string;
   githubUrl? : string;
 }
