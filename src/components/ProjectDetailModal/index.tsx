@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 import { Carousel } from "flowbite-react";
 import { CiGlobe } from "react-icons/ci";
 import ListItem from "@/components/Listing/ListItem";
-import PROJECTS from "@/constants/project";
+import PROJECTS from "@/constants/locales/project";
 import Badge from "../Badge";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
@@ -30,8 +30,8 @@ const fadeVariants = {
 };
 
 const ProjectDetailModal = () => {
-  const { projectKey } = useProfileContext();
-  const project = PROJECTS[projectKey];
+  const { projectKey, language } = useProfileContext();
+  const project = PROJECTS[projectKey] || {};
   const {
     name,
     role,
@@ -40,7 +40,7 @@ const ProjectDetailModal = () => {
     description,
     techologies,
     imageUrls,
-  } = project ? project : {};
+  } = project[language] ? project[language] : {};
   return (
     <AnimatePresence>
       {projectKey !== "" && (

@@ -37,7 +37,7 @@ const promptLab: Record<string, ProjectDetailModalProps> = {
 };
 
 const softwareEngineeringProject: Record<string, ProjectDetailModalProps> = {
-  th: {
+  en: {
     name: "Registration System",
     role: "Full-stack Development",
     projectTimeRange: "December 2022 - Febuary 2023",
@@ -57,10 +57,10 @@ const softwareEngineeringProject: Record<string, ProjectDetailModalProps> = {
     techologies: [Tech.TYPESCRIPT, Tech.REACT, Tech.MUI, Tech.GO, Tech.GIN],
     githubUrl: "https://github.com/HanawuZ/team05",
   },
-  en: {
-    name: "Registration System",
+  th: {
+    name: "ระบบลงทะเบียนเรียน",
     role: "Full-stack Development",
-    projectTimeRange: "December 2022 - Febuary 2023",
+    projectTimeRange: "ธันวาคม 2022 - กุมพาพันธ์ 2023",
     projectCardImageUrl: "images\\projects\\SoftwareEngineering\\Se0.png",
     imageUrls: [
       "images\\projects\\SoftwareEngineering\\Se0.png",
@@ -68,11 +68,11 @@ const softwareEngineeringProject: Record<string, ProjectDetailModalProps> = {
       "images\\projects\\SoftwareEngineering\\Se2.png",
       "images\\projects\\SoftwareEngineering\\Se3.png",
     ],
-    overview: `A software engineering courses project. This project is developed with React and Typescript, along with the Golang Gin framework`,
+    overview: `โปรเจครายวิชาวิศวกรรมซอฟต์แวร์ พัฒนาด้วย React Typescript และภาษา Go ใช้ Gin framework`,
     description: [
-      `I have collaborated with team to complete the registration system, a software engineering courses project.`,
-      `This project is developed with React and Typescript, along with the Golang Gin framework.`,
-      `The system employs JSON Web Tokens (JWT) for its authorization system, providing secure and efficient user authentication.`,
+      `ช่วยกับเพื่อนในทีมในการพัฒนาระบบลงทะเบียนเรียน`,
+      `พัฒนาด้วย React Typescript และภาษา Go ใช้ Gin framework`,
+      `ตัวระบบใช้ JSON Web Tokens (JWT) สำหรับการ authorization`
     ],
     techologies: [Tech.TYPESCRIPT, Tech.REACT, Tech.MUI, Tech.GO, Tech.GIN],
     githubUrl: "https://github.com/HanawuZ/team05",

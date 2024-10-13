@@ -1,6 +1,6 @@
 import { useProfileContext } from "@/context/ProfileContext";
 import styles from "@/pages/projects/styles.module.css";
-import PROJECTS from "@/constants/project";
+import PROJECTS from "@/constants/locales/project";
 
 const ProjectCard = ({ projectKey }: { projectKey: string } ) => {
   const { setProjectKey, language } = useProfileContext();

@@ -10,7 +10,7 @@ const ExperienceBody = () => {
       {experiences[language]?.map((experience, index) => (
         <ExperienceContainer
           key={index}
-          className="mx-4"
+          className="mx-4 mt-8"
           workplace={experience?.workplace}
           location={experience?.location}
           position={experience?.position}
