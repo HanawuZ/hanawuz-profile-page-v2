@@ -14,6 +14,11 @@ type SkillList = {
   tech: BadgeProps[];
 };
 
+type Skill = {
+  title: string;
+  skillList: SkillList[];
+}
+
 const currentlyLearning: BadgeProps[] = [badge.SPRING_BOOT, badge.DOCKER];
 const programmingLanguages: BadgeProps[] = [
   badge.GO,

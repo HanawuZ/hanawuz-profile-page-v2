@@ -10,7 +10,7 @@ const PageLayout = (props: PageLayoutProps) => {
   return (
     <div className="h-90vh md:overflow-y-auto sm:px-8 max-sm:mt-6">
       <div
-        className="grid md:grid-cols-5 lg:grid-cols-4 max-md:pb-20 pb-10"
+        className="grid md:grid-cols-5 lg:grid-cols-4"
         style={{
           zIndex: 100,
         }}

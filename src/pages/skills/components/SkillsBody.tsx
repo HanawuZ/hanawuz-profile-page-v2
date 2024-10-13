@@ -1,6 +1,8 @@
 import Badge from "@/components/Badge";
+import { SPRING_BOOT } from "@/constants/badge";
 import skillList from "@/constants/locales/skills";
 import { useProfileContext } from "@/context/ProfileContext";
+import { HiLightBulb } from "react-icons/hi";
 const SkillsBody = () => {
   const { language } = useProfileContext();
   return (
@@ -11,12 +13,12 @@ const SkillsBody = () => {
             <span>{skill.icon}</span>
             <text> {skill.title} </text>
           </div>
-          <div className="flex gap-2 mt-2">
+          <div className="flex  flex-wrap gap-2 mt-2">
             {skill.tech?.map((tech, index) => (
               <Badge key={index} {...tech} />
             ))}
           </div>
-          <div className="mt-4 ">
+          <div className="mt-4 max-w-[100vw]">
             <p className="break-normal hyphens-auto">
               {skill.description}
             </p>
@@ -27,7 +29,6 @@ const SkillsBody = () => {
   );
 };
 
-/* 
 const CurrentlyLearning = () => (
   <div className="max-md:mx-4 mt-6">
     <div className="font-bold w-full flex gap-2">
@@ -37,9 +38,14 @@ const CurrentlyLearning = () => (
       </span>
       <text> Currently Learning </text>
     </div>
-    <div className="flex gap-2 mt-2">
+    <div className="flex flex-wrap gap-2 mt-2">
       <Badge {...SPRING_BOOT} />
-      <Badge {...DOCKER} />
+      <Badge {...SPRING_BOOT} />
+      <Badge {...SPRING_BOOT} />
+      <Badge {...SPRING_BOOT} />
+      <Badge {...SPRING_BOOT} />
+      <Badge {...SPRING_BOOT} />
+      <Badge {...SPRING_BOOT} />
     </div>
     <div className="mt-4">
       <p className="break-normal hyphens-auto" lang="en">
@@ -52,7 +58,6 @@ const CurrentlyLearning = () => (
     </div>
   </div>
 );
-*/
 
 // const ProgrammingLanguages = () => (
 //   <div className="max-md:mx-4 mt-2">

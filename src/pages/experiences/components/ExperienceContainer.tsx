@@ -2,9 +2,9 @@ interface ExperienceContainerProps {
   className?: string;
   workplace?: string;
   location?: string;
-  position: string;
-  period: string;
-  children: React.ReactNode;
+  position?: string;
+  period?: string;
+  children?: React.ReactNode;
 }
 
 const ExperienceContainer = (props: ExperienceContainerProps) => {

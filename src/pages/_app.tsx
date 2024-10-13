@@ -101,7 +101,7 @@ const Layout = ({
     <div className={`${usedFont.className}`} {...handlers}>
       <ProjectDetailModal />
       <SidebarMenu />
-      <SidebarMenuMobile />
+      {/* <SidebarMenuMobile /> */}
       <AnimatePresence mode="popLayout">
         <motion.div
           key={router.route}

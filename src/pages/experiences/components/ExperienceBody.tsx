@@ -1,10 +1,33 @@
 import { ExperienceContainer } from "./ExperienceContainer";
 import ListItem from "@/components/Listing/ListItem";
+import { useProfileContext } from "@/context/ProfileContext";
+import experiences from "@/constants/locales/experiences";
 
 const ExperienceBody = () => {
+  const { language } = useProfileContext();
   return (
     <div className="mt-6">
-      <ExperienceContainer
+      {experiences[language]?.map((experience, index) => (
+        <ExperienceContainer
+          key={index}
+          className="mx-4"
+          workplace={experience?.workplace}
+          location={experience?.location}
+          position={experience?.position}
+          period={experience?.period}
+        >
+          <ul className="max-md:text-sm mt-3 list-disc mx-10 break-all">
+            {experience.detail?.map((detail, index) => (
+              <ListItem key={index}>
+                <p className="ms-2 break-normal hyphens-auto">
+                  {detail}
+                </p>
+              </ListItem>
+            ))}
+          </ul>
+        </ExperienceContainer>
+      ))}
+      {/* <ExperienceContainer
         className="mx-4"
         workplace="T.C.C. Technology Co. Ltd."
         location="Bangkok, Thailand"
@@ -78,7 +101,7 @@ const ExperienceBody = () => {
             </p>
           </ListItem>
         </ul>
-      </ExperienceContainer>
+      </ExperienceContainer> */}
     </div>
   );
 };
