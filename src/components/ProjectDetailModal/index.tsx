@@ -1,7 +1,7 @@
 import { useProfileContext } from "@/context/ProfileContext";
 import Link from "next/link";
 import styles from "./styles.module.css";
-import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { Carousel } from "flowbite-react";
 import { CiGlobe } from "react-icons/ci";
 import ListItem from "@/components/Listing/ListItem";

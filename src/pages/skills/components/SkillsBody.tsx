@@ -6,7 +6,7 @@ import { HiLightBulb } from "react-icons/hi";
 const SkillsBody = () => {
   const { language } = useProfileContext();
   return (
-    <div className="grid gap-8 max-md:mx-4">
+    <div className="grid gap-8 m-4">
       {skillList[language]?.map((skill, index) => (
         <div key={index} className="max-md:mx-4 mt-6">
           <div className="font-bold w-full flex gap-2">

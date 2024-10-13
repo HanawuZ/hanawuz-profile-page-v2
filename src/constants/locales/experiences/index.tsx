@@ -1,11 +1,3 @@
-/* 
-  className?: string;
-  workplace?: string;
-  location?: string;
-  position: string;
-  period: string;
-*/
-
 type Experience = {
   workplace?: string;
   location?: string;

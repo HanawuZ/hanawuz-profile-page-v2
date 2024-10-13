@@ -11,10 +11,10 @@ const Acknowledgement = () => {
   return (
     <>
       <WebHeader
-        title="Thanawut - Acknowledgements"
+        title={`Thanawut - ${acknowledgementTitle}`}
         description="This is my acknowledgements page"
       />
-      <PageLayout title={acknowledgementTitle.toUpperCase()}>
+      <PageLayout title={acknowledgementTitle}>
         <AcknowledgementBody />
       </PageLayout>
     </>

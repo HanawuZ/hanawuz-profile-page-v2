@@ -6,7 +6,7 @@ import experiences from "@/constants/locales/experiences";
 const ExperienceBody = () => {
   const { language } = useProfileContext();
   return (
-    <div className="mt-6">
+    <div className="m-4">
       {experiences[language]?.map((experience, index) => (
         <ExperienceContainer
           key={index}

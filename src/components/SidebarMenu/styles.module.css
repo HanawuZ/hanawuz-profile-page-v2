@@ -1,9 +1,3 @@
-@media screen and (min-width: 1024px) {
-   .sidebarMenuBox {
-      width: 100%;
-   }
-}
-
 .sidebarMenu {
    border: none;
    color: black;
@@ -25,9 +19,8 @@
 }
 
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
    .sidebarMenuLabel {
-      /* Hidden */
       display: none;
    }
-}
+} */

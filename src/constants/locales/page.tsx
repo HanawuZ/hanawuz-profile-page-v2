@@ -9,7 +9,7 @@ type LocaleData = {
 const pageLocales: Record<string, LocaleData> = {
   th: {
     about: "ตัวผมเอง",
-    skills: "ทักษะ",
+    skills: "ทักษะและความเชี่ยวชาญ",
     projects: "โปรเจคที่เคยทำ",
     experiences: "ประสบการณ์การทำงาน",
     acknowledgement: "คำขอบคุณ",

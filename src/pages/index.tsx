@@ -15,7 +15,8 @@ import { useProfileContext } from "@/context/ProfileContext";
 import { aboutMeList } from "@/constants/locales/aboutMe/list";
 import { education } from "@/constants/locales/aboutMe/education";
 import { aboutMe } from "@/constants/locales/aboutMe";
-
+import wordLocales from "@/constants/locales/word";
+import { AiOutlineGlobal } from "react-icons/ai";
 const Home = () => {
   return (
     <>
@@ -58,13 +59,11 @@ const PersonalInfoSection = () => {
           </div>
           <div className="flex items-center gap-3 p-1 px-3">
             <FaBirthdayCake size={20} color="#000" />
-            <text>
-              10<sup>th</sup> November
-            </text>
+            <text> {aboutMe[language].birthDate}</text>
           </div>
           <div className="flex items-center gap-3 p-1 px-3">
             <span> {aboutMe[language].age}: </span>
-            {calculateAge(new Date(2000, 11, 10))}{" "}{aboutMe[language].ageUnit}
+            {calculateAge(new Date(2000, 11, 10))} {aboutMe[language].ageUnit}
           </div>
         </div>
       </div>
@@ -125,11 +124,11 @@ const EducationSection = () => {
         <div className="lg:flex max-md:mx-2 mt-2">
           <div className="w-full">
             <div className="font-bold">{education[language].university}</div>
-            <div className="italic sm:flex lg:grid">
+            <div className="italic flex flex-wrap">
               <div> {education[language].degree} </div>
               <div>
                 {" "}
-                <span className="max-sm:hidden lg:hidden">,</span>{" "}
+                <span>, </span>
                 {education[language].major}{" "}
               </div>
             </div>
@@ -162,48 +161,54 @@ const EducationSection = () => {
   );
 };
 
-const LetsConnect = () => (
-  <div className="mt-10" id="lets-connect">
-    <text className="text-2xl text-center font-bold sm:mt-10 max-sm:ms-5 ms-10">
-      LET&apos;S CONNECT{" "}
-    </text>
-    <div className="flex justify-center m-5">
-      <div className="grid gap-3 max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3">
-        <Badge
-          icon={<FaGithub color="#FFFFFF" size={24} />}
-          title="HanawuZ"
-          backgroundColor="#2b3137"
-          textColor="#FFFFFF"
-          link="https://github.com/HanawuZ"
-          border="none"
-        />
-        <Badge
-          icon={<FaLinkedin color="#FFFFFF" size={24} />}
-          title="Thanawut Tuamprajak"
-          backgroundColor="#0077B5"
-          textColor="#FFFFFF"
-          link="https://linkedin.com/in/thanawut-tuamprajak-479144262"
-          border="none"
-        />
-        <Badge
-          icon={<MdEmail color="#FFFFFF" size={24} />}
-          backgroundColor="#d44638"
-          textColor="#FFFFFF"
-          title="thanawut.tuam@gmail.com"
-          link="mailto:thanawut.tuam@gmail.com"
-          border="none"
-        />
-        <Badge
-          icon={<FaMedium color="#FFFFFF" size={24} />}
-          title="Thanawut Tuamprajak"
-          backgroundColor="#24292e"
-          textColor="#FFFFFF"
-          border="none"
-          link="https://medium.com/@thanawut.tuam"
-        />
+const LetsConnect = () => {
+  const { language } = useProfileContext();
+  return (
+    <div className="mt-10" id="lets-connect">
+      <div className="font-bold flex gap-3 text-2xl text-center font-bold sm:mt-10 max-sm:ms-5 ms-8">
+        <AiOutlineGlobal size={30} />
+        <span>
+          {wordLocales[language].letConnect}
+        </span>
+      </div>
+      <div className="flex justify-center m-5">
+        <div className="grid gap-3 max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3">
+          <Badge
+            icon={<FaGithub color="#FFFFFF" size={24} />}
+            title="HanawuZ"
+            backgroundColor="#2b3137"
+            textColor="#FFFFFF"
+            link="https://github.com/HanawuZ"
+            border="none"
+          />
+          <Badge
+            icon={<FaLinkedin color="#FFFFFF" size={24} />}
+            title="Thanawut Tuamprajak"
+            backgroundColor="#0077B5"
+            textColor="#FFFFFF"
+            link="https://linkedin.com/in/thanawut-tuamprajak-479144262"
+            border="none"
+          />
+          <Badge
+            icon={<MdEmail color="#FFFFFF" size={24} />}
+            backgroundColor="#d44638"
+            textColor="#FFFFFF"
+            title="thanawut.tuam@gmail.com"
+            link="mailto:thanawut.tuam@gmail.com"
+            border="none"
+          />
+          <Badge
+            icon={<FaMedium color="#FFFFFF" size={24} />}
+            title="Thanawut Tuamprajak"
+            backgroundColor="#24292e"
+            textColor="#FFFFFF"
+            border="none"
+            link="https://medium.com/@thanawut.tuam"
+          />
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Home;
