@@ -1,4 +1,4 @@
-import * as Tech from "@/constants/skills";
+import * as Tech from "@/constants/badge";
 import { ProjectDetailModalProps } from "@/context/ProfileContext/type";
 
 const promptLab: Record<string, ProjectDetailModalProps> = {
