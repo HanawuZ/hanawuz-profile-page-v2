@@ -5,7 +5,10 @@ import PageLayout from "@/components/layout/PageLayout";
 const Experiences = () => {
   return (
     <>
-      <WebHeader title="Thanawut - Experiences" />
+      <WebHeader 
+        title="Thanawut - Experiences"
+        description="This is my experiences page"
+      />
       <PageLayout title="EXPERIENCES">
         <ExperienceBody />
       </PageLayout>

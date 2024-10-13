@@ -8,19 +8,32 @@ import {
 } from "react";
 
 interface ProfileContextGlobalValues {
+  language: string;
   screenWidth: number;
   screenHeight: number;
   modalShow: boolean;
   setModalShow: (show: boolean) => void;
   projectKey: string;
   setProjectKey: (key: string) => void;
+  changeLanguage: (language: string) => void;
 }
 
 interface Props {
   children: ReactNode;
 }
 
-const ProfileContext = createContext<ProfileContextGlobalValues | null>(null);
+const initialValues: ProfileContextGlobalValues = {
+  language: "en",
+  screenWidth: 1280,
+  screenHeight: 720,
+  modalShow: false,
+  setModalShow: () => {},
+  projectKey: "",
+  setProjectKey: () => {},
+  changeLanguage: () => {},
+};
+
+const ProfileContext = createContext<ProfileContextGlobalValues>(initialValues);
 
 export function useProfileContext(): ProfileContextGlobalValues {
   const context = useContext(ProfileContext);
@@ -40,6 +53,11 @@ export function ProfileContextProvider({
   const [modalShow, setModalShow] = useState<boolean>(false);
   const [projectKey, setProjectKey] = useState<string>("");
   const [windowSize, setWindowSize] = useState<number[]>([0, 0]);
+  const [language, setLanguage] = useState<string>("th");
+
+  const changeLanguage = (language: string) => {
+    setLanguage(language);
+  };
 
   useEffect(() => {
     const handleWindowResize = () => {
@@ -52,14 +70,19 @@ export function ProfileContextProvider({
     };
   });
 
-  const value = useMemo(() => ({
+  const value = useMemo(
+    () => ({
+      language,
       screenWidth: windowSize[0] || 1280,
       screenHeight: windowSize[1] || 720,
       modalShow,
       setModalShow,
       projectKey,
       setProjectKey,
-  }), [projectKey]);
+      changeLanguage,
+    }),
+    [projectKey],
+  );
 
   return (
     <ProfileContext.Provider value={value}>{children}</ProfileContext.Provider>

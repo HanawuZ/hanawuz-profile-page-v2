@@ -67,11 +67,11 @@ const CurrentlyLearning = () => (
     </div>
     <div className="mt-4">
       <p className="break-normal hyphens-auto" lang="en">
-        I&apos;m currently spending some free time to learn Java Spring Boot by
-        learning official document. Things I have learned including Basic REST
-        API implemention, Authentication with JWT, Open authentication (OAuth)
-        and Caching with Redis. Furthermore, I am learning Docker to containize
-        database without installing it on my machine.
+        I&apos;m currently spending little free time to learn Java spring boot
+        by learning its official site. Things I&apos;ve learned including Basic
+        REST API implemention, Authentication with JWT, Open authentication
+        &#40;OAuth&#41; and Caching with Redis. Furthermore, I trying Docker to
+        containize database without installing it on my machine.
       </p>
     </div>
   </div>
@@ -95,9 +95,9 @@ const ProgrammingLanguages = () => (
     </div>
     <div className="mt-4">
       <p className="break-normal hyphens-auto" lang="en">
-        During my time in university, Python is a first programming language
-        I&apos;ve learned, then followed by C, Java, Go, JavaScript and
-        TypeScript, respectively.
+        During time in university, Python is a first programming language
+        I&apos;ve learned, and then followed by C, Java, Go, JavaScript and
+        TypeScript, respectively. At this time TypeScript is now my favorite.
       </p>
     </div>
   </div>
@@ -123,10 +123,10 @@ const FrontendDevelopment = () => (
     </div>
     <div className="mt-4">
       <p className="break-normal hyphens-auto" lang="en">
-        I also have studied front-end development in System Analysis & Design
-        (SA) and Software Engineering (SE) courses. React is my first
-        web-development library with Material UI as css framework. After
-        completing SE, I decided to develop web project with senior using
+        When entered 3<sup>rd</sup> year of university, System Analysis &amp;
+        Design and Software Engineering &#40;SE&#41; introduced me the React
+        TypeScript as front-end library and Material UI as CSS framework. After
+        completing SE course, I decided to develop web project with senior using
         Next.js and Bootstrap.
       </p>
     </div>
@@ -152,9 +152,10 @@ const BackendDevelopment = () => (
     </div>
     <div className="mt-4">
       <p className="break-normal hyphens-auto">
-        Go with Gin become a first backend framework I&apos;ve learned,
-        introducing me a realm of back-end development. Subsequently, I have
-        touched Express.js with MongoDB in Web application course.
+        SA and SE also led me into a realm of back-end development. Go with Gin
+        becomes a first back-end framework I&apos;ve touched. Subsequently,
+        I&apos;learned Express.js and MongoDB in Advanced web application
+        course.
       </p>
     </div>
   </div>
@@ -175,10 +176,11 @@ const Tools = () => (
     </div>
     <div className="mt-4">
       <p className="break-normal hyphens-auto">
-        Version control is one of most interesting thing I have learned in
-        software development journey. SE course presented me how to use Git to
+        Version control is one of most interesting things I&apos;ve learned in
+        software development journey. SA and SE taught me how to use Git to
         maintain a source code of project with a team such as managing branches,
-        resolving code conflicts and tracking changes from previous commits.
+        resolving code conflicts, tracking changes from previous commits and so
+        on.
       </p>
     </div>
   </div>
@@ -201,8 +203,8 @@ const Others = () => (
     </div>
     <div className="mt-4">
       <p className="break-normal hyphens-auto">
-        Since internship at Toss. Senior developer assigned me tasks about Data
-        analytics with Apache Superset and managing data with Pandas library.
+        Since internship, I&apos;m also experienced in utilizing Apache Superset
+        as senior developer assigned me tasks about Data analytics.
       </p>
     </div>
   </div>

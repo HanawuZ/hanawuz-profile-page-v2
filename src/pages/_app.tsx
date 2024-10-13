@@ -12,6 +12,7 @@ import { NextComponentType, NextPageContext } from "next";
 import { PAGE_INDEXES } from "@/constants/pageIndex";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
+import { Chakra_Petch } from "next/font/google"
 
 const kodeMono = localFont({
   src: [
@@ -21,6 +22,12 @@ const kodeMono = localFont({
       style: "normal",
     },
   ],
+});
+
+const chakraPetch = Chakra_Petch({
+  subsets: ["latin"],
+  weight: "400",
+  style: "normal",
 });
 
 // Define the direction based on page index differences
@@ -43,7 +50,7 @@ const Layout = ({
   Component: NextComponentType<NextPageContext, any, any>;
   pageProps: any;
 }) => {
-  const { projectKey } = useProfileContext();
+  const { projectKey, language } = useProfileContext();
   const router = useRouter();
   const pageKey = router.asPath;
   const currentPath = router.pathname;
@@ -88,8 +95,10 @@ const Layout = ({
     };
   }, [router, currentPath]);
 
+  const usedFont = language === "th" ? chakraPetch : kodeMono;
+  
   return (
-    <div className={`${kodeMono.className}`} {...handlers}>
+    <div className={`${usedFont.className}`} {...handlers}>
       <ProjectDetailModal />
       <SidebarMenu />
       <SidebarMenuMobile />

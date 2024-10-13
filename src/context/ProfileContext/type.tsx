@@ -1,4 +1,3 @@
-import { SkillBadgeProps } from "@/components/SkillBadge/type";
 import { BadgeProps } from "@/components/Badge";
 export interface ProjectDetailModalProps {
   name: string;

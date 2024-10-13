@@ -1,19 +1,21 @@
 import Link from "next/link";
 import { AiFillExclamationCircle } from "react-icons/ai";
 import { usePathname } from "next/navigation";
-import { useProfileContext } from "@/context/ProfileContext";
 import styles from "./styles.module.css";
 import { FaBriefcase } from "react-icons/fa";
 import { PiProjectorScreenChart } from "react-icons/pi";
 import { BiSolidLike } from "react-icons/bi";
 import { IoCodeSlashSharp } from "react-icons/io5";
+import { useProfileContext } from "@/context/ProfileContext";
+import pageLocales from "@/constants/locales/page";
 
 const SidebarMenu = () => {
   const pathname = usePathname();
+  const { language } = useProfileContext();
   return (
     <div className="max-md:hidden fixed" style={{ zIndex: 100 }}>
-      <div className={`ps-5 w-1/5 absolute h-lvh`}>
-        <div className="mt-20">
+      <div className={`ms-5 absolute flex h-lvh`}>
+        <div className="self-center lg:min-w-[250px]">
           <div className={`grid gap-y-3`}>
             <Link href="/">
               <div
@@ -32,13 +34,11 @@ const SidebarMenu = () => {
                 <div
                   className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}
                 >
-                  About me
+                  {pageLocales[language].about}
                 </div>
               </div>
             </Link>
-            <Link
-              href="/skills"
-            >
+            <Link href="/skills">
               <div
                 className={`py-1 px-2 flex items-center ${styles.sidebarMenu}`}
                 style={{
@@ -55,7 +55,7 @@ const SidebarMenu = () => {
                 <div
                   className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}
                 >
-                  Skills
+                  {pageLocales[language].skills}
                 </div>
               </div>
             </Link>
@@ -76,7 +76,7 @@ const SidebarMenu = () => {
                 <div
                   className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}
                 >
-                  Experiences
+                  {pageLocales[language].experiences}
                 </div>
               </div>
             </Link>
@@ -97,7 +97,7 @@ const SidebarMenu = () => {
                 <div
                   className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}
                 >
-                  Projects
+                  {pageLocales[language].projects}
                 </div>
               </div>
             </Link>
@@ -119,7 +119,7 @@ const SidebarMenu = () => {
                 <div
                   className={`ms-3 flex items-center ${styles.sidebarMenuLabel}`}
                 >
-                  Acknowledgement
+                  {pageLocales[language].acknowledgement}
                 </div>
               </div>
             </Link>

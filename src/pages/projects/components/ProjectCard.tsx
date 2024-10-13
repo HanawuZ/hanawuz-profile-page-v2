@@ -1,11 +1,11 @@
 import { useProfileContext } from "@/context/ProfileContext";
 import styles from "@/pages/projects/styles.module.css";
-import PROJECTS from "@/context/ProfileContext/constant";
+import PROJECTS from "@/constants/project";
 
 const ProjectCard = ({ projectKey }: { projectKey: string } ) => {
-  const { setProjectKey } = useProfileContext();
+  const { setProjectKey, language } = useProfileContext();
   const project = PROJECTS[projectKey];
-  const { projectCardImageUrl, name, projectTimeRange, description, overview } = project ?? {
+  const { projectCardImageUrl, name, projectTimeRange, description, overview } = project[language] ?? {
     imageUrl: "",
     name: "",
     projectTimeRange: "",

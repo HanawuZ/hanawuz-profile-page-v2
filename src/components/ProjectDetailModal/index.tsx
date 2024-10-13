@@ -5,7 +5,7 @@ import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
 import { Carousel } from "flowbite-react";
 import { CiGlobe } from "react-icons/ci";
 import ListItem from "@/components/Listing/ListItem";
-import PROJECTS from "@/context/ProfileContext/constant";
+import PROJECTS from "@/constants/project";
 import Badge from "../Badge";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";

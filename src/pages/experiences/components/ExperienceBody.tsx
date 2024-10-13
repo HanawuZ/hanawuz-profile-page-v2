@@ -65,7 +65,7 @@ const ExperienceBody = () => {
           </ListItem>
           <ListItem>
             <p className="ms-2 break-normal hyphens-auto" lang="en">
-              Work with team to developed the business logic for calculating
+              Worked with team to developed the business logic for calculating
               promotions when order is created, consisting of discounting on
               each product and giving free products.
             </p>

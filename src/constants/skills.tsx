@@ -1,4 +1,3 @@
-import { SkillBadgeProps } from "@/components/SkillBadge/type";
 import { BadgeProps } from "@/components/Badge";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaGolang } from "react-icons/fa6";

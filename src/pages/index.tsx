@@ -11,6 +11,10 @@ import calculateAge from "@/utils/ageCalculator";
 import { MdSchool } from "react-icons/md";
 import { FaRegSmile } from "react-icons/fa";
 import PageLayout from "@/components/layout/PageLayout";
+import { useProfileContext } from "@/context/ProfileContext";
+import { aboutMeList } from "@/constants/locales/aboutMe/list";
+import { education } from "@/constants/locales/aboutMe/education";
+import { aboutMe } from "@/constants/locales/aboutMe";
 
 const Home = () => {
   return (
@@ -20,7 +24,7 @@ const Home = () => {
         <ImageSection />
         <PersonalInfoSection />
         <OverviewSection />
-        <AboutMe />
+        <AboutMeSection />
         <EducationSection />
         <LetsConnect />
       </PageLayout>
@@ -43,6 +47,7 @@ const ImageSection = () => (
 );
 
 const PersonalInfoSection = () => {
+  const { language } = useProfileContext();
   return (
     <div id="personal-info-section">
       <div className="max-md:text-sm mt-8 max-sm:mx-6 mx-10 break-all">
@@ -58,8 +63,8 @@ const PersonalInfoSection = () => {
             </text>
           </div>
           <div className="flex items-center gap-3 p-1 px-3">
-            <span> AGE: </span>
-            {calculateAge(new Date(2000, 11, 10))}
+            <span> {aboutMe[language].age}: </span>
+            {calculateAge(new Date(2000, 11, 10))}{" "}{aboutMe[language].ageUnit}
           </div>
         </div>
       </div>
@@ -68,118 +73,89 @@ const PersonalInfoSection = () => {
 };
 
 const OverviewSection = () => {
+  const { language } = useProfileContext();
   return (
     <div id="overview-section">
-      <p className="max-md:text-sm mt-8 max-sm:mx-6 mx-10 break-normal hyphens-auto">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-        tempus lorem mi, sit amet vulputate elit scelerisque non. Sed sit amet
-        libero id tortor vehicula rutrum. Proin vitae est eu lacus aliquet
-        condimentum sit amet ac sapien. Nunc fermentum, felis in efficitur
-        tempor, erat nisl interdum nunc, et aliquam lorem metus at felis. In
-        posuere urna id molestie egestas. Suspendisse potenti.
+      <p className="max-md:text-sm mt-8 max-sm:mx-6 mx-12 break-normal hyphens-auto">
+        {aboutMe[language].overview}
       </p>
     </div>
   );
 };
 
-const AboutMe = () => (
-  <div id="about-me" className="mt-8">
-    <div className="font-bold flex gap-3 text-2xl text-center font-bold sm:mt-10 max-sm:ms-5 ms-10">
-      <FaRegSmile size={30} />
-      <span> ABOUT ME </span>
+const AboutMeSection = () => {
+  const { language } = useProfileContext();
+
+  return (
+    <div id="about-me" className="mt-8">
+      <div className="font-bold flex gap-3 text-2xl text-center font-bold sm:mt-10 max-sm:ms-5 ms-8">
+        <FaRegSmile size={30} />
+        <span className="uppercase"> {aboutMeList[language].title} </span>
+      </div>
+      <ul className="max-md:text-sm mt-3 list-disc mx-10 break-all sm:ms-16 ms-12">
+        <ListItem className="break-normal hyphens-auto">
+          👷‍♂️ {aboutMeList[language].presentJob}{" "}
+          <Link
+            className="text-blue-500 underline underline-offset-2"
+            href="https://www.tcc-technology.com"
+          >
+            T.C.C. Technology Co., Ltd.
+          </Link>
+        </ListItem>
+        <ListItem className="break-normal hyphens-auto">
+          {aboutMeList[language].doing}
+        </ListItem>
+        <ListItem className="break-normal hyphens-auto">
+          💤 {aboutMeList[language].sleep}
+        </ListItem>
+      </ul>
     </div>
-    <ul className="max-md:text-sm mt-3 list-disc mx-10 break-all sm:ms-16 ms-12">
-      <ListItem className="break-normal hyphens-auto">
-        👷‍♂️ I&apos;m currently working as Application developer associate at
-        <Link
-          className="text-blue-500 underline underline-offset-2"
-          href="https://www.tcc-technology.com"
-        >
-          {" "}
-          T.C.C. Technology Co., Ltd.{" "}
-        </Link>
-      </ListItem>
-      <ListItem className="break-normal hyphens-auto">
-        🤓 Presently learning back-end development with various languages such
-        as ♨️ Java spring boot, and learning software development design such as
-        Clean architecture, React design patterns.
-      </ListItem>
-      <ListItem className="break-normal hyphens-auto">
-        💤 I want 69 hours for sleeping.
-      </ListItem>
-    </ul>
-  </div>
-);
+  );
+};
 
 const EducationSection = () => {
+  const { language } = useProfileContext();
   return (
     <div id="education-info-section" className="mt-8">
-      <div className="font-bold flex gap-3 text-2xl text-center font-bold sm:mt-10 max-sm:ms-5 ms-10">
+      <div className="font-bold flex gap-3 text-2xl text-center font-bold sm:mt-10 max-sm:ms-5 ms-8">
         <MdSchool size={30} />
-        <span> EDUCATION </span>
+        <span className="uppercase "> {education[language].title} </span>
       </div>
-      <div className="max-md:text-sm mt-3 max-sm:mx-6 mx-10 break-all">
+      <div className="max-md:text-sm mt-3 max-sm:mx-6 mx-12 break-all">
         <div className="lg:flex max-md:mx-2 mt-2">
           <div className="w-full">
-            <div className="font-bold">Suranaree University of Technology</div>
+            <div className="font-bold">{education[language].university}</div>
             <div className="italic sm:flex lg:grid">
-              <div> Bachelor of Engineering </div>
+              <div> {education[language].degree} </div>
               <div>
                 {" "}
-                <span className="max-sm:hidden lg:hidden">,</span> Computer
-                Engineering{" "}
+                <span className="max-sm:hidden lg:hidden">,</span>{" "}
+                {education[language].major}{" "}
               </div>
             </div>
           </div>
           <div className="w-full lg:text-end max-lg:mt-2">
-            <div> Nakhon Ratchasima, Thailand </div>
-            <div> May 2024 </div>
+            <div> {education[language].location} </div>
+            <div> {education[language].graduatedDate} </div>
           </div>
         </div>
-        {/* Relevant courses: Software Engineering, System Analysis and Design,
-          Software Testing, Operating System, Web Application, Object-oriented
-          Programming, Data structure and Algorithm. */}
       </div>
 
-      <div className="max-md:text-sm mt-5 max-sm:mx-6 mx-10 break-all">
+      <div className="max-md:text-sm mt-5 max-sm:mx-6 mx-12 break-all">
         <text className="max-md:text-sm font-bold max-md:ms-2">
-          {" "}
-          Relevant courses:{" "}
+          {education[language].relevantCourse.title}:
         </text>
         <ul className="max-md:text-sm list-disc mx-10 break-all">
-          <ListItem className="break-normal hyphens-auto">
-            <text className="italic me-1" lang="en">
-              Software Engineering:{" "}
-            </text>
-            Learned the processes of software development via a{" "}
-            <Link
-              href={""}
-              className="text-blue-500 underline underline-offset-2"
-            >
-              {" "}
-              course project.{" "}
-            </Link>
-          </ListItem>
-          <ListItem className="break-normal hyphens-auto">
-            <text className="italic me-1"> System Analysis & Design: </text>
-            Gathered knownledge of the fundamental concepts of system analysis
-            like analyzing user requirement or software design
-          </ListItem>
-          <ListItem className="break-normal hyphens-auto">
-            <text className="italic me-1"> Software Testing: </text> Studied
-            various types of software testing.
-          </ListItem>
-          <ListItem>Operating System</ListItem>
-          <ListItem className="break-normal hyphens-auto">
-            <text className="italic me-1"> Web Application: </text> Learned the
-            fundamental concepts of web application and commonly-found web
-            framework such as Angular, Vue, and React.
-          </ListItem>
-          <ListItem className="break-normal hyphens-auto">
-            <text className="italic me-1"> Object-oriented Programming: </text>{" "}
-            Learned the fundamental concepts of object-oriented programming with
-            ♨️ Java
-          </ListItem>
+          {education[language].relevantCourse.list?.map((course, index) => {
+            return (
+              <ListItem key={index} className="break-normal hyphens-auto">
+                <text className="italic me-1" lang="en">
+                  {course?.name}&#58;{" "}
+                </text>
+                {course?.description}
+              </ListItem>
+            );
+          })}
         </ul>
       </div>
     </div>
@@ -229,4 +205,5 @@ const LetsConnect = () => (
     </div>
   </div>
 );
+
 export default Home;
