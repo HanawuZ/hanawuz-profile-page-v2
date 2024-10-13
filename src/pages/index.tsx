@@ -51,7 +51,7 @@ const PersonalInfoSection = () => {
   const { language } = useProfileContext();
   return (
     <div id="personal-info-section">
-      <div className="max-md:text-sm mt-8 max-sm:mx-6 mx-10 break-all">
+      <div className="max-md:text-sm mt-5 max-sm:mx-6 mx-10 break-all">
         <div className="flex flex-wrap gap-2 mt-2 w-full justify-center">
           <div className="flex items-center gap-3 p-1 px-3">
             <FaPhoneAlt size={20} color="#000" />
@@ -87,7 +87,7 @@ const AboutMeSection = () => {
 
   return (
     <div id="about-me" className="mt-8">
-      <div className="font-bold flex gap-3 text-2xl text-center font-bold sm:mt-10 max-sm:ms-5 ms-8">
+      <div className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8">
         <FaRegSmile size={30} />
         <span className="uppercase"> {aboutMeList[language].title} </span>
       </div>
@@ -116,7 +116,7 @@ const EducationSection = () => {
   const { language } = useProfileContext();
   return (
     <div id="education-info-section" className="mt-8">
-      <div className="font-bold flex gap-3 text-2xl text-center font-bold sm:mt-10 max-sm:ms-5 ms-8">
+      <div className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8">
         <MdSchool size={30} />
         <span className="uppercase "> {education[language].title} </span>
       </div>
@@ -165,7 +165,7 @@ const LetsConnect = () => {
   const { language } = useProfileContext();
   return (
     <div className="mt-10" id="lets-connect">
-      <div className="font-bold flex gap-3 text-2xl text-center font-bold sm:mt-10 max-sm:ms-5 ms-8">
+      <div className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8">
         <AiOutlineGlobal size={30} />
         <span>
           {wordLocales[language].letConnect}
