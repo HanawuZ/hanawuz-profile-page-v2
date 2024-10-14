@@ -3,13 +3,23 @@ import { SPRING_BOOT } from "@/constants/badge";
 import skillList from "@/constants/locales/skills";
 import { useProfileContext } from "@/context/ProfileContext";
 import { HiLightBulb } from "react-icons/hi";
+import themes from "@/theme";
+
 const SkillsBody = () => {
-  const { language } = useProfileContext();
+  const { language, mode } = useProfileContext();
   return (
     <div className="grid gap-6 m-4">
       {skillList[language]?.map((skill, index) => (
-        <div key={index} className="max-md:mx-4 mt-6">
-          <div className="font-bold w-full flex gap-2">
+        <div 
+          key={index} 
+          className="max-md:mx-4 mt-6"
+        >
+          <div 
+            className="font-bold w-full flex gap-2"
+            style={{
+              color: themes[mode].primaryText,
+            }}
+          >
             <span>{skill.icon}</span>
             <text> {skill.title} </text>
           </div>
@@ -19,7 +29,12 @@ const SkillsBody = () => {
             ))}
           </div>
           <div className="mt-4 max-w-[100vw]">
-            <p className="break-normal hyphens-auto">
+            <p 
+              className="break-normal hyphens-auto"
+              style={{
+                color: themes[mode].secondaryText,
+              }}
+            >
               {skill.description}
             </p>
           </div>

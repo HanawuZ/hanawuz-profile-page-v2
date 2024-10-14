@@ -17,6 +17,8 @@ import { education } from "@/constants/locales/aboutMe/education";
 import { aboutMe } from "@/constants/locales/aboutMe";
 import wordLocales from "@/constants/locales/word";
 import { AiOutlineGlobal } from "react-icons/ai";
+import themes from "@/theme";
+
 const Home = () => {
   return (
     <>
@@ -34,23 +36,25 @@ const Home = () => {
 };
 
 const ImageSection = () => (
-  <div className="items-center grid p-3 justify-items-center">
+  <div className="items-center grid p-3 justify-items-center z-[2]">
     <Image
-      src={"/images/portrait-dummy.png"}
+      src="/images/portrait-dummy.png"
       alt="image"
       width={300}
       height={300}
-      style={{
-        zIndex: 2,
-      }}
     />
   </div>
 );
 
 const PersonalInfoSection = () => {
-  const { language } = useProfileContext();
+  const { language, mode } = useProfileContext();
   return (
-    <div id="personal-info-section">
+    <div
+      id="personal-info-section"
+      style={{
+        color: themes[mode].primaryText,
+      }}
+    >
       <div className="max-md:text-sm mt-5 max-sm:mx-6 mx-10 break-all">
         <div className="flex flex-wrap gap-2 mt-2 w-full justify-center">
           <div className="flex items-center gap-3 p-1 px-3">
@@ -58,7 +62,7 @@ const PersonalInfoSection = () => {
             +66 99 434 5245
           </div>
           <div className="flex items-center gap-3 p-1 px-3">
-            <FaBirthdayCake size={20}  />
+            <FaBirthdayCake size={20} />
             <text> {aboutMe[language].birthDate}</text>
           </div>
           <div className="flex items-center gap-3 p-1 px-3">
@@ -72,9 +76,14 @@ const PersonalInfoSection = () => {
 };
 
 const OverviewSection = () => {
-  const { language } = useProfileContext();
+  const { language, mode } = useProfileContext();
   return (
-    <div id="overview-section">
+    <div
+      id="overview-section"
+      style={{
+        color: themes[mode].primaryText,
+      }}
+    >
       <p className="max-md:text-sm mt-8 max-sm:mx-6 mx-12 break-normal hyphens-auto">
         {aboutMe[language].overview}
       </p>
@@ -83,10 +92,16 @@ const OverviewSection = () => {
 };
 
 const AboutMeSection = () => {
-  const { language } = useProfileContext();
+  const { language, mode } = useProfileContext();
 
   return (
-    <div id="about-me" className="mt-8">
+    <div
+      id="about-me"
+      className="mt-8"
+      style={{
+        color: themes[mode].primaryText,
+      }}
+    >
       <div className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8">
         <FaRegSmile size={30} />
         <span className="uppercase"> {aboutMeList[language].title} </span>
@@ -95,8 +110,11 @@ const AboutMeSection = () => {
         <ListItem className="break-normal hyphens-auto">
           👷‍♂️ {aboutMeList[language].presentJob}{" "}
           <Link
-            className="text-blue-500 underline underline-offset-2"
+            className="text-blue-500 underline underline-offset-2 hover:text-blue-300"
             href="https://www.tcc-technology.com"
+            style={{
+              transition: "all 0.15s",
+            }}
           >
             T.C.C. Technology Co., Ltd.
           </Link>
@@ -113,9 +131,15 @@ const AboutMeSection = () => {
 };
 
 const EducationSection = () => {
-  const { language } = useProfileContext();
+  const { language, mode } = useProfileContext();
   return (
-    <div id="education-info-section" className="mt-8">
+    <div
+      id="education-info-section"
+      className="mt-8"
+      style={{
+        color: themes[mode].primaryText,
+      }}
+    >
       <div className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8">
         <MdSchool size={30} />
         <span className="uppercase "> {education[language].title} </span>
@@ -124,7 +148,12 @@ const EducationSection = () => {
         <div className="lg:flex max-md:mx-2 mt-2">
           <div className="w-full">
             <div className="font-bold">{education[language].university}</div>
-            <div className="italic flex flex-wrap">
+            <div
+              className="italic flex flex-wrap"
+              style={{
+                color: themes[mode].secondaryText,
+              }}
+            >
               <div> {education[language].degree} </div>
               <div>
                 {" "}
@@ -162,14 +191,17 @@ const EducationSection = () => {
 };
 
 const LetsConnect = () => {
-  const { language } = useProfileContext();
+  const { language, mode } = useProfileContext();
   return (
     <div className="mt-10" id="lets-connect">
-      <div className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8">
+      <div 
+        className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8"
+        style={{
+          color: themes[mode].primaryText,
+        }}
+      >
         <AiOutlineGlobal size={30} />
-        <span className="uppercase">
-          {wordLocales[language].letConnect}
-        </span>
+        <span className="uppercase">{wordLocales[language].letConnect}</span>
       </div>
       <div className="flex justify-center m-5">
         <div className="grid gap-3 max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3">

@@ -15,6 +15,7 @@ import { useSwipeable } from "react-swipeable";
 import { Chakra_Petch } from "next/font/google"
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
+import themes from "@/theme";
 
 const kodeMono = localFont({
   src: [
@@ -52,7 +53,7 @@ const Layout = ({
   Component: NextComponentType<NextPageContext, any, any>;
   pageProps: any;
 }) => {
-  const { projectKey, language, darkMode } = useProfileContext();
+  const { projectKey, language, mode } = useProfileContext();
   const router = useRouter();
   const pageKey = router.asPath;
   const currentPath = router.pathname;
@@ -83,18 +84,6 @@ const Layout = ({
       : {}
   );
 
-  const darkModeStyle = {
-    color: "#FFFFFF",
-    backgroundColor: "rgba(0, 0, 0, 0.75)",
-    transition: "0.15s",
-  }
-
-  const lightModeStyle = {
-    color: "#000000",
-    backgroundColor: "#FFFFFF",
-    transition: "0.15s",
-  }
-
   // Track changes in path and update direction
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -116,7 +105,8 @@ const Layout = ({
       className={`${usedFont.className}`} 
       {...handlers}
       style={{
-        ...(darkMode ? darkModeStyle : lightModeStyle)
+        backgroundColor: themes[mode].background,
+        transition: "0.15s",
       }}
     >
       <ProjectDetailModal />
@@ -153,9 +143,8 @@ const Layout = ({
             },
           }}
           style={{
-            overflow: projectKey !== "" ? "hidden" : "auto",
-            maxHeight: "100vh"
-            // maxHeight: projectKey !== "" ? "100vh" : "auto",
+            overflowY: projectKey !== "" ? "hidden" : "auto",
+            maxHeight: "100vh",
           }}
         >
           <Component key={pageKey} {...pageProps} />

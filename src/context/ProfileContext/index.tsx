@@ -13,6 +13,7 @@ interface ProfileContextGlobalValues {
   screenHeight: number;
   modalShow: boolean;
   darkMode: boolean;
+  mode: "light" | "dark";
   setModalShow: (show: boolean) => void;
   projectKey: string;
   setProjectKey: (key: string) => void;
@@ -29,6 +30,7 @@ const initialValues: ProfileContextGlobalValues = {
   screenWidth: 1280,
   screenHeight: 720,
   modalShow: false,
+  mode: "light",
   darkMode: false,
   setModalShow: () => {},
   projectKey: "",
@@ -59,6 +61,7 @@ export function ProfileContextProvider({
   const [windowSize, setWindowSize] = useState<number[]>([0, 0]);
   const [language, setLanguage] = useState<string>("en");
   const [darkMode, setDarkMode] = useState<boolean>(true);
+  const [mode, setMode] = useState<"light" | "dark">("dark");
 
   const changeLanguage = (selectLanguage: string) => {
     if (selectLanguage === language) return;
@@ -66,7 +69,7 @@ export function ProfileContextProvider({
   };
 
   const changeTheme = () => {
-    setDarkMode(!darkMode);
+    setMode(mode === "light" ? "dark" : "light");
   };
 
   useEffect(() => {
@@ -91,9 +94,10 @@ export function ProfileContextProvider({
       setProjectKey,
       changeLanguage,
       darkMode,
-      changeTheme
+      changeTheme,
+      mode
     }),
-    [projectKey, language, windowSize, modalShow, darkMode],
+    [projectKey, language, windowSize, modalShow, darkMode, mode],
   );
 
   return (

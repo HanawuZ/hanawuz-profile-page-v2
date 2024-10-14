@@ -15,10 +15,13 @@ const SidebarMenuMobile = () => {
       style={{ 
         zIndex: 100,
         position: "absolute",
-        bottom: 0
+        bottom: 10
       }}>
       <div
-        className="flex mt-2 gap-2 py-6"
+        className="flex gap-2 p-3 rounded-full"
+        style={{
+          backgroundColor: "",
+        }}
       >
         {" "}
         <MenuItem

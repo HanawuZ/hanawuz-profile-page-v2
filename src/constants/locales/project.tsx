@@ -1,13 +1,28 @@
 import * as Tech from "@/constants/badge";
 import { ProjectDetailModalProps } from "@/context/ProfileContext/type";
 
+const promptLabImages: Record<string, any> = {
+  projectCardImageUrl: "/images/prompt-lab.jpg",
+  imageUrls: ["/images/prompt-lab-overview.png"],
+}
+
+const softwareEngineeringProjectImages: Record<string, any> = {
+  projectCardImageUrl: "/images/projects/SoftwareEngineering/Se0.png",
+  imageUrls: [
+    "/images/projects/SoftwareEngineering/Se0.png",
+    "/images/projects/SoftwareEngineering/Se1.png",
+    "/images/projects/SoftwareEngineering/Se2.png",
+    "/images/projects/SoftwareEngineering/Se3.png",
+  ],
+}
+
 const promptLab: Record<string, ProjectDetailModalProps> = {
   th: {
     name: "Prompt Lab AI",
     role: "Front-end Development",
-    projectTimeRange: "มีนาคม 2023 - ตอนนี้",
-    projectCardImageUrl: "images\\prompt-lab.jpg",
-    imageUrls: ["images\\prompt-lab-overview.png"],
+    projectTimeRange: "มีนาคม 2023 - ปัจจุบัน",
+    projectCardImageUrl: promptLabImages["projectCardImageUrl"],
+    imageUrls: promptLabImages["imageUrls"],
     overview: `Prompt Lab เป็นเว็บไซต์ที่ช่วยปลดล็อกความคิดสร้างสรรค์ของคุณด้วยความช่วยเหลือจาก AI ในการสร้างโพสต์ขายของ เรากำลังร่วมมือกับเพื่อนเพื่อพัฒนาเว็บไซต์นี้โดยใช้ Next.js และ Bootstrap เป็นเฟรมเวิร์กสำหรับการจัดการ CSS`,
     description: [
       `Prompt Lab เป็นเว็บไซต์ที่ช่วยปลดล็อกความคิดสร้างสรรค์ของคุณด้วยความช่วยเหลือจาก AI สำหรับการสร้างโพสต์ขาย สร้างเนื้อหาไอเดีย เขียนบทความ สร้างสคริปต์วิดีโอ และข้อความดึงดูดความสนใจ`,
@@ -21,8 +36,8 @@ const promptLab: Record<string, ProjectDetailModalProps> = {
     name: "Prompt Lab AI",
     role: "Front-end Development",
     projectTimeRange: "March 2023 - Present",
-    projectCardImageUrl: "images\\prompt-lab.jpg",
-    imageUrls: ["images\\prompt-lab-overview.png"],
+    projectCardImageUrl: promptLabImages["projectCardImageUrl"],
+    imageUrls: promptLabImages["imageUrls"],
     overview: ` Prompt Lab is a website that unlocks your creativity with AI assistance for generating sales posts. 
                 I collaborating with my friend to develop this site using Next.js with Bootstrap for CSS frameworks.`,
     description: [
@@ -41,13 +56,8 @@ const softwareEngineeringProject: Record<string, ProjectDetailModalProps> = {
     name: "Registration System",
     role: "Full-stack Development",
     projectTimeRange: "December 2022 - Febuary 2023",
-    projectCardImageUrl: "images\\projects\\SoftwareEngineering\\Se0.png",
-    imageUrls: [
-      "images\\projects\\SoftwareEngineering\\Se0.png",
-      "images\\projects\\SoftwareEngineering\\Se1.png",
-      "images\\projects\\SoftwareEngineering\\Se2.png",
-      "images\\projects\\SoftwareEngineering\\Se3.png",
-    ],
+    projectCardImageUrl: softwareEngineeringProjectImages["projectCardImageUrl"],
+    imageUrls: softwareEngineeringProjectImages["imageUrls"],
     overview: `A software engineering courses project. This project is developed with React and Typescript, along with the Golang Gin framework`,
     description: [
       `I have collaborated with team to complete the registration system, a software engineering courses project.`,
@@ -61,13 +71,8 @@ const softwareEngineeringProject: Record<string, ProjectDetailModalProps> = {
     name: "ระบบลงทะเบียนเรียน",
     role: "Full-stack Development",
     projectTimeRange: "ธันวาคม 2022 - กุมพาพันธ์ 2023",
-    projectCardImageUrl: "images\\projects\\SoftwareEngineering\\Se0.png",
-    imageUrls: [
-      "images\\projects\\SoftwareEngineering\\Se0.png",
-      "images\\projects\\SoftwareEngineering\\Se1.png",
-      "images\\projects\\SoftwareEngineering\\Se2.png",
-      "images\\projects\\SoftwareEngineering\\Se3.png",
-    ],
+    projectCardImageUrl: softwareEngineeringProjectImages["projectCardImageUrl"],
+    imageUrls: softwareEngineeringProjectImages["imageUrls"],
     overview: `โปรเจครายวิชาวิศวกรรมซอฟต์แวร์ พัฒนาด้วย React Typescript และภาษา Go ใช้ Gin framework`,
     description: [
       `ช่วยกับเพื่อนในทีมในการพัฒนาระบบลงทะเบียนเรียน`,

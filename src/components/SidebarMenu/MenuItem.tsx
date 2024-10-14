@@ -11,9 +11,9 @@ interface MenuItemProps {
 }
 
 const MenuItem = (props: MenuItemProps) => {
-  const { darkMode } = useProfileContext();
-  const hoverStyle = darkMode ? styles.sidebarMenuDarkMode : styles.sidebarMenuLightMode;
-  const textColor = darkMode ? "#000000" : "#FFFFFF";
+  const { mode } = useProfileContext();
+  const hoverStyle = mode === "dark" ? styles.sidebarMenuDarkMode : styles.sidebarMenuLightMode;
+  const textColor = mode === "dark" ? "#000000" : "#FFFFFF";
   const { href, currentPath, className, icon, name } = props;
   return (
     <Link href={href} className={className}>
