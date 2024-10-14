@@ -1,6 +1,6 @@
 import { useProfileContext } from "@/context/ProfileContext";
 import { THFlag, USFlag } from "../Flag";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IoMdArrowDropup } from "react-icons/io";
 const languageOptions = [
   { value: "en", icon: <USFlag /> },
@@ -13,20 +13,33 @@ const flagMap: Record<string, JSX.Element> = {
 };
 
 const LanguageSelect = () => {
-  const { language, changeLanguage } = useProfileContext();
+  const { language, changeLanguage, darkMode } = useProfileContext();
   const [showOption, setShowOption] = useState<boolean>(false);
+  const dropdownRef = useRef<HTMLDivElement>(null); // Create a ref for the dropdown
+
+    // Handle click outside
+    useEffect(() => {
+      const handleClickOutside = (event: MouseEvent) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+          setShowOption(false); // Close the dropdown when clicking outside
+        }
+      };
+  
+      // Add event listener
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside); // Cleanup listener
+      };
+    }, [dropdownRef]);
 
   return (
-    <div className="relative my-2 me-4">
+    <div className="relative my-2 me-4" ref={dropdownRef}>
       <button
         className="flex gap-2 items-center"
-        onClick={() => {
-          setShowOption(!showOption);
-        }}
+        onClick={() => setShowOption(!showOption)}
       >
         {flagMap[language]}
         <IoMdArrowDropup
-          color="#FFFFFF"
           size={25}
           style={{
             transform: showOption ? "rotate(180deg)" : "rotate(0deg)",
@@ -34,7 +47,7 @@ const LanguageSelect = () => {
         />
       </button>
       <div
-        className={`grid gap-3 py-2 bg-white rounded-md mt-2 shadow-lg border border-slate-300`}
+        className={`grid gap-3 py-2  rounded-md mt-2 shadow-lg border border-slate-300`}
         style={{
           transition: "opacity 0.1s ease-in-out",
           opacity: showOption ? 1 : 0,
@@ -43,6 +56,7 @@ const LanguageSelect = () => {
           right: 5,
           borderRadius: "5px",
           zIndex: 1,
+          backgroundColor: darkMode ? "#2b3137" : "#FFFFFF",
         }}
       >
         {languageOptions.map((option) => (

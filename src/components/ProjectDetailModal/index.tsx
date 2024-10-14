@@ -31,7 +31,7 @@ const fadeVariants = {
 };
 
 const ProjectDetailModal = () => {
-  const { projectKey, language } = useProfileContext();
+  const { projectKey, language, darkMode } = useProfileContext();
   const project = PROJECTS[projectKey] || {};
   const {
     name,
@@ -42,6 +42,9 @@ const ProjectDetailModal = () => {
     techologies,
     imageUrls,
   } = project[language] ? project[language] : {};
+
+  const backgroundColor = darkMode ? "#2b3137" : "#f9f9f9";
+
   return (
     <AnimatePresence>
       {projectKey !== "" && (
@@ -50,7 +53,7 @@ const ProjectDetailModal = () => {
           animate="visible"
           exit="exit"
           variants={fadeVariants}
-          onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on content
+          onClick={(event) => event.stopPropagation()} // Prevent closing when clicking on content
           transition={{ duration: 0.1 }} // Adjust the timing for fade-in/out
           className="backdrop-blur-md fixed top-0 w-full h-full flex justify-center items-center"
           style={{ zIndex: 999 }}
@@ -58,25 +61,30 @@ const ProjectDetailModal = () => {
           <motion.div
             variants={fadeVariants}
             transition={{ duration: 0.1 }} // Smooth fade animation
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on content
+            onClick={(event) => event.stopPropagation()} // Prevent closing when clicking on content
             className={`md:w-[70vw] container mx-auto ${
               styles.projectDetailModal
             } ${projectKey === "" && styles.disappearProjectDetailModal} shadow-lg`}
           >
             <div className="w-full bg-slate-600 rounded-t-lg py-2 px-3">
               <div className="grid grid-cols-2">
-                <text className="ms-2 text-white"> {name} </text>
+                <text className="ms-2"> {name} </text>
                 <CloseButton className="justify-self-end text-white" />
               </div>
             </div>
-            <div className="w-full overflow-y-auto grid overflow-x-hidden bg-white md:max-h-[86vh] max-h-[90vh] pb-4">
+            <div 
+              className="w-full overflow-y-auto grid overflow-x-hidden md:max-h-[86vh] max-h-[90vh] pb-4"
+              style={{
+                backgroundColor: backgroundColor,
+              }}
+            >
               <div
                 className={`mb-5  md:mx-10 mt-5 ${styles.projectCarouselContainer} `}
               >
                 <Carousel
                   className="rounded-lg"
-                  leftControl={<div className="text-3xl"> &#60; </div>}
-                  rightControl={<div className="text-3xl"> &#62; </div>}
+                  leftControl={<div className="text-3xl text-slate-600"> &#60; </div>}
+                  rightControl={<div className="text-3xl text-slate-600"> &#62; </div>}
                   slideInterval={5000}
                   indicators={false}
                 >
@@ -142,6 +150,10 @@ const ProjectDetailModal = () => {
                   <Link
                     className={`px-2 p-1 flex justify-center ${styles.viewProjectButton}`}
                     href={githubUrl}
+                    style={{
+                      borderColor: darkMode ? "#f9f9f9" : "#000000",
+                      border: "1px solid",
+                    }}
                   >
                     <FaGithub size={30} className="text-5xl md:text-4xl" />
                     <text className="ms-2 self-center"> {wordLocales[language].viewCode}</text>
@@ -151,6 +163,10 @@ const ProjectDetailModal = () => {
                   <Link
                     className={`px-2 p-1 flex justify-center ${styles.viewProjectButton}`}
                     href={projectUrl}
+                    style={{
+                      borderColor: darkMode ? "#f9f9f9" : "#000000",
+                      border: "1px solid",
+                    }}
                   >
                     <CiGlobe size={30} className="self-center" />
                     <text className="ms-2 self-center"> {wordLocales[language].viewProject}</text>

@@ -12,10 +12,12 @@ interface ProfileContextGlobalValues {
   screenWidth: number;
   screenHeight: number;
   modalShow: boolean;
+  darkMode: boolean;
   setModalShow: (show: boolean) => void;
   projectKey: string;
   setProjectKey: (key: string) => void;
   changeLanguage: (selectLanguage: string) => void;
+  changeTheme: () => void;
 }
 
 interface Props {
@@ -27,10 +29,12 @@ const initialValues: ProfileContextGlobalValues = {
   screenWidth: 1280,
   screenHeight: 720,
   modalShow: false,
+  darkMode: false,
   setModalShow: () => {},
   projectKey: "",
   setProjectKey: () => {},
   changeLanguage: () => {},
+  changeTheme: () => {},
 };
 
 const ProfileContext = createContext<ProfileContextGlobalValues>(initialValues);
@@ -54,10 +58,15 @@ export function ProfileContextProvider({
   const [projectKey, setProjectKey] = useState<string>("");
   const [windowSize, setWindowSize] = useState<number[]>([0, 0]);
   const [language, setLanguage] = useState<string>("en");
+  const [darkMode, setDarkMode] = useState<boolean>(true);
 
   const changeLanguage = (selectLanguage: string) => {
     if (selectLanguage === language) return;
     setLanguage(selectLanguage);
+  };
+
+  const changeTheme = () => {
+    setDarkMode(!darkMode);
   };
 
   useEffect(() => {
@@ -81,8 +90,10 @@ export function ProfileContextProvider({
       projectKey,
       setProjectKey,
       changeLanguage,
+      darkMode,
+      changeTheme
     }),
-    [projectKey, language, windowSize, modalShow],
+    [projectKey, language, windowSize, modalShow, darkMode],
   );
 
   return (

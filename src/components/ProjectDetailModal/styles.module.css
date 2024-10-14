@@ -1,7 +1,5 @@
 .viewProjectButton {
-  color: black;
   text-align: center;
-  border: 1px solid black;
   border-radius: 2rem;
   transition: all 0.15s;
 }
@@ -34,19 +32,6 @@
     /* End growth effect */
   }
 }
-
-/* .projectDetailModal {
-  opacity: 0;
-  transform: scale(0.8);
-  animation: fadeInAndGrow 0.15s ease-in-out forwards;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.disappearProjectDetailModal {
-  opacity: 1;
-  animation: fadeOutAndShrink 0.15s ease-in-out;
-} */
-
 
 @keyframes fadeOutAndShrink {
   from {

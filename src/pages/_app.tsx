@@ -52,7 +52,7 @@ const Layout = ({
   Component: NextComponentType<NextPageContext, any, any>;
   pageProps: any;
 }) => {
-  const { projectKey, language } = useProfileContext();
+  const { projectKey, language, darkMode } = useProfileContext();
   const router = useRouter();
   const pageKey = router.asPath;
   const currentPath = router.pathname;
@@ -83,6 +83,18 @@ const Layout = ({
       : {}
   );
 
+  const darkModeStyle = {
+    color: "#FFFFFF",
+    backgroundColor: "rgba(0, 0, 0, 0.75)",
+    transition: "0.15s",
+  }
+
+  const lightModeStyle = {
+    color: "#000000",
+    backgroundColor: "#FFFFFF",
+    transition: "0.15s",
+  }
+
   // Track changes in path and update direction
   useEffect(() => {
     const handleRouteChange = (url: string) => {
@@ -100,7 +112,13 @@ const Layout = ({
   const usedFont = language === "th" ? chakraPetch : kodeMono;
   
   return (
-    <div className={`${usedFont.className}`} {...handlers}>
+    <div 
+      className={`${usedFont.className}`} 
+      {...handlers}
+      style={{
+        ...(darkMode ? darkModeStyle : lightModeStyle)
+      }}
+    >
       <ProjectDetailModal />
       <SidebarMenu />
       <SidebarMenuMobile />

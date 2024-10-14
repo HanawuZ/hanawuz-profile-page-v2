@@ -54,11 +54,11 @@ const PersonalInfoSection = () => {
       <div className="max-md:text-sm mt-5 max-sm:mx-6 mx-10 break-all">
         <div className="flex flex-wrap gap-2 mt-2 w-full justify-center">
           <div className="flex items-center gap-3 p-1 px-3">
-            <FaPhoneAlt size={20} color="#000" />
+            <FaPhoneAlt size={20} />
             +66 99 434 5245
           </div>
           <div className="flex items-center gap-3 p-1 px-3">
-            <FaBirthdayCake size={20} color="#000" />
+            <FaBirthdayCake size={20}  />
             <text> {aboutMe[language].birthDate}</text>
           </div>
           <div className="flex items-center gap-3 p-1 px-3">
