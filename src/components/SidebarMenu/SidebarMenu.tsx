@@ -20,7 +20,7 @@ const SidebarMenu = () => {
     >
       <div className="self-center lg:min-w-[250px] grid">
         <div
-          className="justify-self-center my-5"
+          className="justify-self-center my-5 lg:hidden"
           style={{
             borderLeft: "2.5px solid rgba(0, 0, 0, 0.25)",
             height: "30vh",
@@ -59,7 +59,7 @@ const SidebarMenu = () => {
           />
         </div>
         <div
-          className="justify-self-center my-5"
+          className="justify-self-center my-5 lg:hidden"
           style={{
             borderLeft: "2.5px solid rgba(0, 0, 0, 0.25)",
             height: "30vh",

@@ -16,7 +16,7 @@ const pageLocales: Record<string, LocaleData> = {
   },
   en: {
     about: "About Me",
-    skills: "Skills",
+    skills: "Skills & Proficiencies",
     projects: "Projects",
     experiences: "Experiences",
     acknowledgement: "Acknowledgement",

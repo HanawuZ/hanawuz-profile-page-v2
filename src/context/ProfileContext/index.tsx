@@ -15,7 +15,7 @@ interface ProfileContextGlobalValues {
   setModalShow: (show: boolean) => void;
   projectKey: string;
   setProjectKey: (key: string) => void;
-  changeLanguage: (language: string) => void;
+  changeLanguage: (selectLanguage: string) => void;
 }
 
 interface Props {
@@ -53,10 +53,11 @@ export function ProfileContextProvider({
   const [modalShow, setModalShow] = useState<boolean>(false);
   const [projectKey, setProjectKey] = useState<string>("");
   const [windowSize, setWindowSize] = useState<number[]>([0, 0]);
-  const [language, setLanguage] = useState<string>("th");
+  const [language, setLanguage] = useState<string>("en");
 
-  const changeLanguage = (language: string) => {
-    setLanguage(language);
+  const changeLanguage = (selectLanguage: string) => {
+    if (selectLanguage === language) return;
+    setLanguage(selectLanguage);
   };
 
   useEffect(() => {
@@ -81,7 +82,7 @@ export function ProfileContextProvider({
       setProjectKey,
       changeLanguage,
     }),
-    [projectKey],
+    [projectKey, language, windowSize, modalShow],
   );
 
   return (

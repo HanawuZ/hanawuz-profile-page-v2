@@ -167,7 +167,7 @@ const LetsConnect = () => {
     <div className="mt-10" id="lets-connect">
       <div className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8">
         <AiOutlineGlobal size={30} />
-        <span>
+        <span className="uppercase">
           {wordLocales[language].letConnect}
         </span>
       </div>

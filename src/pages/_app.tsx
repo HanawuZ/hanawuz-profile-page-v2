@@ -13,6 +13,8 @@ import { PAGE_INDEXES } from "@/constants/pageIndex";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import { Chakra_Petch } from "next/font/google"
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
 
 const kodeMono = localFont({
   src: [
@@ -102,6 +104,7 @@ const Layout = ({
       <ProjectDetailModal />
       <SidebarMenu />
       <SidebarMenuMobile />
+      <Navbar />
       <AnimatePresence mode="popLayout">
         <motion.div
           key={router.route}

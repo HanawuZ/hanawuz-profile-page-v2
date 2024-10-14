@@ -9,6 +9,7 @@ import PROJECTS from "@/constants/locales/project";
 import Badge from "../Badge";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import wordLocales from "@/constants/locales/word";
 const CloseButton = ({ className }: { className?: string }) => {
   const { setProjectKey } = useProfileContext();
 
@@ -60,7 +61,7 @@ const ProjectDetailModal = () => {
             onClick={(e) => e.stopPropagation()} // Prevent closing when clicking on content
             className={`md:w-[70vw] container mx-auto ${
               styles.projectDetailModal
-            } ${projectKey === "" && styles.disappearProjectDetailModal}`}
+            } ${projectKey === "" && styles.disappearProjectDetailModal} shadow-lg`}
           >
             <div className="w-full bg-slate-600 rounded-t-lg py-2 px-3">
               <div className="grid grid-cols-2">
@@ -143,7 +144,7 @@ const ProjectDetailModal = () => {
                     href={githubUrl}
                   >
                     <FaGithub size={30} className="text-5xl md:text-4xl" />
-                    <text className="ms-2 self-center"> View code</text>
+                    <text className="ms-2 self-center"> {wordLocales[language].viewCode}</text>
                   </Link>
                 )}
                 {projectUrl && (
@@ -152,7 +153,7 @@ const ProjectDetailModal = () => {
                     href={projectUrl}
                   >
                     <CiGlobe size={30} className="self-center" />
-                    <text className="ms-2 self-center"> View project</text>
+                    <text className="ms-2 self-center"> {wordLocales[language].viewProject}</text>
                   </Link>
                 )}
               </div>
