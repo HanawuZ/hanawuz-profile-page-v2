@@ -17,7 +17,7 @@ const LanguageSelect = () => {
   const [showOption, setShowOption] = useState<boolean>(false);
 
   return (
-    <div className="relative my-3 me-4">
+    <div className="relative my-2 me-4">
       <button
         className="flex gap-2 items-center"
         onClick={() => {
@@ -34,7 +34,7 @@ const LanguageSelect = () => {
         />
       </button>
       <div
-        className={`grid gap-3  bg-white rounded-md mt-2 shadow-lg border border-slate-300`}
+        className={`grid gap-3 py-2 bg-white rounded-md mt-2 shadow-lg border border-slate-300`}
         style={{
           transition: "opacity 0.1s ease-in-out",
           opacity: showOption ? 1 : 0,
@@ -47,7 +47,7 @@ const LanguageSelect = () => {
       >
         {languageOptions.map((option) => (
           <div
-            className="cursor-pointer hover:bg-slate-200 px-4 py-2 rounded-md flex gap-4 items-center"
+            className="cursor-pointer hover:bg-slate-200 px-4 flex gap-4 items-center"
             key={option.value}
             onClick={() => {
               changeLanguage(option.value);
@@ -55,7 +55,7 @@ const LanguageSelect = () => {
             }}
           >
             {option.icon}
-            <text className="uppercase text-2xl"> {option.value} </text>
+            <text className="uppercase text-lg"> {option.value} </text>
           </div>
         ))}
       </div>

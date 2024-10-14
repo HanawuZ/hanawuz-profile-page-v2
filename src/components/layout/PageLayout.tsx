@@ -17,7 +17,7 @@ const PageLayout = (props: PageLayoutProps) => {
       >
         <div />
         <div className="w-full md:flex md:col-span-4 lg:col-span-3 md:min-h-[96vh] md:py-10 max-md:pt-4 lg:px-4">
-          <div className="md:self-center w-full border border-slate-300 min-h-[80vh] lg:min-h-[90vh] shadow-lg pb-2">
+          <div className="md:self-center w-full border border-slate-300 min-h-[80vh] lg:min-h-[90vh] shadow-lg pb-2 mt-5">
             <div className="mt-8 max-md:ms-3 flex justify-center">
               <text className="text-2xl uppercase font-bold max-md:ms-3">
                 {title}
