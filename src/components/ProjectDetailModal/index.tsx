@@ -10,6 +10,8 @@ import Badge from "../Badge";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import wordLocales from "@/constants/locales/word";
+import themes from "@/theme";
+
 const CloseButton = ({ className }: { className?: string }) => {
   const { setProjectKey } = useProfileContext();
 
@@ -31,8 +33,8 @@ const fadeVariants = {
 };
 
 const ProjectDetailModal = () => {
-  const { projectKey, language, darkMode } = useProfileContext();
-  const project = PROJECTS[projectKey] || {};
+  const { projectKey, language, mode } = useProfileContext();
+  const project = PROJECTS[projectKey]?.[language] || {};
   const {
     name,
     role,
@@ -41,9 +43,8 @@ const ProjectDetailModal = () => {
     description,
     techologies,
     imageUrls,
-  } = project[language] ? project[language] : {};
-
-  const backgroundColor = darkMode ? "#2b3137" : "#f9f9f9";
+  } = project;
+  const backgroundColor = mode === "dark" ? "#2b3137" : "#f9f9f9";
 
   return (
     <AnimatePresence>
@@ -64,15 +65,17 @@ const ProjectDetailModal = () => {
             onClick={(event) => event.stopPropagation()} // Prevent closing when clicking on content
             className={`md:w-[70vw] container mx-auto ${
               styles.projectDetailModal
-            } ${projectKey === "" && styles.disappearProjectDetailModal} shadow-lg`}
+            } ${
+              projectKey === "" && styles.disappearProjectDetailModal
+            } shadow-lg`}
           >
             <div className="w-full bg-slate-600 rounded-t-lg py-2 px-3">
-              <div className="grid grid-cols-2">
-                <text className="ms-2"> {name} </text>
-                <CloseButton className="justify-self-end text-white" />
+              <div className="grid grid-cols-2  text-white">
+                <text className="ms-2 text-xl font-bold"> {name} </text>
+                <CloseButton className="justify-self-end" />
               </div>
             </div>
-            <div 
+            <div
               className="w-full overflow-y-auto grid overflow-x-hidden md:max-h-[86vh] max-h-[90vh] pb-4"
               style={{
                 backgroundColor: backgroundColor,
@@ -83,8 +86,12 @@ const ProjectDetailModal = () => {
               >
                 <Carousel
                   className="rounded-lg"
-                  leftControl={<div className="text-3xl text-slate-600"> &#60; </div>}
-                  rightControl={<div className="text-3xl text-slate-600"> &#62; </div>}
+                  leftControl={
+                    <div className="text-3xl text-slate-600"> &#60; </div>
+                  }
+                  rightControl={
+                    <div className="text-3xl text-slate-600"> &#62; </div>
+                  }
                   slideInterval={5000}
                   indicators={false}
                 >
@@ -100,18 +107,28 @@ const ProjectDetailModal = () => {
                 </Carousel>
               </div>
               <div className="w-full grid lg:grid-cols-2">
-                <div className="md:py-2 max-lg:text-center lg:ms-12 text-2xl font-bold self-center">
+                <div
+                  className="md:py-2 max-lg:text-center lg:ms-12 text-2xl font-bold self-center"
+                  style={{
+                    color: themes[mode].primaryText,
+                  }}
+                >
                   {name?.toUpperCase()}
                 </div>
-                <div className="max-lg:mx-[2rem] lg:hidden">
-                  <div className="self-center w-full justify-self-center bg-slate-500 h-[1.25px]" />
+                <div className="max-lg:mx-[2rem] lg:hidden my-1">
+                  <div className="self-center w-full justify-self-center bg-slate-500 h-[1px]" />
                 </div>
-                <div className="py-1 max-lg:text-center text-end lg:me-12 max-lg:text-base text-lg self-center">
+                <div
+                  className="py-1 max-lg:text-center text-end lg:me-12 max-lg:text-base text-lg self-center"
+                  style={{
+                    color: themes[mode].secondaryText,
+                  }}
+                >
                   {role}
                 </div>
               </div>
               <div className="lg:mx-[3rem] max-lg:hidden">
-                <div className="self-center w-full justify-self-center bg-slate-500 h-[1.25px]" />
+                <div className="self-center w-full justify-self-center bg-slate-500 h-[1px]" />
               </div>
               <div className="flex justify-center mx-3 mt-3">
                 <div className="flex flex-wrap gap-2 max-md:grid max-sm:grid-cols-2 max-md:grid-cols-3">
@@ -120,8 +137,13 @@ const ProjectDetailModal = () => {
                   ))}
                 </div>
               </div>
-              <div className="flex justify-center w-full">
-                <ul className="mt-4 mx-10 list-disc text-base max-lg:text-sm ">
+              <div
+                className="flex w-full mt-4 sm:px-5 md:px-10"
+                style={{
+                  color: themes[mode].secondaryText,
+                }}
+              >
+                <ul className="mx-10 list-disc text-base max-lg:text-sm">
                   {description?.map((desc, index) => (
                     <ListItem
                       className="break-normal hyphens-auto"
@@ -133,7 +155,12 @@ const ProjectDetailModal = () => {
                 </ul>
               </div>
 
-              <div className="max-md:hidden flex justify-end max-md:justify-center my-5 md:mx-10 gap-2">
+              <div 
+                className="max-md:hidden flex justify-end max-md:justify-center my-5 md:mx-10 gap-2"
+                style={{
+                  color: themes[mode].secondaryText,
+                }}
+              >
                 {githubUrl && (
                   <Link className={styles.icon} href={githubUrl}>
                     <FaGithub className="text-5xl md:text-4xl" />
@@ -145,18 +172,26 @@ const ProjectDetailModal = () => {
                   </Link>
                 )}
               </div>
-              <div className="md:hidden flex justify-end max-md:justify-center my-5 md:mx-20 gap-2">
+              <div 
+                className="md:hidden flex justify-end max-md:justify-center my-5 md:mx-20 gap-2"
+                style={{
+                  color: themes[mode].secondaryText,
+                }}
+              >
                 {githubUrl && (
                   <Link
                     className={`px-2 p-1 flex justify-center ${styles.viewProjectButton}`}
                     href={githubUrl}
                     style={{
-                      borderColor: darkMode ? "#f9f9f9" : "#000000",
+                      borderColor: mode === "dark" ? "#f9f9f9" : "#000000",
                       border: "1px solid",
                     }}
                   >
                     <FaGithub size={30} className="text-5xl md:text-4xl" />
-                    <text className="ms-2 self-center"> {wordLocales[language].viewCode}</text>
+                    <text className="ms-2 self-center">
+                      {" "}
+                      {wordLocales[language].viewCode}
+                    </text>
                   </Link>
                 )}
                 {projectUrl && (
@@ -164,12 +199,15 @@ const ProjectDetailModal = () => {
                     className={`px-2 p-1 flex justify-center ${styles.viewProjectButton}`}
                     href={projectUrl}
                     style={{
-                      borderColor: darkMode ? "#f9f9f9" : "#000000",
+                      borderColor: mode === "dark" ? "#f9f9f9" : "#000000",
                       border: "1px solid",
                     }}
                   >
                     <CiGlobe size={30} className="self-center" />
-                    <text className="ms-2 self-center"> {wordLocales[language].viewProject}</text>
+                    <text className="ms-2 self-center">
+                      {" "}
+                      {wordLocales[language].viewProject}
+                    </text>
                   </Link>
                 )}
               </div>

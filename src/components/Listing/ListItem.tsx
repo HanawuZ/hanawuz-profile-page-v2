@@ -7,8 +7,8 @@ interface ListItemProps {
 }
 
 const ListItem = ({ children, className }: ListItemProps) => {
-  const { darkMode } = useProfileContext();
-  const listClass = darkMode ? styles.triangularListDarkMode : styles.triangularListLightMode;
+  const { mode } = useProfileContext();
+  const listClass = mode === "dark" ? styles.triangularListDarkMode : styles.triangularListLightMode;
 
   return (
     <li 

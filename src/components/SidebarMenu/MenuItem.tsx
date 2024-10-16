@@ -18,7 +18,7 @@ const MenuItem = (props: MenuItemProps) => {
   return (
     <Link href={href} className={className}>
       <div
-        className={`py-1 px-2 flex items-center ${styles.sidebarMenu} ${hoverStyle}`}
+        className={`p-2 flex items-center ${styles.sidebarMenu} ${hoverStyle}`}
         style={{
           background:
             currentPath === href

@@ -35,7 +35,10 @@ const LanguageSelect = () => {
     }, [dropdownRef]);
 
   return (
-    <div className="relative my-2 me-4" ref={dropdownRef}>
+    <div 
+      className="relative my-2 me-4 p-2" 
+      ref={dropdownRef}
+    >
       <button
         className="flex gap-2 items-center"
         onClick={() => setShowOption(!showOption)}
@@ -53,8 +56,8 @@ const LanguageSelect = () => {
       <div
         className={`grid gap-3 py-2 rounded-md mt-2 shadow-lg border border-slate-300`}
         style={{
-          transition: "opacity 0.1s ease-in-out",
           display: showOption ? "block" : "none",
+          transition: "0.1s ease-in-out",
           position: "absolute",
           top: "100%",
           right: 5,

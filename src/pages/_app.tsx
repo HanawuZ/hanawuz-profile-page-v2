@@ -80,6 +80,7 @@ const Layout = ({
               router.push(prevPage);
             }
           },
+          delta: 100,
         }
       : {}
   );
@@ -99,7 +100,8 @@ const Layout = ({
   }, [router, currentPath]);
 
   const usedFont = language === "th" ? chakraPetch : kodeMono;
-  
+  const pageNotFound = Object.keys(PAGE_INDEXES).includes(currentPath)
+
   return (
     <div 
       className={`${usedFont.className}`} 
@@ -109,9 +111,13 @@ const Layout = ({
         transition: "0.15s",
       }}
     >
-      <ProjectDetailModal />
-      <SidebarMenu />
-      <SidebarMenuMobile />
+      {pageNotFound && (
+          <>
+            <ProjectDetailModal />
+            <SidebarMenu />
+            <SidebarMenuMobile />
+          </>
+        )}
       <Navbar />
       <AnimatePresence mode="popLayout">
         <motion.div

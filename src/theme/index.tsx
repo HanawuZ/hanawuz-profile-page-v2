@@ -9,12 +9,14 @@ const themes: Theme = {
     sheetBackground: "#3c3c3c",
     primaryText: "#FFFFFF",
     secondaryText: "#ececec",
+    mobileMenuBackground: "#252525",
   },
   light: {
     background: "#FFFFFF",
     sheetBackground: "",
     primaryText: "#000000",
-    secondaryText: "#262626"
+    secondaryText: "#262626",
+    mobileMenuBackground: "#d9d9d9",
   },
 };
 

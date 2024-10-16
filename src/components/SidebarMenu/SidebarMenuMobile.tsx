@@ -5,10 +5,12 @@ import { PiProjectorScreenChart } from "react-icons/pi";
 import { BiSolidLike } from "react-icons/bi";
 import { IoCodeSlashSharp } from "react-icons/io5";
 import { MenuItem } from "./MenuItem";
+import themes from "@/theme";
+import { useProfileContext } from "@/context/ProfileContext";
 
 const SidebarMenuMobile = () => {
   const pathname = usePathname();
-
+  const { mode } = useProfileContext();
   return (
     <div 
       className="md:hidden w-full flex justify-center" 
@@ -18,9 +20,9 @@ const SidebarMenuMobile = () => {
         bottom: 10
       }}>
       <div
-        className="flex gap-2 p-3 rounded-full"
+        className="flex gap-2 p-3 rounded-full border border-slate-500"
         style={{
-          backgroundColor: "",
+          backgroundColor: themes[mode].mobileMenuBackground,
         }}
       >
         {" "}
