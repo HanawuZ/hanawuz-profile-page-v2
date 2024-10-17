@@ -10,6 +10,7 @@ const themes: Theme = {
     primaryText: "#FFFFFF",
     secondaryText: "#ececec",
     mobileMenuBackground: "#252525",
+    loadingScreenBackground: "rgba(0, 0, 0, 0.5)",
   },
   light: {
     background: "#FFFFFF",
@@ -17,6 +18,7 @@ const themes: Theme = {
     primaryText: "#000000",
     secondaryText: "#262626",
     mobileMenuBackground: "#d9d9d9",
+    loadingScreenBackground: "rgba(255, 255, 255, 0.5)",
   },
 };
 

@@ -38,7 +38,7 @@ const Home = () => {
 const ImageSection = () => (
   <div className="items-center grid p-3 justify-items-center z-[2]">
     <Image
-      src="/images/portrait-dummy.png"
+      src="/images/me/me-1.png"
       alt="image"
       width={300}
       height={300}

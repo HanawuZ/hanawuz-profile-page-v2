@@ -12,10 +12,12 @@ import { MenuItem } from "./MenuItem";
 
 const SidebarMenu = () => {
   const pathname = usePathname();
-  const { language } = useProfileContext();
+  const { language, transitioning } = useProfileContext();
   return (
     <div className="max-md:hidden fixed ms-5 flex h-full mt-5 z-[100]">
-      <div className="self-center lg:min-w-[250px] grid">
+      <div 
+        className="self-center lg:min-w-[250px] grid"
+      >
         <div className="grid gap-y-3">
           <MenuItem
             href="/"

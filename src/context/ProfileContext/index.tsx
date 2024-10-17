@@ -13,10 +13,12 @@ interface ProfileContextGlobalValues {
   screenHeight: number;
   modalShow: boolean;
   mode: "light" | "dark";
+  transitioning: boolean;
   setModalShow: (show: boolean) => void;
   projectKey: string;
   setProjectKey: (key: string) => void;
   changeLanguage: (selectLanguage: string) => void;
+  handleSetTransitioning: (transitioning: boolean) => void;
   changeTheme: () => void;
 }
 
@@ -29,10 +31,12 @@ const initialValues: ProfileContextGlobalValues = {
   screenWidth: 1280,
   screenHeight: 720,
   modalShow: false,
+  transitioning: false,
   mode: "light",
   setModalShow: () => {},
   projectKey: "",
   setProjectKey: () => {},
+  handleSetTransitioning: () => {},
   changeLanguage: () => {},
   changeTheme: () => {},
 };
@@ -59,6 +63,7 @@ export function ProfileContextProvider({
   const [windowSize, setWindowSize] = useState<number[]>([0, 0]);
   const [language, setLanguage] = useState<string>("en");
   const [mode, setMode] = useState<"light" | "dark">("dark");
+  const [transitioning, setTransitioning] = useState<boolean>(false);
 
   const changeLanguage = (selectLanguage: string) => {
     if (selectLanguage === language) return;
@@ -67,6 +72,10 @@ export function ProfileContextProvider({
 
   const changeTheme = () => {
     setMode(mode === "light" ? "dark" : "light");
+  };
+
+  const handleSetTransitioning = (transitioning: boolean) => {
+    setTransitioning(transitioning);
   };
 
   useEffect(() => {
@@ -91,7 +100,9 @@ export function ProfileContextProvider({
       setProjectKey,
       changeLanguage,
       changeTheme,
-      mode
+      mode,
+      transitioning,
+      handleSetTransitioning
     }),
     [projectKey, language, windowSize, modalShow, mode],
   );
