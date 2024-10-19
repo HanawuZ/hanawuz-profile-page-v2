@@ -55,7 +55,6 @@
 ::-webkit-scrollbar-thumb {
   background: #949494;
   border: 0px none none;
-  /* border-radius: 50px; */
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -67,7 +66,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: none;
+  background: transparent;
   border-radius: 59px;
 }
 

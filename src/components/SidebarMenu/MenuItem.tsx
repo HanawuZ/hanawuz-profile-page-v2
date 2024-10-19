@@ -16,7 +16,13 @@ const MenuItem = (props: MenuItemProps) => {
   const textColor = mode === "dark" ? "#000000" : "#FFFFFF";
   const { href, currentPath, className, icon, name } = props;
   return (
-    <Link href={href} className={className}>
+    <Link 
+      href={href} 
+      className={className} 
+      style={{
+        pointerEvents: currentPath === href ? "none" : "auto",
+      }}
+    >
       <div
         className={`p-2 flex items-center ${styles.sidebarMenu} ${hoverStyle}`}
         style={{

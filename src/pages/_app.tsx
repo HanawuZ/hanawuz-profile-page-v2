@@ -53,7 +53,7 @@ const Layout = ({
   Component: NextComponentType<NextPageContext, any, any>;
   pageProps: any;
 }) => {
-  const { projectKey, language, mode, handleSetTransitioning } = useProfileContext();
+  const { projectKey, language, mode, handleSetTransitioning, transitioning } = useProfileContext();
   const router = useRouter();
   const pageKey = router.asPath;
   const currentPath = router.pathname;
@@ -158,13 +158,13 @@ const Layout = ({
             },
           }}
           style={{
-            overflowY: projectKey !== "" ? "hidden" : "auto",
+            overflow: projectKey !== "" ? "hidden" : "auto",
             maxHeight: "100vh",
           }}
           onAnimationStart={() => { handleSetTransitioning(true) }}
           onAnimationComplete={() => { handleSetTransitioning(false) }}
         >
-            <Component key={pageKey} {...pageProps} />
+          <Component key={pageKey} {...pageProps} />
         </motion.div>
       </AnimatePresence>
     </div>

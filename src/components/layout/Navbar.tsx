@@ -7,14 +7,14 @@ const Navbar = () => {
 
   return (
     <div 
-      className="w-full absolute z-[500] flex gap-4 justify-end"
+      className="w-full sticky flex gap-4 justify-end"
       style={{
         backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF",
       }}
     >
       <div className="flex items-center">
         <button
-          className="hover:bg-slate-700 rounded-full p-1"
+          className="hover:bg-slate-700 rounded-full p"
           onClick={changeTheme}
         >
           {mode === "dark" ? (
