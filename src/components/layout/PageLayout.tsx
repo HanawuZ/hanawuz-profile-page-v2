@@ -25,26 +25,26 @@ const PageLayout = (props: PageLayoutProps) => {
               height: "calc(100vh - 57px)",
             }}
           >
-            <div className="max-md:px-5 px-8 overflow-y-auto">
-            <div
-              className="w-full mt-5 mb-5 max-md:mb-24 min-h-[90vh] py-4 max-w-[1280px]"
-              style={{
-                boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
-                backgroundColor: themes[mode].sheetBackground,
-              }}
-            >
+            <div className="max-md:px-5 px-8 w-full overflow-y-auto">
               <div
-                className="flex justify-center mt-4"
+                className="mt-5 mb-5 max-md:mb-24 min-h-[90vh] py-4 max-w-[1280px]"
                 style={{
-                  color: themes[mode].primaryText,
+                  boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
+                  backgroundColor: themes[mode].sheetBackground,
                 }}
               >
-                <text className="text-2xl uppercase font-bold ">{title}</text>
+                <div
+                  className="flex justify-center mt-4"
+                  style={{
+                    color: themes[mode].primaryText,
+                  }}
+                >
+                  <text className="text-2xl uppercase font-bold ">{title}</text>
+                </div>
+                {children}
               </div>
-              {children}
             </div>
-            </div>
-            {/* 
+            {/*
              */}
           </div>
         </div>

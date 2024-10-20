@@ -57,7 +57,6 @@ const LanguageSelect = () => {
         className={`grid gap-3 py-2 rounded-md mt-2 shadow-lg border border-slate-300`}
         style={{
           display: showOption ? "block" : "none",
-          transition: "0.1s ease-in-out",
           position: "absolute",
           top: "100%",
           right: 5,
