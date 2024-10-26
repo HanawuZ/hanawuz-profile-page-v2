@@ -14,7 +14,7 @@ const themes: Theme = {
   },
   light: {
     background: "#FFFFFF",
-    sheetBackground: "",
+    sheetBackground: "#FFFFFF",
     primaryText: "#000000",
     secondaryText: "#262626",
     mobileMenuBackground: "#d9d9d9",

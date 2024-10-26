@@ -6,12 +6,12 @@ const Navbar = () => {
   const { mode, changeTheme } = useProfileContext();
 
   return (
-    <div 
-      className="w-full sticky flex gap-4 justify-end"
-      style={{
-        backgroundColor: mode === "dark" ? "#000000" : "#FFFFFF",
-      }}
-    >
+      <div
+        className="w-full flex gap-4 justify-end"
+        style={{
+          backgroundColor: mode === "dark" ? "rgba(0, 0, 0, 0.5)" : "white", // 50% opacity
+        }}
+      >
       <div className="flex items-center">
         <button
           className="hover:bg-slate-700 rounded-full p"
