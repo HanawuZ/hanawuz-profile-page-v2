@@ -4,30 +4,26 @@ import { ProfileContextProvider } from "@/context/ProfileContext";
 import { useProfileContext } from "@/context/ProfileContext";
 import SidebarMenu from "@/components/SidebarMenu/SidebarMenu";
 import SidebarMenuMobile from "@/components/SidebarMenu/SidebarMenuMobile";
-import { ProjectDetailModal } from "@/components/ProjectDetailModal";
-import localFont from "next/font/local";
+import { ProjectDetailModal } from "@/components/ui/ProjectDetailModal";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { NextComponentType, NextPageContext } from "next";
 import { PAGE_INDEXES } from "@/constants/pageIndex";
 import { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-import { Chakra_Petch } from "next/font/google";
 import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import themes from "@/theme";
 import LoadingScreen from "@/components/ui/LoadingScreen";
-const kodeMono = localFont({
-  src: [
-    {
-      path: "../../public/fonts/KodeMono-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-  ],
+import { JetBrains_Mono, Prompt } from "next/font/google";
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: "400",
+  style: "normal",
 });
 
-const chakraPetch = Chakra_Petch({
+const prompt = Prompt({
   subsets: ["latin"],
   weight: "400",
   style: "normal",
@@ -107,7 +103,7 @@ const Layout = ({
     };
   }, [router, currentPath]);
 
-  const usedFont = chakraPetch;
+  const usedFont = language === "en" ? jetBrainsMono : prompt;
   const pageFound = Object.keys(PAGE_INDEXES).includes(currentPath);
 
   return (

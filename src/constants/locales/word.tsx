@@ -6,7 +6,8 @@ const wordLocales: Record<string, Record<string, string>> = {
     viewDetail: "View Detail",
     oops: "Oops...",
     pageNotFound: "There is no page",
-    pageNotFoundQuestion: "What are you looking for?"
+    pageNotFoundQuestion: "What are you looking for?",
+    graduatedFrom: "I am graduated from",
   },
   th: {
     letConnect: "มารู้จักกันเถอะ",
@@ -15,7 +16,8 @@ const wordLocales: Record<string, Record<string, string>> = {
     viewDetail: "ดูรายละเอียด",
     oops: "อุ๊บบบ...",
     pageNotFound: "ไม่พบหน้า",
-    pageNotFoundQuestion: "กำลังมองหาอะไรอ่า"
+    pageNotFoundQuestion: "กำลังมองหาอะไรอ่า",
+    graduatedFrom: "จบการศึกษาจาก",
   },
 };
 

@@ -6,7 +6,7 @@ export interface ProjectDetailModalProps {
   overview?: string;
   projectCardImageUrl?: string;
   imageUrls?: string[];
-  description?: string[];
+  description?: string[] | JSX.Element[];
   techologies?: BadgeProps[];
   projectUrl?: string;
   githubUrl? : string;

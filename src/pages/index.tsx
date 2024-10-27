@@ -1,23 +1,25 @@
 import { MdEmail } from "react-icons/md";
-import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaMedium,
+  FaPhoneAlt,
+  FaBirthdayCake,
+} from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { WebHeader } from "@/components/WebHeader";
 import Badge from "@/components/Badge";
-import ListItem from "@/components/Listing/ListItem";
-import { FaPhoneAlt } from "react-icons/fa";
-import { FaBirthdayCake } from "react-icons/fa";
+import ListItem from "@/components/ui/Listing/ListItem";
 import calculateAge from "@/utils/ageCalculator";
-import { MdSchool } from "react-icons/md";
-import { FaRegSmile } from "react-icons/fa";
 import PageLayout from "@/components/layout/PageLayout";
 import { useProfileContext } from "@/context/ProfileContext";
 import { aboutMeList } from "@/constants/locales/aboutMe/list";
 import { education } from "@/constants/locales/aboutMe/education";
 import { aboutMe } from "@/constants/locales/aboutMe";
 import wordLocales from "@/constants/locales/word";
-import { AiOutlineGlobal } from "react-icons/ai";
 import themes from "@/theme";
+import styles from "./styles.module.css";
 
 const Home = () => {
   return (
@@ -26,7 +28,6 @@ const Home = () => {
       <PageLayout title="THANAWUT TUAMPRAJAK">
         <ImageSection />
         <PersonalInfoSection />
-        <OverviewSection />
         <AboutMeSection />
         <EducationSection />
         <LetsConnect />
@@ -37,12 +38,7 @@ const Home = () => {
 
 const ImageSection = () => (
   <div className="items-center grid p-3 justify-items-center z-[2]">
-    <Image
-      src="/images/me/me-1.png"
-      alt="image"
-      width={300}
-      height={300}
-    />
+    <Image src="/images/me/me-1.png" alt="image" width={300} height={300} />
   </div>
 );
 
@@ -55,7 +51,7 @@ const PersonalInfoSection = () => {
         color: themes[mode].primaryText,
       }}
     >
-      <div className="max-md:text-sm mt-5 max-sm:mx-6 mx-10 break-all">
+      <div className="max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-all">
         <div className="flex flex-wrap gap-2 mt-2 w-full justify-center">
           <div className="flex items-center gap-3 p-1 px-3">
             <FaPhoneAlt size={20} />
@@ -75,54 +71,113 @@ const PersonalInfoSection = () => {
   );
 };
 
-const OverviewSection = () => {
-  const { language, mode } = useProfileContext();
-  return (
-    <div
-      id="overview-section"
-      style={{
-        color: themes[mode].primaryText,
-      }}
-    >
-      <p className="max-md:text-sm mt-8 max-sm:mx-6 mx-12 break-normal hyphens-auto">
-        {aboutMe[language].overview}
-      </p>
-    </div>
-  );
-};
-
 const AboutMeSection = () => {
   const { language, mode } = useProfileContext();
 
   return (
     <div
       id="about-me"
-      className="mt-8"
+      className="mt-12"
       style={{
         color: themes[mode].primaryText,
       }}
     >
-      <div className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8">
-        <FaRegSmile size={30} />
-        <span className="uppercase"> {aboutMeList[language].title} </span>
+      <div className="max-sm:ms-5 ms-8">
+        <span className="uppercase font-bold text-2xl">
+          {" "}
+          {aboutMeList[language].title}{" "}
+        </span>
+        <div className="bg-white h-[3.5px] w-1/6" />
       </div>
-      <ul className="max-md:text-sm mt-3 list-disc mx-10 break-all sm:ms-16 ms-12">
-        <ListItem className="break-normal hyphens-auto">
-          👷‍♂️ {aboutMeList[language].presentJob}{" "}
-          <Link
-            className="text-blue-500 underline underline-offset-2 hover:text-blue-300"
-            href="https://www.tcc-technology.com"
-            style={{
-              transition: "all 0.15s",
-            }}
-          >
-            T.C.C. Technology Co., Ltd.
-          </Link>
-        </ListItem>
-        <ListItem className="break-normal hyphens-auto">
-          {aboutMeList[language].doing}
-        </ListItem>
-        <ListItem className="break-normal hyphens-auto">
+      <ul className="tracking-wide max-md:text-sm mt-3 list-disc mx-8 break-normal hyphens-auto sm:ms-16 ms-12">
+        {language === "en" && (
+          <>
+            <ListItem className="leading-relaxed">
+              Hello world! I am &quot;Gop&quot;, currently working as
+              <code
+                className="p-[3px] rounded text-slate-600 mx-1"
+                style={{
+                  background: mode === "dark" ? "#4e4e4e" : "#ececec",
+                  color: themes[mode].primaryText,
+                }}
+              >
+                Application Developer Associate
+              </code>{" "}
+              at{" "}
+              <Link
+                className="text-blue-500 font-bold underline underline-offset-2 hover:text-blue-300"
+                href="https://www.tcc-technology.com"
+                style={{
+                  transition: "all 0.15s",
+                }}
+              >
+                T.C.C. Technology Co., Ltd.
+              </Link>
+            </ListItem>
+            <ListItem className="leading-relaxed">
+              I have 1 year experience in maintaining{" "}
+              <text className="font-bold">
+                {" "}
+                Distribution Management System &#40;DMS&#41;
+              </text>
+              , mainly refining for promotion calculation, sale target
+              management, and warehousing.
+            </ListItem>
+            <ListItem className="leading-relaxed">
+              Have a strong background in both front-end and back-end
+              development. Now I am presently deep diving into back-end
+              development by coding ♨️{" "}
+              <text className="font-bold" style={{ color: "#ED8B00" }}>
+                Java Spring Boot
+              </text>{" "}
+              and{" "}
+              <text className="font-bold" style={{ color: "#00ADD8" }}>
+                Golang
+              </text>{" "}
+              with widely used web frameworks. Moreover, I am learning software
+              development practices like Clean architecture, React design
+              patterns and Behavior-driven development.
+            </ListItem>
+          </>
+        )}
+        {language === "th" && (
+          <>
+            <ListItem className="leading-relaxed">
+              สวัสดีครับทุกคน ผมชื่อ &quot;ก๊อป&quot; ครับผม
+              ปัจจุบันทำงานในตำแหน่ง
+              <code
+                className="p-[3px] rounded text-slate-600 mx-1"
+                style={{
+                  background: mode === "dark" ? "#4e4e4e" : "#ececec",
+                  color: themes[mode].primaryText,
+                }}
+              >
+                ผู้ช่วยนักพัฒนาแอพพลิเคชัน
+              </code>
+              ที่บริษัท{" "}
+              <Link
+                className="text-blue-500 font-bold underline underline-offset-2 hover:text-blue-300"
+                href="https://www.tcc-technology.com"
+                style={{
+                  transition: "all 0.15s",
+                }}
+              >
+                T.C.C. Technology Co., Ltd.
+              </Link>
+            </ListItem>
+            <ListItem className="leading-relaxed">
+              มีประสบการณ์ 1 ปีในการช่วยดูแลระบบ<text className="font-bold"> จัดการการกระจายสินค้า &#40;DMS&#41; </text> 
+              โดยรับหน้าที่ในการปรับปรุงระบบคำนวนโปรโมชัน จัดการเป้ายอดขายของร้านค้า และจัดการสินค้าคงคลัง
+            </ListItem>
+            <ListItem className="leading-relaxed">
+              ผมมีพื้นฐานแน่นทั้งฝั่ง Front-end และ Back-end ตอนนี้กำลังลงลึกการพัฒนา Backend ด้วย 
+              ♨️ <text className="font-bold" style={{ color: "#ED8B00" }}>Java Spring Boot</text> และ
+              <text className="font-bold" style={{ color: "#00ADD8" }}> ภาษา Go</text> นอกจากนี้ยังศึกษาแนวทางปฏิบัติเพิ่มเติมเกี่ยวกับการพัฒนาซอฟต์แวร์ด้วย เช่น 
+              Clean architecture, React design patterns และ Behavior-driven development.
+            </ListItem>
+          </>
+        )}
+        <ListItem className="leading-relaxed">
           💤 {aboutMeList[language].sleep}
         </ListItem>
       </ul>
@@ -135,48 +190,46 @@ const EducationSection = () => {
   return (
     <div
       id="education-info-section"
-      className="mt-8"
+      className="mt-12"
       style={{
         color: themes[mode].primaryText,
       }}
     >
-      <div className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8">
-        <MdSchool size={30} />
-        <span className="uppercase "> {education[language].title} </span>
+      <div className="max-sm:ms-5 ms-8">
+        <span className="uppercase font-bold text-2xl">
+          {" "}
+          {education[language].title}{" "}
+        </span>
+        <div className="bg-white h-[3.5px] w-1/6" />
       </div>
-      <div className="max-md:text-sm mt-3 max-sm:mx-6 mx-12 break-all">
-        <div className="lg:flex max-md:mx-2 mt-2">
-          <div className="w-full">
-            <div className="font-bold">{education[language].university}</div>
-            <div
-              className="italic flex flex-wrap"
-              style={{
-                color: themes[mode].secondaryText,
-              }}
-            >
-              <div> {education[language].degree} </div>
-              <div>
-                {" "}
-                <span>, </span>
-                {education[language].major}{" "}
-              </div>
-            </div>
+      <div className="tracking-wide max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
+        {language === "en" && (
+          <div className="leading-relaxed">
+            I am graduated from &nbsp;<text className={styles.gradientText}>{education[language].university}</text> with
+            <text style={{ fontStyle: "italic", color: themes[mode].secondaryText }}> Bachelor degree in Computer Engineering.  </text>
+            I completed my studies in{" "}<text> {education[language].graduatedDate}.</text>
           </div>
-          <div className="w-full lg:text-end max-lg:mt-2">
-            <div> {education[language].location} </div>
-            <div> {education[language].graduatedDate} </div>
+        )}
+        {language === "th" && (
+          <div className="leading-relaxed">
+            จบการศึกษาในระดับ <text className="italic" style={{ color: themes[mode].secondaryText }}>{education[language].degree}, {education[language].major}</text>{" "}
+            จาก <text className={styles.gradientText}>{" "}{education[language].university}{" "}</text>
+            เมื่อเดิอน <text> {education[language].graduatedDate} </text>
           </div>
-        </div>
+        )}
       </div>
 
-      <div className="max-md:text-sm mt-5 max-sm:mx-6 mx-12 break-all">
-        <text className="max-md:text-sm font-bold max-md:ms-2">
+      <div className="tracking-wide max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
+        <text className="max-md:text-sm font-bold">
           {education[language].relevantCourse.title}:
         </text>
-        <ul className="max-md:text-sm list-disc mx-10 break-all">
+        <ul className="max-md:text-sm list-disc max-sm:mx-6 mx-8">
           {education[language].relevantCourse.list?.map((course, index) => {
             return (
-              <ListItem key={index} className="break-normal hyphens-auto">
+              <ListItem
+                key={index}
+                className="break-normal hyphens-auto leading-relaxed"
+              >
                 <text className="italic me-1" lang="en">
                   {course?.name}&#58;{" "}
                 </text>
@@ -193,8 +246,14 @@ const EducationSection = () => {
 const LetsConnect = () => {
   const { language, mode } = useProfileContext();
   return (
-    <div className="mt-10" id="lets-connect">
-      <div 
+    <div
+      className="mt-12"
+      id="lets-connect"
+      style={{
+        color: themes[mode].primaryText,
+      }}
+    >
+      {/* <div 
         className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8"
         style={{
           color: themes[mode].primaryText,
@@ -202,8 +261,15 @@ const LetsConnect = () => {
       >
         <AiOutlineGlobal size={30} />
         <span className="uppercase">{wordLocales[language].letConnect}</span>
+      </div> */}
+      <div className="max-sm:ms-5 ms-8">
+        <span className="uppercase font-bold text-2xl">
+          {" "}
+          {wordLocales[language].letConnect}{" "}
+        </span>
+        <div className="bg-white h-[3.5px] w-1/6" />
       </div>
-      <div className="flex justify-center m-5">
+      <div className="flex justify-center m-5 mt-8">
         <div className="grid gap-3 max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3">
           <Badge
             icon={<FaGithub color="#FFFFFF" size={24} />}

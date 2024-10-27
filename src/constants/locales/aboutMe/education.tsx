@@ -10,7 +10,7 @@ interface EducationDetails {
     title: string;
     list: {
       name: string;
-      description: string;
+      description: string | JSX.Element;
     }[];
   };
 }
@@ -24,31 +24,38 @@ export const education: Record<string, EducationDetails> = {
     location: "นครราชสีมา, ประเทศไทย",
     graduatedDate: "พฤษภาคม 2024",
     relevantCourse: {
-      title: "เคยเรียนอะไรบ้าง",
+      title: "เคยเรียนอะไรมาบ้าง",
       list: [
         {
           name: "วิศวกรรมซอฟต์แวร์",
           description:
-            "ได้เรียนรู้กระบวนการพัฒนาซอฟต์แวร์โดยทำโปรเจกต์กับเพื่อนในสาขา",
+            <>เป็นวิชาที่อัพสกิลทักษะการพัฒนาซอฟต์แวร์ของผมได้เยอะมาก จากเรียนรู้กระบวนการพัฒนาซอฟต์แวร์โดยทำโปรเจกต์กลุ่มกับเพื่อนในสาขา</>
         },
         {
           name: "การวิเคราะห์และออกแบบระบบ",
           description:
-            "เก็บเกี่ยวความรู้พื้นฐานเกี่ยวกับการวิเคราะห์ระบบ เช่น การวิเคราะห์ความต้องการของผู้ใช้และการออกแบบซอฟต์แวร์",
+            <>
+              เป็นวิชาก่อนหน้าที่จะเรียนวิศวกรรมซอฟต์แวร์ ระหว่างเรียนจะเน้นความรู้การวิเคราะห์ระบบ เช่น 
+              การวิเคราะห์ความต้องการของผู้ใช้ และการออกแบบการทำงานของซอฟต์แวร์ด้วย <strong>UML Diagrams</strong>
+            </>
         },
         {
           name: "การทดสอบซอฟต์แวร์",
-          description: "ศึกษาเรื่องการทดสอบซอฟต์แวร์ในรูปแบบต่าง ๆ",
+          description: 
+            <>เรียนต่อจากวิชา Software Engineering โดยได้ศึกษาเรื่องการทดสอบซอฟต์แวร์ในรูปแบบต่าง ๆ</>
         },
         {
           name: "เว็บแอปพลิเคชัน",
           description:
-            "ได้ลองใช้เฟรมเวิร์กต่าง ๆ เช่น React, Angular และ Express.js",
+            <>
+              ผมได้ลองใช้เฟรมเวิร์กเพิ่มเติมในการพัฒนาเว็บ เช่น <strong style={{ color: "#88dded"}}>React</strong>,{" "} 
+              <strong style={{ color: "#DD0031" }}>Angular</strong> และ <strong>Express.js</strong>
+            </>  
         },
         {
           name: "การเขียนโปรแกรมเชิงวัตถุ",
           description:
-            "เข้าใจพื้นฐานของการเขียนโปรแกรมเชิงวัตถุ ด้วย ♨️ ภาษา Java!",
+            <>เข้าใจพื้นฐานของการเขียนโปรแกรมเชิงวัตถุ ด้วย ♨️ <text style={{ color: "#ED8B00", fontWeight: "bold" }}>ภาษา Java</text></>,
         },
       ],
     },
@@ -66,26 +73,39 @@ export const education: Record<string, EducationDetails> = {
         {
           name: "Software Engineering",
           description:
-            "Learned processes of software development by implementing a course project with my team.",
+            <>
+              This course has greatly improved my software development skills. I learned processes of 
+              software development by working on a course project with my team.
+            </>
         },
         {
           name: "System Analysis & Design",
           description:
-            "Gathered knownledge of the fundamental concepts of system analysis like analyzing user requirement or software design.",
+            <>
+              A prerequisite course before Software Engineering. During the course,
+              I gathered knownledge of system analysis skills, such as analyzing user requirement
+              and designing software functionality using <strong>UML Diagrams.</strong>
+            </>
         },
         {
           name: "Software Testing",
-          description: "Studied various types of software testing.",
+          description: 
+            <>
+              Studied various types of software testing.
+            </>
         },
         {
           name: "Web Application",
           description:
-            "Learned the various full stack frameworks such as React, Angular and Express.js.",
+            <>
+              I have learned web application frameworks such as <strong style={{ color: "#88dded"}}>React</strong>,{" "} 
+              <strong style={{ color: "#DD0031" }}>Angular</strong> and <strong>Express.js.</strong>
+            </>
         },
         {
           name: "Object-oriented Programming",
           description:
-            "Understood the fundamental concepts of Object-oriented programming with ♨️ Java.",
+            <>Understood the fundamental concepts of Object-oriented programming with ♨️ <text style={{ color: "#ED8B00", fontWeight: "bold" }}>Java</text>.</>
         },
       ],
     },

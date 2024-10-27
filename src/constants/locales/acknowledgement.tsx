@@ -1,20 +1,32 @@
-
-const acknowledgement: Record<string, any> = {
+const acknowledgement: Record<string, Record<string, string | JSX.Element>> = {
   th: {
     title: "คำขอบคุณ",
-    detail: `ขอบคุณจากใจ - ขอใช้โอกาสนี้ในการแสดงความขอบคุณจากใจจริงถึงทุกคนที่ได้มีส่วนร่วม สนับสนุน หรือเป็นแรงบันดาลใจตลอดเส้นทางนี้ 
-              การให้กำลังใจ คำแนะนำ และความร่วมมือจากทุกคนเป็นสิ่งที่มีค่าอย่างยิ่ง ขอบคุณเป็นพิเศษสำหรับอาจารย์ที่ให้คำแนะนำและความคิดเห็นที่มีประโยชน์ตลอดการเดินทางครั้งนี้ สุดท้ายนี้ 
-              ขอบคุณครอบครัวที่เชื่อมั่นในตัวฉัน แม้ในวันที่ฉันเองยังสงสัยตัวเอง`,
-    sincely: "ขอบคุณจากใจจริงครับ",
+    detail: (
+      <>
+        🌟 ขอแสดงความขอบคุณจากใจจริงถึงทุกคนที่คอยซัพพอร์ต ไม่ว่าจะเป็นเพื่อน ๆ
+        รุ่นพี่ อาจารย์ที่น่าเคารพ
+        สุดท้ายนี้ก็ขอบคุณครอบครัวที่เชื่อมั่นในตัวผมมาโดยตลอด
+        แม้ในวันที่ฉันเองยังสงสัยตัวเอง 😊
+      </>
+    ),
+    sincely: "ขอบคุณจากใจจริง ๆ ครับ",
   },
   en: {
     title: "Acknowledgement",
-    detail: `Special Thanks - I would like to take a moment to express my
-              heartfelt gratitude to all those who have contributed, inspired, or 
-              supported me along the journey. Your encouragement, feedback, and
-              shared enthusiasm have been invaluable. Many thanks to my mentor for
-              their invaluable guidance and feedback throughout this journey.
-              Lastly, thank you to my family for believing in me, even when I doubted myself.`,
+    detail: (
+      <>
+        🌟 I would like to take a moment to express my heartfelt gratitude to
+        all those who have contributed, inspired, or supported me. Lastly,
+        thank you to my family for believing in me, even when I doubted myself. 😊
+        {/* `Special Thanks - I would like to take a moment to express my heartfelt
+        gratitude to all those who have contributed, inspired, or supported me
+        along the journey. Your encouragement, feedback, and shared enthusiasm
+        have been invaluable. Many thanks to my mentor for their invaluable
+        guidance and feedback throughout this journey. Lastly, thank you to my
+        family for believing in me, even when I doubted myself.` */}
+      </>
+    ),
+
     sincely: "Best sincerely",
   },
 };

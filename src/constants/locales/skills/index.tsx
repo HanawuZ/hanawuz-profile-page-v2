@@ -4,22 +4,17 @@ import { LiaLaptopCodeSolid } from "react-icons/lia";
 import { HiLightBulb } from "react-icons/hi";
 import { MdOutlineMonitor } from "react-icons/md";
 import { FaServer } from "react-icons/fa6";
-import { FaTools } from "react-icons/fa";
-import { FaBookOpen } from "react-icons/fa";
+import { FaBookOpen, FaDatabase, FaTools } from "react-icons/fa";
 
 type SkillList = {
   icon: JSX.Element;
   title: string;
-  description: string;
+  description: string | JSX.Element;
   tech: BadgeProps[];
 };
 
-type Skill = {
-  title: string;
-  skillList: SkillList[];
-}
-
 const currentlyLearning: BadgeProps[] = [badge.SPRING_BOOT, badge.DOCKER];
+
 const programmingLanguages: BadgeProps[] = [
   badge.GO,
   badge.JAVA,
@@ -28,6 +23,7 @@ const programmingLanguages: BadgeProps[] = [
   badge.PYTHON,
   badge.CPP,
 ];
+
 const frontendDevelopment: BadgeProps[] = [
   badge.REACT,
   badge.NEXT,
@@ -37,15 +33,22 @@ const frontendDevelopment: BadgeProps[] = [
   badge.ANGULAR,
   badge.VUE,
 ];
+
 const backEndDevelopment: BadgeProps[] = [
   badge.GIN,
-  badge.MONGODB,
-  badge.REDIS,
-  badge.MYSQL,
+  badge.FIBER,
+  // badge.ECHO,
   badge.EXPRESSJS,
-  badge.POSTGRESQL,
   badge.SEQUELIZE,
 ];
+
+const databases: BadgeProps[] = [
+  badge.MYSQL,
+  badge.POSTGRESQL,
+  badge.MONGODB,
+  badge.REDIS,
+];
+
 const tools: BadgeProps[] = [badge.GIT, badge.GITHUB, badge.GITLAB];
 
 const others: BadgeProps[] = [
@@ -61,88 +64,201 @@ const skillList: Record<string, SkillList[]> = {
     {
       icon: <HiLightBulb size={24} />,
       title: "Currently Learning",
-      description:
-        "I'm currently spending little free time to learn Java spring boot by learning its official site. Things I've learned including Basic REST API implemention, Authentication with JWT, Open authentication (OAuth) and Caching with Redis. Furthermore, I trying Docker to containize database without installing it on my machine.",
       tech: currentlyLearning,
+      description: (
+        <>
+          I am currently spending little free time to learn{" "}
+          <strong style={{ color: "#8BC34A" }}>Java Spring Boot</strong> from
+          official documents. I grasp knowledges of backend development
+          including Basic REST API implemention, Authentication with JWT, Open
+          authentication &#40;OAuth&#41; and caching with{" "}
+          <strong style={{ color: "#E33E2D" }}>Redis</strong>. Moreover, I am
+          learning basic skill of{" "}
+          <strong style={{ color: "#0DB7ED" }}>Docker</strong> to containize
+          database rather than installing on my own machine.
+        </>
+      ),
     },
     {
       icon: <LiaLaptopCodeSolid size={24} />,
       title: "Programming Languages",
-      description:
-        "During time in university, Python is a first programming language I've learned, and then followed by C, Java, Go, JavaScript and TypeScript, respectively. At this time TypeScript is now my favorite.",
       tech: programmingLanguages,
+      description: (
+        <>
+          During time in university, I have learned various programming
+          languages including Python, and then followed by C++, Java, Go,
+          JavaScript and TypeScript, respectively.
+        </>
+      ),
     },
     {
       icon: <MdOutlineMonitor size={24} />,
       title: "Front-end Development",
-      description:
-        "When entered 3rd year of university, System Analysis & Design and Software Engineering (SE) introduced me the React TypeScript as front-end library and Material UI as CSS framework. After completing SE course, I decided to develop web project with senior using Next.js and Bootstrap.",
       tech: frontendDevelopment,
+      description: (
+        <>
+          When entered 3<sup>rd</sup> year of university, System Analysis &amp;
+          Design and Software Engineering &#40;SE&#41; introduced me the{" "}
+          <strong>React Typescript</strong> as front-end library and{" "}
+          <strong>Material UI</strong> as CSS framework. After completing SE
+          course, I decided to develop web project with senior using{" "}
+          <strong>Next.js</strong> and <strong>Bootstrap.</strong>
+        </>
+      ),
     },
     {
       icon: <FaServer size={24} />,
       title: "Back-end Development",
-      description:
-        "SA and SE also led me into a realm of back-end development. Go with Gin becomes a first back-end framework I've touched. Subsequently, I'learned Express.js and MongoDB in Advanced web application course.",
       tech: backEndDevelopment,
+      description: (
+        <>
+          SA and SE also led me into a realm of back-end development.{" "}
+          <strong>Go</strong> with Gin becomes a first back-end framework I have
+          touched. Subsequently, I learned <strong>Express.js</strong> from
+          course Advanced Web Application, <strong>Java Spring Boot</strong> and
+          other Go web frameworks such as <strong>Echo</strong>
+          and <strong>Fiber</strong>.
+        </>
+      ),
+    },
+    {
+      icon: <FaDatabase size={24} />,
+      title: "Databases",
+      description: (
+        <>
+          The first database I got to try was <strong>MySQL</strong>, and I also explored{" "} 
+          <strong>NoSQL</strong> options like MongoDB and Redis.
+        </>
+      ),
+      tech: databases,
     },
     {
       icon: <FaTools size={24} />,
       title: "Tools",
-      description:
-        "Version control is one of most interesting things I've learned in software development journey. SA and SE taught me how to use Git to maintain a source code of project with a team such as managing branches, resolving code conflicts, tracking changes from previous commits and so on.",
       tech: tools,
+      description: (
+        <>
+          Version control is one of most interesting things I have learned in
+          software development journey. SA and SE taught me how to use{" "}
+          <strong style={{ color: "#F05033" }}>Git</strong> to maintain a source
+          code of project with a team such as managing branches, resolving code
+          conflicts and tracking changes from previous commits.
+        </>
+      ),
     },
     {
       icon: <FaBookOpen size={24} />,
       title: "Others",
-      description:
-        "Since internship, I'm also experienced in utilizing Apache Superset as senior developer assigned me tasks about Data analytics.",
       tech: others,
+      description: (
+        <>
+          I have also tried using <strong>LaTeX</strong> to write my CV and{" "}
+          <strong>Markdown</strong> for documentation. There was a time at work
+          when a senior assigned me to do data analysis, which gave me hands-on
+          experience with{" "}
+          <strong style={{ color: "#20A7C9" }}>Apache Superset</strong>
+        </>
+      ),
     },
   ],
   th: [
     {
       icon: <HiLightBulb size={24} />,
       title: "กำลังเรียนรู้อยู่",
-      description:
-        "ตอนนี้ในเวลาว่างนิด ๆ หน่อย ๆ ก็ใช้ไปกับการเรียนรู้ Java Spring Boot จากเว็บทางการของมัน สิ่งที่ได้เรียนมามีทั้งการทำ REST API เบื้องต้น, การยืนยันตัวตนด้วย JWT, Open Authentication (OAuth), แล้วก็การทำ Caching ด้วย Redis นอกจากนี้ยังลองใช้ Docker เพื่อคอนเทนเนอร์ฐานข้อมูลแทนการติดตั้งลงเครื่องโดยตรงด้วย",
+      description: (
+        <>
+          ในเวลาว่างนิด ๆ หน่อย ๆ ผมลองศึกษา{" "}
+          <strong style={{ color: "#8BC34A" }}>Java Spring Boot</strong> จาก
+          Documents โดยเข้าใจ REST API เบื้องต้น, การยืนยันตัวตนด้วย JWT, Open
+          Authentication &#40;OAuth&#41;, แล้วก็การทำ Caching ด้วย{" "}
+          <strong style={{ color: "#E33E2D" }}>Redis</strong> นอกจากนี้ผมลองใช้{" "}
+          <strong style={{ color: "#0DB7ED" }}>Docker</strong>{" "}
+          เพื่อติดตั้งฐานข้อมูลแทนการติดตั้งลงเครื่องโดยตรงด้วย
+        </>
+      ),
       tech: currentlyLearning,
     },
     {
       icon: <LiaLaptopCodeSolid size={24} />,
       title: "ภาษาโปรแกรม",
-      description:
-        "สมัยเรียนมหาวิทยาลัย ภาษาโปรแกรมแรกที่ได้เรียนคือ Python ตามมาด้วย C, Java, Go, JavaScript และ TypeScript แบบเรียงลำดับ ตอนนี้ TypeScript กลายเป็นภาษาที่ชอบที่สุดแล้ว!",
+      description: (
+        <>
+          สมัยเรียนมหาวิทยาลัย ผมได้เรียนภาษาโปรแกรมหลายตัวเลย ได้แก่ Python
+          ตามด้วย C++, Java, Go, JavaScript และ TypeScript
+        </>
+      ),
       tech: programmingLanguages,
     },
     {
       icon: <MdOutlineMonitor size={24} />,
       title: "หน้าบ้าน",
-      description:
-        "พอเข้าปี 3 ที่มหาวิทยาลัย วิชา System Analysis & Design และ Software Engineering (SE) ทำให้ได้รู้จัก React TypeScript เป็นไลบรารีสำหรับฝั่ง Front-end และ Material UI เป็นเฟรมเวิร์ก CSS หลังจากเรียนจบวิชา SE ก็เลยตัดสินใจพัฒนาโปรเจกต์เว็บกับรุ่นพี่ โดยใช้ Next.js และ Bootstrap เป็นเครื่องมือ!",
       tech: frontendDevelopment,
+      description: (
+        <>
+          เมื่อเข้าชั้นปีที่ 3 ผมได้รู้จักการทำเว็บด้วย <strong>React</strong>{" "}
+          <strong>TypeScript</strong> และ <strong>Material UI</strong>{" "}
+          เป็นเฟรมเวิร์ก CSS ครั้งแรกในวิชา{" "}
+          <strong>System Analysis &amp; Design &#40;SA&#41;</strong> และ{" "}
+          <strong>Software Engineering &#40;SE&#41;</strong> หลังจากผ่านทั้ง 2
+          วิชาแล้ว ก็เลยตัดสินใจพัฒนาโปรเจกต์เว็บกับรุ่นพี่ โดยใช้{" "}
+          <strong>Next.js</strong> และ <strong>Bootstrap</strong>
+        </>
+      ),
     },
     {
       icon: <FaServer size={24} />,
       title: "หลังบ้าน",
-      description:
-        "วิชา System Analysis (SA) และ Software Engineering (SE) ก็ทำให้ได้เข้าไปในโลกของการพัฒนา Back-end ด้วยเหมือนกัน โดยได้ลองใช้ Go กับ Gin เป็นเฟรมเวิร์ก Back-end ตัวแรกที่ได้สัมผัส ต่อจากนั้นก็เรียนรู้ Express.js และ MongoDB ในวิชา Advanced Web Application!",
+      description: (
+        <>
+          วิชา SA และ SE ทำให้ผมได้ลองพัฒนา Backend โดยเริ่มจากการสัมผ้สกับภาษา
+          Go และ Gin เป็นเฟรมเวิร์ก Back-end ต่อมาก็ได้ลองใช้อย่างอื่นบ้าง
+          ไม่ว่าจะเป็น Express.js ในวิชา Advanced Web Application, Java Spring
+          boot ตอนเรียนรู้ด้วยตัวเอง และเฟรมเวิร์กอื่น ๆ ของ Go ได้แก่ Echo และ
+          Fiber
+        </>
+      ),
       tech: backEndDevelopment,
+    },
+    {
+      icon: <FaDatabase size={24} />,
+      title: "ฐานข้อมูล",
+      description: (
+        <>
+          ฐานข้อมูลตัวแรกที่ได้ลองเลยก็คือ <strong>MySQL</strong> และได้ลอง{" "}
+          NoSQL อย่าง <strong>MongoDB</strong> และ <strong>Redis</strong> ด้วย
+        </>
+      ),
+      tech: databases,
     },
     {
       icon: <FaTools size={24} />,
       title: "เครื่องมือ",
-      description:
-        "การควบคุมเวอร์ชันเป็นหนึ่งในสิ่งที่น่าสนใจที่สุดที่ได้เรียนรู้ในเส้นทางการพัฒนาซอฟต์แวร์เลยล่ะ วิชา SA และ SE สอนให้รู้จักการใช้ Git เพื่อดูแลซอร์สโค้ดของโปรเจกต์กับทีม เช่น การจัดการสาขา, แก้ไขปัญหาความขัดแย้งในโค้ด, และติดตามการเปลี่ยนแปลงจากคอมมิตก่อนหน้า เป็นต้น!",
       tech: tools,
+      description: (
+        <>
+          การควบคุมเวอร์ชันเป็นหนึ่งในสิ่งที่ผมรู้สึกว่า มันว้าวสุดๆ
+          ที่ได้เรียนรู้ในสายซอฟต์แวร์เลย วิชา SA และ SE สอนให้ผมรู้จักการใช้{" "}
+          <strong style={{ color: "#F05033" }}>Git</strong>{" "}
+          มาดูแลซอร์สโค้ดของโปรเจกต์กับทีม ทำให้รู้จักวิธีจัดการ Branches,
+          แก้ปัญหาโค้ดชนกัน แล้วก็ดูว่าโค้ดเราเปลี่ยนมายังไงบ้างจากคอมมิตเก่า ๆ
+          ด้วย
+        </>
+      ),
     },
     {
       icon: <FaBookOpen size={24} />,
       title: "อื่น ๆ",
-      description:
-        "ตั้งแต่ช่วงฝึกงานก็ได้ประสบการณ์ในการใช้ Apache Superset ด้วย เพราะรุ่นพี่ให้ทำงานเกี่ยวกับการวิเคราะห์ข้อมูลนั่นเอง!",
       tech: others,
+      description: (
+        <>
+          จะบอกให้ว่าไม่ได้เป็นแค่เขียนโค้ดภาษาโปรแกรมนะค้าบ เคยลองใช้{" "}
+          <strong>LaTeX</strong> ในการเขียน CV และใช้ <strong>Markdown</strong>{" "}
+          ในการเขียน Document ด้วย มีช่วงหนึ่งระหว่างทำงาน
+          รุ่นพี่ในที่ทำงานได้มอบหมายให้ผมทำการวิเคราะห์ข้อมูล
+          ทำให้ได้มีประสบการณ์ในการใช้{" "}
+          <strong style={{ color: "#20A7C9" }}>Apache Superset</strong>
+        </>
+      ),
     },
   ],
 };

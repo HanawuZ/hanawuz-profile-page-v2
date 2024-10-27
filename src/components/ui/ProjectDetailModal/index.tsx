@@ -1,12 +1,12 @@
 import { useProfileContext } from "@/context/ProfileContext";
 import Link from "next/link";
 import styles from "./styles.module.css";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Carousel } from "flowbite-react";
 import { CiGlobe } from "react-icons/ci";
-import ListItem from "@/components/Listing/ListItem";
+import ListItem from "@/components/ui/Listing/ListItem";
 import PROJECTS from "@/constants/locales/project";
-import Badge from "../Badge";
+import Badge from "@/components/Badge";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import wordLocales from "@/constants/locales/word";
@@ -63,7 +63,7 @@ const ProjectDetailModal = () => {
             variants={fadeVariants}
             transition={{ duration: 0.1 }} // Smooth fade animation
             onClick={(event) => event.stopPropagation()} // Prevent closing when clicking on content
-            className={`md:w-[70vw] container mx-auto ${
+            className={`md:w-[80vw] container mx-auto ${
               styles.projectDetailModal
             } ${
               projectKey === "" && styles.disappearProjectDetailModal
@@ -71,7 +71,7 @@ const ProjectDetailModal = () => {
           >
             <div className="w-full bg-slate-600 rounded-t-lg py-2 px-3">
               <div className="grid grid-cols-2  text-white">
-                <text className="ms-2 text-xl font-bold"> {name} </text>
+                <text className="ms-2 text-xl font-bold "> {name} </text>
                 <CloseButton className="justify-self-end" />
               </div>
             </div>
@@ -86,11 +86,25 @@ const ProjectDetailModal = () => {
               >
                 <Carousel
                   className="rounded-lg"
+                  // leftControl={
+                  //   <FaArrowLeft color="#ececec" size={30}/>
+                  // }
+                  // rightControl={
+                  //   <FaArrowRight color="#ececec" size={30}/>
+                  // }
                   leftControl={
-                    <div className="text-3xl text-slate-600"> &#60; </div>
+                    imageUrls && imageUrls?.length > 1 ? (
+                      <FaArrowLeft  size={30} />
+                    ) : (
+                      <></>
+                    )
                   }
                   rightControl={
-                    <div className="text-3xl text-slate-600"> &#62; </div>
+                    imageUrls && imageUrls?.length > 1 ? (
+                      <FaArrowRight size={30} />
+                    ) : (
+                      <></>
+                    )
                   }
                   slideInterval={5000}
                   indicators={false}
@@ -146,7 +160,7 @@ const ProjectDetailModal = () => {
                 <ul className="mx-10 list-disc text-base max-lg:text-sm">
                   {description?.map((desc, index) => (
                     <ListItem
-                      className="break-normal hyphens-auto"
+                      className="leading-relaxed tracking-wide break-normal hyphens-auto"
                       key={`id-22-${index}`}
                     >
                       {desc}
@@ -155,8 +169,8 @@ const ProjectDetailModal = () => {
                 </ul>
               </div>
 
-              <div 
-                className="max-md:hidden flex justify-end max-md:justify-center my-5 md:mx-10 gap-2"
+              <div
+                className="max-md:hidden flex justify-end max-md:justify-center my-5 md:mx-10 gap-2 mt-8"
                 style={{
                   color: themes[mode].secondaryText,
                 }}
@@ -172,8 +186,8 @@ const ProjectDetailModal = () => {
                   </Link>
                 )}
               </div>
-              <div 
-                className="md:hidden flex justify-end max-md:justify-center my-5 md:mx-20 gap-2"
+              <div
+                className="md:hidden flex justify-end max-md:justify-center my-5 md:mx-20 gap-2 mt-8"
                 style={{
                   color: themes[mode].secondaryText,
                 }}

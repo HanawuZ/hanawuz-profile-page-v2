@@ -1,5 +1,5 @@
 import { ExperienceContainer } from "./ExperienceContainer";
-import ListItem from "@/components/Listing/ListItem";
+import ListItem from "@/components/ui/Listing/ListItem";
 import { useProfileContext } from "@/context/ProfileContext";
 import experiences from "@/constants/locales/experiences";
 import themes from "@/theme";
@@ -11,7 +11,7 @@ const ExperienceBody = () => {
       {experiences[language]?.map((experience, index) => (
         <ExperienceContainer
           key={index}
-          className="mx-4 mt-8"
+          className="mx-4 mt-8 leading-relaxed tracking-wide"
           workplace={experience?.workplace}
           location={experience?.location}
           position={experience?.position}

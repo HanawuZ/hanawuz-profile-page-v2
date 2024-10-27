@@ -5,7 +5,7 @@ import wordLocales from "@/constants/locales/word";
 import Image from "next/image";
 import themes from "@/theme";
 
-const ProjectCard = ({ projectKey }: { projectKey: string }) => {
+const ProjectCard = ({ projectKey }: { projectKey: string }) : JSX.Element => {
   const { language, setProjectKey, mode } = useProfileContext();
   const project = PROJECTS[projectKey]?.[language] ?? {
     projectCardImageUrl: "",
@@ -30,7 +30,7 @@ const ProjectCard = ({ projectKey }: { projectKey: string }) => {
         <div className="col-span-2 h-full min-h-[200px]">
           <div className="mx-6 mt-3">
             <div
-              className="block mt-1 text-lg leading-tight font-bold"
+              className="block mt-1 text-lg leading-tight font-bold leading-relaxed tracking-wide"
               style={{
                 color: themes[mode].primaryText,
               }}
@@ -38,7 +38,7 @@ const ProjectCard = ({ projectKey }: { projectKey: string }) => {
               {name}
             </div>
             <text
-              className="text-sm"
+              className="text-sm leading-relaxed tracking-wide"
               style={{
                 color: themes[mode].secondaryText,
               }}
@@ -46,7 +46,7 @@ const ProjectCard = ({ projectKey }: { projectKey: string }) => {
               {projectTimeRange}
             </text>
             <p
-              className="text-sm my-2 min-h-[100px]"
+              className="text-sm my-2 min-h-[100px] leading-relaxed tracking-wide"
               style={{
                 color: themes[mode].secondaryText,
               }}
@@ -61,7 +61,7 @@ const ProjectCard = ({ projectKey }: { projectKey: string }) => {
             >
               <button
                 onClick={() => setProjectKey(projectKey)}
-                className={`${styles.linkButton} max-md:w-full`}
+                className={`${styles.linkButton} max-md:w-full leading-relaxed tracking-wide`}
                 style={{
                   border: "solid 1px",
                 }}
