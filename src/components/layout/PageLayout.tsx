@@ -19,10 +19,10 @@ const PageLayout = (props: PageLayoutProps) => {
             height: "calc(100vh - 57px)",
           }}
         >
-          <div className="h-full w-full overflow-y-auto md:py-4">
+          <div className="h-full w-full overflow-y-auto">
             <div className="w-full flex justify-center">
               <div
-                className="min-h-[90vh] max-md:w-[90vw] md:w-[80vw] lg:w-[70vw] max-md:mb-28 my-5 mx-5 py-10"
+                className="min-h-[90vh] max-md:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[65vw] max-md:mb-28 my-5 mx-5 py-10"
                 style={{
                   boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
                   backgroundColor: themes[mode].sheetBackground,

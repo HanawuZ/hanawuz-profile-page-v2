@@ -11,14 +11,14 @@ const ExperienceBody = () => {
       {experiences[language]?.map((experience, index) => (
         <ExperienceContainer
           key={index}
-          className="mx-4 mt-8 leading-relaxed tracking-wide"
+          className="mx-4 mt-10 leading-relaxed tracking-wide"
           workplace={experience?.workplace}
           location={experience?.location}
           position={experience?.position}
           period={experience?.period}
         >
           <ul 
-            className="max-md:text-sm mt-3 list-disc mx-10 break-all"
+            className="max-md:text-sm mt-3 list-disc mx-10 break-normal hyphens-auto"
             style={{
               color: themes[mode].secondaryText
             }}

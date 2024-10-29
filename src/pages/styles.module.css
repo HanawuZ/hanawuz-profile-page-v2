@@ -6,3 +6,9 @@
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+
+.downloadButton:hover {
+  color: white;
+  border: 1px solid white;
+  background-image: linear-gradient(45deg, #e52e71, #ff8a00);
+}

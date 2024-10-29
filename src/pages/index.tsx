@@ -20,7 +20,15 @@ import { aboutMe } from "@/constants/locales/aboutMe";
 import wordLocales from "@/constants/locales/word";
 import themes from "@/theme";
 import styles from "./styles.module.css";
+import { MdOutlineDownload } from "react-icons/md";
 
+/**
+ * The homepage of the website, rendering the main components of the website,
+ * including the web header, personal information section, about me section,
+ * education section, and a call-to-action section to contact the author.
+ *
+ * @returns {React.ReactElement} The JSX element representing the homepage.
+ */
 const Home = () => {
   return (
     <>
@@ -67,6 +75,19 @@ const PersonalInfoSection = () => {
           </div>
         </div>
       </div>
+      <div className="w-full flex justify-center mt-4">
+        <button 
+          className={`px-2 p-1 flex gap-2 items-center ${styles.downloadButton}`}
+          style={{
+            borderColor: mode === "dark" ? "#f9f9f9" : "#000000",
+            border: "1px solid",
+            borderRadius: "2rem",
+            transition: "all 0.15s ease-in-out",
+          }}
+        > 
+          <MdOutlineDownload size={20} />Download CV
+        </button>
+      </div>
     </div>
   );
 };
@@ -77,7 +98,7 @@ const AboutMeSection = () => {
   return (
     <div
       id="about-me"
-      className="mt-12"
+      className="mt-8"
       style={{
         color: themes[mode].primaryText,
       }}
@@ -93,9 +114,9 @@ const AboutMeSection = () => {
         {language === "en" && (
           <>
             <ListItem className="leading-relaxed">
-              Hello world! I am &quot;Gop&quot;, currently working as
+              Hello world! I am &quot;Gop&quot;, currently working as{" "}
               <code
-                className="p-[3px] rounded text-slate-600 mx-1"
+                className="p-[3px] rounded text-slate-600"
                 style={{
                   background: mode === "dark" ? "#4e4e4e" : "#ececec",
                   color: themes[mode].primaryText,
@@ -143,17 +164,17 @@ const AboutMeSection = () => {
         {language === "th" && (
           <>
             <ListItem className="leading-relaxed">
-              สวัสดีครับทุกคน ผมชื่อ &quot;ก๊อป&quot; ครับผม
-              ปัจจุบันทำงานในตำแหน่ง
+              สวัสดีครับทุกคน ผมชื่อ &quot;ก๊อป&quot; ครับ
+              ปัจจุบันทำงานในตำแหน่ง{" "}
               <code
-                className="p-[3px] rounded text-slate-600 mx-1"
+                className="p-[3px] rounded text-slate-600"
                 style={{
                   background: mode === "dark" ? "#4e4e4e" : "#ececec",
                   color: themes[mode].primaryText,
                 }}
               >
                 ผู้ช่วยนักพัฒนาแอพพลิเคชัน
-              </code>
+              </code>{" "}
               ที่บริษัท{" "}
               <Link
                 className="text-blue-500 font-bold underline underline-offset-2 hover:text-blue-300"
@@ -205,9 +226,9 @@ const EducationSection = () => {
       <div className="tracking-wide max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
         {language === "en" && (
           <div className="leading-relaxed">
-            I am graduated from &nbsp;<text className={styles.gradientText}>{education[language].university}</text> with
-            <text style={{ fontStyle: "italic", color: themes[mode].secondaryText }}> Bachelor degree in Computer Engineering.  </text>
-            I completed my studies in{" "}<text> {education[language].graduatedDate}.</text>
+            I graduated from <text className={styles.gradientText}>{education[language].university}</text> with
+            <text style={{ fontStyle: "italic", color: themes[mode].secondaryText }}> Bachelor&#39;s degree in Computer Engineering</text>,
+            completing my studies in{" "}<text> {education[language].graduatedDate}.</text>
           </div>
         )}
         {language === "th" && (
