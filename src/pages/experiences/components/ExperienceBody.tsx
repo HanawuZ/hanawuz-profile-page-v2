@@ -18,7 +18,7 @@ const ExperienceBody = () => {
           period={experience?.period}
         >
           <ul 
-            className="max-md:text-sm mt-3 list-disc mx-10 break-normal hyphens-auto"
+            className="max-md:text-sm mt-3 list-disc max-md:mx-6 md:mx-10 break-normal hyphens-auto"
             style={{
               color: themes[mode].secondaryText
             }}

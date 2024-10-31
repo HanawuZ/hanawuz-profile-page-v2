@@ -21,6 +21,7 @@ import wordLocales from "@/constants/locales/word";
 import themes from "@/theme";
 import styles from "./styles.module.css";
 import { MdOutlineDownload } from "react-icons/md";
+import { FaUserClock } from "react-icons/fa6";
 
 /**
  * The homepage of the website, rendering the main components of the website,
@@ -29,7 +30,7 @@ import { MdOutlineDownload } from "react-icons/md";
  *
  * @returns {React.ReactElement} The JSX element representing the homepage.
  */
-const Home = () => {
+const Home = (): React.ReactElement => {
   return (
     <>
       <WebHeader title="Thanawut - My website" />
@@ -70,7 +71,8 @@ const PersonalInfoSection = () => {
             <text> {aboutMe[language].birthDate}</text>
           </div>
           <div className="flex items-center gap-3 p-1 px-3">
-            <span> {aboutMe[language].age}: </span>
+            <FaUserClock size={20} />
+            {/* <span> {aboutMe[language].age}: </span> */}
             {calculateAge(new Date(2000, 11, 10))} {aboutMe[language].ageUnit}
           </div>
         </div>
@@ -108,7 +110,7 @@ const AboutMeSection = () => {
           {" "}
           {aboutMeList[language].title}{" "}
         </span>
-        <div className="bg-white h-[3.5px] w-1/6" />
+        <div className="h-[3.5px] w-1/6" style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }} />
       </div>
       <ul className="tracking-wide max-md:text-sm mt-3 list-disc mx-8 break-normal hyphens-auto sm:ms-16 ms-12">
         {language === "en" && (
@@ -146,7 +148,7 @@ const AboutMeSection = () => {
             </ListItem>
             <ListItem className="leading-relaxed">
               Have a strong background in both front-end and back-end
-              development. Now I am presently deep diving into back-end
+              development. I am presently deep diving into back-end
               development by coding ♨️{" "}
               <text className="font-bold" style={{ color: "#ED8B00" }}>
                 Java Spring Boot
@@ -155,7 +157,7 @@ const AboutMeSection = () => {
               <text className="font-bold" style={{ color: "#00ADD8" }}>
                 Golang
               </text>{" "}
-              with widely used web frameworks. Moreover, I am learning software
+              with widely-used web frameworks. Moreover, I am learning software
               development practices like Clean architecture, React design
               patterns and Behavior-driven development.
             </ListItem>
@@ -221,7 +223,7 @@ const EducationSection = () => {
           {" "}
           {education[language].title}{" "}
         </span>
-        <div className="bg-white h-[3.5px] w-1/6" />
+        <div className="h-[3.5px] w-1/6" style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }} />
       </div>
       <div className="tracking-wide max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
         {language === "en" && (
@@ -274,21 +276,12 @@ const LetsConnect = () => {
         color: themes[mode].primaryText,
       }}
     >
-      {/* <div 
-        className="font-bold flex gap-3 text-2xl text-center font-bold max-sm:ms-5 ms-8"
-        style={{
-          color: themes[mode].primaryText,
-        }}
-      >
-        <AiOutlineGlobal size={30} />
-        <span className="uppercase">{wordLocales[language].letConnect}</span>
-      </div> */}
       <div className="max-sm:ms-5 ms-8">
         <span className="uppercase font-bold text-2xl">
           {" "}
           {wordLocales[language].letConnect}{" "}
         </span>
-        <div className="bg-white h-[3.5px] w-1/6" />
+        <div className="h-[3.5px] w-1/6" style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }} />
       </div>
       <div className="flex justify-center m-5 mt-8">
         <div className="grid gap-3 max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3">

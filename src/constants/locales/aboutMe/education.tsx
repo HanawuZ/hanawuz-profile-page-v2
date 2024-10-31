@@ -98,14 +98,14 @@ export const education: Record<string, EducationDetails> = {
           name: "Web Application",
           description:
             <>
-              I have learned web application frameworks such as <strong style={{ color: "#88dded"}}>React</strong>,{" "} 
+              I have learned various web application frameworks such as <strong style={{ color: "#88dded"}}>React</strong>,{" "} 
               <strong style={{ color: "#DD0031" }}>Angular</strong> and <strong>Express.js.</strong>
             </>
         },
         {
           name: "Object-oriented Programming",
           description:
-            <>Understood the fundamental concepts of Object-oriented programming with ♨️ <text style={{ color: "#ED8B00", fontWeight: "bold" }}>Java</text>.</>
+            <>Understand the fundamental concepts of Object-oriented programming with ♨️ <text style={{ color: "#ED8B00", fontWeight: "bold" }}>Java</text>.</>
         },
       ],
     },

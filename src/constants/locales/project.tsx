@@ -25,8 +25,16 @@ const promptLab: Record<string, ProjectDetailModalProps> = {
     imageUrls: promptLabImages["imageUrls"],
     overview: `Prompt Lab เป็นเว็บไซต์ที่ช่วยปลดล็อกความคิดสร้างสรรค์ของคุณด้วยความช่วยเหลือจาก AI ในการสร้างโพสต์ขายของ เรากำลังร่วมมือกับเพื่อนเพื่อพัฒนาเว็บไซต์นี้โดยใช้ Next.js และ Bootstrap เป็นเฟรมเวิร์กสำหรับการจัดการ CSS`,
     description: [
-      `Prompt Lab เป็นเว็บไซต์ที่ช่วยปลดล็อกความคิดสร้างสรรค์ของคุณด้วยความช่วยเหลือจาก AI สำหรับการสร้างโพสต์ขาย สร้างเนื้อหาไอเดีย เขียนบทความ สร้างสคริปต์วิดีโอ และข้อความดึงดูดความสนใจ`,
-      `บทบาทของฉันในโปรเจกต์นี้คือการพัฒนา Front-end โดยใช้เฟรมเวิร์ก Next.js และ Bootstrap`,
+      <>
+        <strong style={{ color: "#00ffab" }}>Prompt Lab AI</strong>{" "}
+        เป็นเว็บไซต์ที่ช่วยปลดล็อกความคิดสร้างสรรค์ของคุณด้วยความช่วยเหลือจาก AI
+        สำหรับการสร้างโพสต์ขาย สร้างเนื้อหาไอเดีย เขียนบทความ สร้างสคริปต์วิดีโอ
+        และข้อความดึงดูดความสนใจ
+      </>,
+      <>
+        บทบาทของฉันในโปรเจกต์นี้คือการพัฒนา Frontend โดยใช้เฟรมเวิร์ก Next.js
+        และ Bootstrap,
+      </>,
     ],
     techologies: [Tech.TYPESCRIPT, Tech.REACT, Tech.NEXT, Tech.BOOTSTRAP],
     projectUrl: "https://promptlabai.com/th/",
@@ -38,7 +46,7 @@ const promptLab: Record<string, ProjectDetailModalProps> = {
     projectTimeRange: "March 2023 - Present",
     projectCardImageUrl: promptLabImages["projectCardImageUrl"],
     imageUrls: promptLabImages["imageUrls"],
-    overview: ` Prompt Lab is a website that unlocks your creativity with AI assistance for generating sales posts. 
+    overview: ` A website with AI assistance for generating sales posts. 
                 I collaborating with my friend to develop this site using Next.js with Bootstrap for CSS frameworks.`,
     description: [
       <>
@@ -67,7 +75,7 @@ const softwareEngineeringProject: Record<string, ProjectDetailModalProps> = {
     projectCardImageUrl:
       softwareEngineeringProjectImages["projectCardImageUrl"],
     imageUrls: softwareEngineeringProjectImages["imageUrls"],
-    overview: `A software engineering courses project. This project is developed with React and Typescript, along with the Golang Gin framework`,
+    overview: `A software engineering courses project to complete the registration system. This project is developed with React and Typescript, along with the Golang Gin framework`,
     description: [
       <>
         I have collaborated with team to complete the{" "}
@@ -110,7 +118,10 @@ const softwareEngineeringProject: Record<string, ProjectDetailModalProps> = {
         <strong style={{ color: "#00ADD8" }}>ภาษา Go</strong> และใช้ Gin
         เป็นเฟรมเวิร์ก
       </>,
-      <>ตัวระบบใช้ <strong>JSON Web Tokens &#40;JWT&#41;</strong> สำหรับการ authorization</>,
+      <>
+        ตัวระบบใช้ <strong>JSON Web Tokens &#40;JWT&#41;</strong> สำหรับการ
+        authorization
+      </>,
     ],
     techologies: [Tech.TYPESCRIPT, Tech.REACT, Tech.MUI, Tech.GO, Tech.GIN],
     githubUrl: "https://github.com/HanawuZ/team05",
