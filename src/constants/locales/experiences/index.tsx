@@ -21,9 +21,9 @@ const experiences: Record<string, Experience[]> = {
           tracking sales.
         </>,
         <>
-          Responsible for refined features involving sales promotion such as
+          Refined features involving sales promotion such as
           improving promotion calculation logic to support new promotion
-          pattern, developing <strong>campaign system</strong> to manage sales
+          patterns, developing <strong>campaign system</strong> to manage sales
           target for each retailer, and{" "}
           <strong>coupon management system</strong> to manage coupons for
           retailers.
@@ -40,7 +40,7 @@ const experiences: Record<string, Experience[]> = {
         <>
           Experienced in querying sales order data from the database and visualizng reports in{" "}
           <strong style={{ color: "#20A7C9" }}>Apache Superset</strong> to
-          display sales data of each agent or retailer.
+          display sales data of each agent or retailer that improved data accessibility and decision-making.
         </>,
       ],
     },

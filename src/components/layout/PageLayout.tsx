@@ -22,12 +22,17 @@ const PageLayout = (props: PageLayoutProps) => {
           <div className="h-full w-full overflow-y-auto">
             <div className="w-full flex justify-center">
               <div
-                className="min-h-[90vh] max-md:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[65vw] max-md:mb-28 my-5 mx-5 py-10"
+                className="rounded-md min-h-[90vh] max-md:w-[90vw] md:w-[80vw] lg:w-[70vw] xl:w-[65vw] max-md:mb-28 my-5 mx-5 pb-8"
                 style={{
                   boxShadow: "0 0 10px 0 rgba(0, 0, 0, 0.5)",
                   backgroundColor: themes[mode].sheetBackground,
                 }}
               >
+                <div className="w-full flex gap-2 m-4">
+                  <div className="w-4 h-4 bg-red-500 rounded-full" />
+                  <div className="w-4 h-4 bg-yellow-300 rounded-full" />
+                  <div className="w-4 h-4 bg-green-500 rounded-full" />
+                </div>
                 <div
                   className="flex justify-center"
                   style={{

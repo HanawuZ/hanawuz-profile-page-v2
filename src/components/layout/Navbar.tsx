@@ -7,9 +7,9 @@ const Navbar = () => {
 
   return (
     <div
-      className="w-full sticky top-0 flex gap-4 justify-end"
+      className="w-full sticky top-0 flex gap-4 justify-end shadow-md"
       style={{
-        backgroundColor: mode === "dark" ? "rgba(0, 0, 0, 0.5)" : "white", // 50% opacity
+        backgroundColor: mode === "dark" ? "rgba(0, 0, 0, 0.5)" : "#f9f9f9", // 50% opacity
       }}
     >
       <div className="flex items-center">

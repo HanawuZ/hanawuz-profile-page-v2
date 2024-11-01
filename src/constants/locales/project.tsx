@@ -128,9 +128,63 @@ const softwareEngineeringProject: Record<string, ProjectDetailModalProps> = {
   },
 };
 
+const defaultProject: Record<string, ProjectDetailModalProps> = {
+  en: {
+    name: "Placeholder, waiting new project",
+    role: "Something",
+    projectTimeRange: "January 1 - December 40,000",
+    projectCardImageUrl: "https://placehold.co/600x400",
+    imageUrls: [],
+    overview:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis sollicitudin nisl, a rhoncus dolor laoreet quis. Aliquam erat volutpat. ",
+    description: [
+      <>
+        Etiam dictum ligula purus, at varius justo commodo quis. Aliquam orci
+        ex, rutrum pretium efficitur at, interdum vel arcu.
+      </>,
+      <>
+        Nam eget magna erat. Nam eu sem molestie, interdum ex eu, porta est.
+        Phasellus a urna lectus.
+      </>,
+      <>
+        Morbi vel convallis massa, at rhoncus neque. Nullam sapien sapien,
+        gravida a turpis eu, convallis convallis lectus. Donec efficitur sem
+        tincidunt lorem auctor feugiat
+      </>,
+    ],
+    techologies: [Tech.TYPESCRIPT, Tech.REACT, Tech.MUI, Tech.GO, Tech.GIN],
+  },
+  th: {
+    name: "กันว่าง รอโปรเจคใหม่",
+    role: "อะไรสักอย่าง",
+    projectTimeRange: "มกราคม 1 - ธันวาคม 40,000",
+    projectCardImageUrl: "https://placehold.co/600x400",
+    imageUrls: [],
+    overview:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut convallis sollicitudin nisl, a rhoncus dolor laoreet quis. Aliquam erat volutpat. ",
+    description: [
+      <>
+        Etiam dictum ligula purus, at varius justo commodo quis. Aliquam orci
+        ex, rutrum pretium efficitur at, interdum vel arcu.
+      </>,
+      <>
+        Nam eget magna erat. Nam eu sem molestie, interdum ex eu, porta est.
+        Phasellus a urna lectus.
+      </>,
+      <>
+        Morbi vel convallis massa, at rhoncus neque. Nullam sapien sapien,
+        gravida a turpis eu, convallis convallis lectus. Donec efficitur sem
+        tincidunt lorem auctor feugiat
+      </>,
+    ],
+    techologies: [Tech.TYPESCRIPT, Tech.REACT, Tech.MUI, Tech.GO, Tech.GIN],
+  },
+};
+
 const PROJECTS: Record<string, Record<string, ProjectDetailModalProps>> = {
   "prompt-lab": promptLab,
   "se-project": softwareEngineeringProject,
+  "default": defaultProject,
 };
 
 export default PROJECTS;

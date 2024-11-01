@@ -21,7 +21,7 @@ const SkillsBody = () => {
             <span>{skill.icon}</span>
             <text className="text-lg"> {skill.title} </text>
           </div>
-          <div className="flex flex-wrap gap-2 mt-3">
+          <div className="flex flex-wrap mt-3 gap-2">
             {skill.tech?.map((tech, index) => (
               <Badge key={index} {...tech} />
             ))}

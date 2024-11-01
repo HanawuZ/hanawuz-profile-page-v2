@@ -20,9 +20,10 @@ const SidebarMenuMobile = () => {
         bottom: 10
       }}>
       <div
-        className="flex gap-2 p-3 rounded-full border border-slate-500"
+        className="flex gap-2 p-3 rounded-xl border border-slate-400 shadow-xl"
         style={{
           backgroundColor: themes[mode].mobileMenuBackground,
+          backdropFilter: "blur(10px)",
         }}
       >
         {" "}

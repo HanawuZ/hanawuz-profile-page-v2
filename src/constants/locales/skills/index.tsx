@@ -70,8 +70,8 @@ const skillList: Record<string, SkillList[]> = {
           I am currently spending little free time to learn{" "}
           <strong style={{ color: "#8BC34A" }}>Java Spring Boot</strong> from
           official documents. I grasp knowledges of backend development
-          including Basic REST API implemention, Authentication with JWT, Open
-          authentication &#40;OAuth&#41; and caching with{" "}
+          including learning authentication with JWT, using Open
+          authentication &#40;OAuth&#41; for GitHub and Google login and caching with{" "}
           <strong style={{ color: "#E33E2D" }}>Redis</strong>. Moreover, I am
           learning basic skill of{" "}
           <strong style={{ color: "#0DB7ED" }}>Docker</strong> to containize
@@ -85,9 +85,12 @@ const skillList: Record<string, SkillList[]> = {
       tech: programmingLanguages,
       description: (
         <>
-          During time in university, I have learned various programming
-          languages including Python, and then followed by C++, Java, Go,
-          JavaScript and TypeScript, respectively.
+          During time in university, I learned various programming languages. As
+          a freshman, Python was my first programming language, then followed by
+          C++, Java, Go, JavaScript and TypeScript in sophomore year. My two
+          favourite languages are{" "}
+          <strong style={{ color: "#3776AB" }}>Python</strong> and{" "}
+          <strong style={{ color: "#007ACC" }}>TypeScript</strong>
         </>
       ),
     },
@@ -97,12 +100,15 @@ const skillList: Record<string, SkillList[]> = {
       tech: frontendDevelopment,
       description: (
         <>
-          When entered 3<sup>rd</sup> year of university, System Analysis &amp;
-          Design and Software Engineering &#40;SE&#41; introduced me the{" "}
-          <strong>React Typescript</strong> as front-end library and{" "}
-          <strong>Material UI</strong> as CSS framework. After completing SE
-          course, I decided to develop web project with senior using{" "}
-          <strong>Next.js</strong> and <strong>Bootstrap.</strong>
+          When entered 3<sup>rd</sup> year of university,{" "}
+          <strong>System Analysis &amp; Design &#40;SA&#41;</strong> and{" "}
+          <strong>Software Engineering &#40;SE&#41;</strong> introduced me the{" "}
+          <strong style={{ color: "#88dded" }}>React Typescript</strong> as
+          front-end library and{" "}
+          <strong style={{ color: "#1FA6CA" }}>Material UI</strong> as CSS
+          framework. After completing <strong>SE</strong> class, I decided to
+          develop web project with senior using <strong>Next.js</strong> and{" "}
+          <strong>Bootstrap.</strong>
         </>
       ),
     },
@@ -112,12 +118,14 @@ const skillList: Record<string, SkillList[]> = {
       tech: backEndDevelopment,
       description: (
         <>
-          SA and SE also led me into a realm of back-end development.{" "}
-          <strong>Go</strong> with Gin becomes a first back-end framework I have
-          touched. Subsequently, I learned <strong>Express.js</strong> from
-          course Advanced Web Application, <strong>Java Spring Boot</strong> and
-          other Go web frameworks such as <strong>Echo</strong>
-          and <strong>Fiber</strong>.
+          <strong>SA</strong> and <strong>SE</strong> also led me into a realm
+          of back-end development.{" "}
+          <strong style={{ color: "#00ADD8" }}>Go with Gin</strong> becomes a
+          first back-end framework I have touched. Subsequently, I learned{" "}
+          <strong>Express.js</strong> from class Advanced Web Application,{" "}
+          <strong style={{ color: "#8BC34A" }}>Java Spring Boot</strong> and
+          other Go web frameworks such as <strong>Echo</strong> and{" "}
+          <strong>Fiber</strong>.
         </>
       ),
     },
@@ -126,8 +134,17 @@ const skillList: Record<string, SkillList[]> = {
       title: "Databases",
       description: (
         <>
-          The first database I got to try was <strong>MySQL</strong>, and I also explored{" "} 
-          <strong>NoSQL</strong> options like MongoDB and Redis.
+          <strong style={{ color: "#4479A1" }}>MySQL</strong> is a first
+          database I have learned. I practiced database management by doing
+          small project in Database Design class and project in{" "}
+          <strong>SA</strong> and <strong>SE</strong>. After that, I had a
+          chance to explore <strong>NoSQL</strong> databases like{" "}
+          <strong style={{ color: "#47A248" }}>MongoDB</strong>, and learned
+          caching by utilizing{" "}
+          <strong style={{ color: "#E33E2D" }}>Redis</strong>. Trying out
+          different databases helped me understand their
+          strengths and limitations, so now I know which type fits best in
+          various scenarios.
         </>
       ),
       tech: databases,
@@ -139,7 +156,8 @@ const skillList: Record<string, SkillList[]> = {
       description: (
         <>
           Version control is one of most interesting things I have learned in
-          software development journey. SA and SE taught me how to use{" "}
+          software development journey. <strong>SA</strong> and{" "}
+          <strong>SE</strong> taught me how to use{" "}
           <strong style={{ color: "#F05033" }}>Git</strong> to maintain a source
           code of project with a team such as managing branches, resolving code
           conflicts and tracking changes from previous commits.
@@ -154,7 +172,7 @@ const skillList: Record<string, SkillList[]> = {
         <>
           I have also tried using <strong>LaTeX</strong> to write my CV and{" "}
           <strong>Markdown</strong> for documentation. There was a time at work
-          when a senior assigned me to do data analysis, which gave me hands-on
+          when a senior developer assigned me to perform data analysis, which gave me hands-on
           experience with{" "}
           <strong style={{ color: "#20A7C9" }}>Apache Superset</strong>
         </>
@@ -167,13 +185,15 @@ const skillList: Record<string, SkillList[]> = {
       title: "กำลังเรียนรู้อยู่",
       description: (
         <>
-          ในเวลาว่างนิด ๆ หน่อย ๆ ผมลองศึกษา{" "}
+          ในเวลาว่างอันน้อยนิด ผมกำลังลงลึกการพัฒนา Backend ด้วยการฝึกเขียน{" "}
           <strong style={{ color: "#8BC34A" }}>Java Spring Boot</strong> จาก
-          Documents โดยเข้าใจ REST API เบื้องต้น, การยืนยันตัวตนด้วย JWT, Open
-          Authentication &#40;OAuth&#41;, แล้วก็การทำ Caching ด้วย{" "}
-          <strong style={{ color: "#E33E2D" }}>Redis</strong> นอกจากนี้ผมลองใช้{" "}
-          <strong style={{ color: "#0DB7ED" }}>Docker</strong>{" "}
-          เพื่อติดตั้งฐานข้อมูลแทนการติดตั้งลงเครื่องโดยตรงด้วย
+          Docs ต่าง ๆ โดยได้เรียนรู้เกี่ยวกับการยืนยันตัวตนด้วย JWT, ใช้ Open
+          Authentication &#40;OAuth&#41; ทำล็อกอินด้วย GitHub และ Google
+          และหัดทำ Caching ด้วย{" "}
+          <strong style={{ color: "#E33E2D" }}>Redis</strong> สำหรับแคชข้อมูลจาก
+          Database นอกจากนี้ผมลองใช้{" "}
+          <strong style={{ color: "#0DB7ED" }}>Docker</strong> เพื่อลง Database
+          แทนการติดตั้งลงเครื่องโดยตรง
         </>
       ),
       tech: currentlyLearning,
@@ -183,8 +203,11 @@ const skillList: Record<string, SkillList[]> = {
       title: "ภาษาโปรแกรม",
       description: (
         <>
-          สมัยเรียนมหาวิทยาลัย ผมได้เรียนภาษาโปรแกรมหลายตัวเลย ได้แก่ Python
-          ตามด้วย C++, Java, Go, JavaScript และ TypeScript
+          ช่วงเรียนมหาวิทยาลัย เรียกได้ว่า ได้ลองหลายภาษาโปรแกรม เริ่มต้นจากปี 1
+          ได้เรียน Python เป็นตัวแรก พอเข้าปี 2 ก็ได้เรียน C++, Java, JavaScript
+          และ TypeScript ตามลำดับ ภาษาที่ผมชอบที่สุดมี 2 ตัว คือ เจ้างูเหลือม{" "}
+          <strong style={{ color: "#3776AB" }}>Python</strong> และ{" "}
+          <strong style={{ color: "#007ACC" }}>TypeScript</strong>
         </>
       ),
       tech: programmingLanguages,
@@ -195,9 +218,9 @@ const skillList: Record<string, SkillList[]> = {
       tech: frontendDevelopment,
       description: (
         <>
-          เมื่อเข้าชั้นปีที่ 3 ผมได้รู้จักการทำเว็บด้วย <strong>React</strong>{" "}
-          <strong>TypeScript</strong> และ <strong>Material UI</strong>{" "}
-          เป็นเฟรมเวิร์ก CSS ครั้งแรกในวิชา{" "}
+          เมื่อเข้าปีที่ 3 ผมได้ลองเขียนซอฟต์แวร์แบบจริงจังครั้งแรก ด้วยลองเขียน{" "}
+          <strong>React</strong> <strong>TypeScript</strong> และ{" "}
+          <strong>Material UI</strong> ในวิชา{" "}
           <strong>System Analysis &amp; Design &#40;SA&#41;</strong> และ{" "}
           <strong>Software Engineering &#40;SE&#41;</strong> หลังจากผ่านทั้ง 2
           วิชาแล้ว ก็เลยตัดสินใจพัฒนาโปรเจกต์เว็บกับรุ่นพี่ โดยใช้{" "}
@@ -210,11 +233,13 @@ const skillList: Record<string, SkillList[]> = {
       title: "หลังบ้าน",
       description: (
         <>
-          วิชา SA และ SE ทำให้ผมได้ลองพัฒนา Backend โดยเริ่มจากการสัมผ้สกับภาษา
-          Go และ Gin เป็นเฟรมเวิร์ก Back-end ต่อมาก็ได้ลองใช้อย่างอื่นบ้าง
-          ไม่ว่าจะเป็น Express.js ในวิชา Advanced Web Application, Java Spring
-          boot ตอนเรียนรู้ด้วยตัวเอง และเฟรมเวิร์กอื่น ๆ ของ Go ได้แก่ Echo และ
-          Fiber
+          วิชา <strong>SA</strong> กับ <strong>SE</strong> ทำให้ผมได้ลองพัฒนา
+          Backend เริ่มจากการได้ใช้ภาษา Go และเฟรมเวิร์ก Gin ก่อนเลย
+          จากนั้นก็ได้ลองใช้เฟรมเวิร์กอื่น ๆ อย่าง <strong>Express.js</strong>{" "}
+          ในวิชา Advanced Web Application แล้วก็ลอง{" "}
+          <strong style={{ color: "#8BC34A" }}>Java Spring Boot</strong>{" "}
+          ด้วยตัวเองบ้าง แล้วยังได้ลองเฟรมเวิร์กอื่นในภาษา Go อย่าง{" "}
+          <strong>Echo</strong> กับ <strong>Fiber</strong> อีกด้วย
         </>
       ),
       tech: backEndDevelopment,
@@ -224,8 +249,17 @@ const skillList: Record<string, SkillList[]> = {
       title: "ฐานข้อมูล",
       description: (
         <>
-          ฐานข้อมูลตัวแรกที่ได้ลองเลยก็คือ <strong>MySQL</strong> และได้ลอง{" "}
-          NoSQL อย่าง <strong>MongoDB</strong> และ <strong>Redis</strong> ด้วย
+          Database ตัวแรกที่ได้ลองใช้เลยคือ{" "}
+          <strong style={{ color: "#4479A1" }}>MySQL</strong>{" "}
+          เริ่มจากงานโปรเจกต์วิชา Database Design แล้วก็ค่อย ๆ
+          คุ้นเคยกับการจัดการข้อมูลมากขึ้นตอนสร้างซอฟต์แวร์ในวิชา{" "}
+          <strong>SA</strong> และ <strong>SE</strong>
+          หลังจากนั้นก็ได้ลองฐานข้อมูลแบบ <strong>NoSQL</strong> อย่าง{" "}
+          <strong style={{ color: "#47A248" }}>MongoDB</strong>{" "}
+          ทำให้ผมได้ลองอะไรใหม่อย่างการเก็บข้อมูลแบบไม่ใช้โครงสร้างตาราง
+          แถมยังได้สัมผัสกับ <strong style={{ color: "#E33E2D" }}>Redis</strong>{" "}
+          เพื่อลองแคชข้อมูล พอได้ลองหลาย ๆ ตัวก็เริ่มเห็นข้อดีข้อเสียของแต่ละแบบ
+          ทำให้รู้ว่าจะใช้ตัวไหนในสถานการณ์ไหน
         </>
       ),
       tech: databases,

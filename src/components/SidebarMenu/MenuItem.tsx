@@ -24,7 +24,7 @@ const MenuItem = (props: MenuItemProps) => {
       }}
     >
       <div
-        className={`p-2 flex items-center ${styles.sidebarMenu} ${hoverStyle}`}
+        className={`p-2 flex items-center rounded-xl ${styles.sidebarMenu} ${hoverStyle}`}
         style={{
           background:
             currentPath === href

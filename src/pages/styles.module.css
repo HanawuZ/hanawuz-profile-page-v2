@@ -12,3 +12,15 @@
   border: 1px solid white;
   background-image: linear-gradient(45deg, #e52e71, #ff8a00);
 }
+
+.goHomeButton {
+  text-align: center;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 2rem;
+  transition: all 0.15s;
+}
+
+.goHomeButton:hover {
+  background-image: linear-gradient(45deg, #e52e71, #ff8a00);
+}

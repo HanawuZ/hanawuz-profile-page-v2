@@ -1,11 +1,15 @@
-const wordLocales: Record<string, Record<string, string>> = {
+const wordLocales: Record<string, Record<string, string | string[]>> = {
   en: {
     letConnect: "Let's Connect",
     viewCode: "View Code",
     viewProject: "View Project",
     viewDetail: "View Detail",
     oops: "Oops...",
-    pageNotFound: "There is no page",
+    pageNotFound: [
+      "Page Not Found..",
+      "Nothing here..",
+      "Are you looking for something?"
+    ],
     pageNotFoundQuestion: "What are you looking for?",
     graduatedFrom: "I am graduated from",
   },
@@ -15,7 +19,11 @@ const wordLocales: Record<string, Record<string, string>> = {
     viewProject: "เปิดโปรเจค",
     viewDetail: "ดูรายละเอียด",
     oops: "อุ๊บบบ...",
-    pageNotFound: "ไม่พบหน้า",
+    pageNotFound: [
+      "ไม่พบหน้า",
+      "หน้านี้ไม่มีอะไรรร",
+      "หาอะไรอยู่จ้ะ ตะเอง",
+    ],
     pageNotFoundQuestion: "กำลังมองหาอะไรอ่า",
     graduatedFrom: "จบการศึกษาจาก",
   },

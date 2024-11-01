@@ -72,22 +72,22 @@ const PersonalInfoSection = () => {
           </div>
           <div className="flex items-center gap-3 p-1 px-3">
             <FaUserClock size={20} />
-            {/* <span> {aboutMe[language].age}: </span> */}
             {calculateAge(new Date(2000, 11, 10))} {aboutMe[language].ageUnit}
           </div>
         </div>
       </div>
       <div className="w-full flex justify-center mt-4">
-        <button 
-          className={`px-2 p-1 flex gap-2 items-center ${styles.downloadButton}`}
+        <button
+          className={`px-2 p-1 flex gap-2 items-center ${styles.downloadButton} opacity-40 pointer-events-none`}
           style={{
             borderColor: mode === "dark" ? "#f9f9f9" : "#000000",
             border: "1px solid",
             borderRadius: "2rem",
             transition: "all 0.15s ease-in-out",
           }}
-        > 
-          <MdOutlineDownload size={20} />Download CV
+        >
+          <MdOutlineDownload size={20} />
+          {language === "th" ? "CV ยังเขียนไม่เสร็จจ้า" : "CV not finished yet"}
         </button>
       </div>
     </div>
@@ -110,7 +110,10 @@ const AboutMeSection = () => {
           {" "}
           {aboutMeList[language].title}{" "}
         </span>
-        <div className="h-[3.5px] w-1/6" style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }} />
+        <div
+          className="h-[3.5px] w-1/6 mt-1"
+          style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }}
+        />
       </div>
       <ul className="tracking-wide max-md:text-sm mt-3 list-disc mx-8 break-normal hyphens-auto sm:ms-16 ms-12">
         {language === "en" && (
@@ -148,8 +151,8 @@ const AboutMeSection = () => {
             </ListItem>
             <ListItem className="leading-relaxed">
               Have a strong background in both front-end and back-end
-              development. I am presently deep diving into back-end
-              development by coding ♨️{" "}
+              development. I am presently deep diving into back-end development
+              by coding ♨️{" "}
               <text className="font-bold" style={{ color: "#ED8B00" }}>
                 Java Spring Boot
               </text>{" "}
@@ -189,14 +192,30 @@ const AboutMeSection = () => {
               </Link>
             </ListItem>
             <ListItem className="leading-relaxed">
-              มีประสบการณ์ 1 ปีในการช่วยดูแลระบบ<text className="font-bold"> จัดการการกระจายสินค้า &#40;DMS&#41; </text> 
-              โดยรับหน้าที่ในการปรับปรุงระบบคำนวนโปรโมชัน จัดการเป้ายอดขายของร้านค้า และจัดการสินค้าคงคลัง
+              มีประสบการณ์ 1 ปีในการช่วยดูแลระบบ
+              <text className="font-bold">
+                {" "}
+                จัดการการกระจายสินค้า &#40;DMS&#41;{" "}
+              </text>
+              โดยรับหน้าที่ในการปรับปรุงระบบคำนวนโปรโมชัน
+              จัดการเป้ายอดขายของร้านค้า และจัดการสินค้าคงคลัง
             </ListItem>
             <ListItem className="leading-relaxed">
-              ผมมีพื้นฐานแน่นทั้งฝั่ง Front-end และ Back-end ตอนนี้กำลังลงลึกการพัฒนา Backend ด้วย 
-              ♨️ <text className="font-bold" style={{ color: "#ED8B00" }}>Java Spring Boot</text> และ
-              <text className="font-bold" style={{ color: "#00ADD8" }}> ภาษา Go</text> นอกจากนี้ยังศึกษาแนวทางปฏิบัติเพิ่มเติมเกี่ยวกับการพัฒนาซอฟต์แวร์ด้วย เช่น 
-              Clean architecture, React design patterns และ Behavior-driven development.
+              สามารถเขียนโค๊ดแบบ Full stack ได้ ก็คือเขียนได้ทั้งหน้าบ้าน
+              &#40;Frontend&#41; และหลังบ้าน &#40;Backend&#41; โดยฝั่ง Frontend
+              จะเขียน <strong style={{ color: "#88dded" }}>React</strong>{" "}
+              เป็นหลัก ส่วน Backend คุ้นเคยกับการเขียน
+              <span className="font-bold" style={{ color: "#00ADD8" }}>
+                {" "}
+                ภาษา Go
+              </span>{" "}
+              ตอนนี้กำลังลงลึกการพัฒนา Backend ด้วย{" "}
+              <text className="font-bold" style={{ color: "#8BC34A" }}>
+                Java Spring Boot
+              </text>{" "}
+              นอกจากนี้กำลังศึกษาและนำแนวทางปฏิบัติเพิ่มเติมเกี่ยวกับการพัฒนาซอฟต์แวร์มาใช้ระหว่างทำงานด้วย
+              เช่น Clean Architecture, React Design Patterns และ Behavior-driven
+              Development.
             </ListItem>
           </>
         )}
@@ -223,20 +242,43 @@ const EducationSection = () => {
           {" "}
           {education[language].title}{" "}
         </span>
-        <div className="h-[3.5px] w-1/6" style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }} />
+        <div
+          className="h-[3.5px] w-1/6 mt-1"
+          style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }}
+        />
       </div>
       <div className="tracking-wide max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
         {language === "en" && (
           <div className="leading-relaxed">
-            I graduated from <text className={styles.gradientText}>{education[language].university}</text> with
-            <text style={{ fontStyle: "italic", color: themes[mode].secondaryText }}> Bachelor&#39;s degree in Computer Engineering</text>,
-            completing my studies in{" "}<text> {education[language].graduatedDate}.</text>
+            I graduated from{" "}
+            <text className={styles.gradientText}>
+              {education[language].university}
+            </text>{" "}
+            with
+            <text
+              style={{ fontStyle: "italic", color: themes[mode].secondaryText }}
+            >
+              {" "}
+              Bachelor&#39;s degree in Computer Engineering
+            </text>
+            , completing my studies in{" "}
+            <text> {education[language].graduatedDate}.</text>
           </div>
         )}
         {language === "th" && (
           <div className="leading-relaxed">
-            จบการศึกษาในระดับ <text className="italic" style={{ color: themes[mode].secondaryText }}>{education[language].degree}, {education[language].major}</text>{" "}
-            จาก <text className={styles.gradientText}>{" "}{education[language].university}{" "}</text>
+            จบการศึกษาในระดับ{" "}
+            <text
+              className="italic"
+              style={{ color: themes[mode].secondaryText }}
+            >
+              {education[language].degree}, {education[language].major}
+            </text>{" "}
+            จาก{" "}
+            <text className={styles.gradientText}>
+              {" "}
+              {education[language].university}{" "}
+            </text>
             เมื่อเดิอน <text> {education[language].graduatedDate} </text>
           </div>
         )}
@@ -281,7 +323,10 @@ const LetsConnect = () => {
           {" "}
           {wordLocales[language].letConnect}{" "}
         </span>
-        <div className="h-[3.5px] w-1/6" style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }} />
+        <div
+          className="h-[3.5px] w-1/6 mt-1"
+          style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }}
+        />
       </div>
       <div className="flex justify-center m-5 mt-8">
         <div className="grid gap-3 max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3">

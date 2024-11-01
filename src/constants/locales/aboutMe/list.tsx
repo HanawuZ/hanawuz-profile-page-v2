@@ -6,7 +6,7 @@ export interface AboutMeListInterface {
 export const aboutMeList: Record<string, AboutMeListInterface> = {
   th: {
     title: "ชั้นคือใคร",
-    sleep: "ตอนนี้อยากนอน 69 ชั่วโมงต่อวันมากกกก!!",
+    sleep: "ตอนนี้อยากนอน 69 ชั่วโมงต่อวันมากกกก!! ง่วงจ้าาา!!",
   },
   en: {
     title: "Who am I",

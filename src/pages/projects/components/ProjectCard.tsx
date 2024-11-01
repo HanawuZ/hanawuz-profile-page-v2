@@ -5,22 +5,25 @@ import wordLocales from "@/constants/locales/word";
 import themes from "@/theme";
 import { FaCalendarAlt } from "react-icons/fa";
 
-const ProjectCard = ({ projectKey }: { projectKey: string }): JSX.Element => {
+const ProjectCard = ({ projectKey = "default" }: { projectKey?: string }): JSX.Element => {
   const { language, setProjectKey, mode } = useProfileContext();
-  const project = PROJECTS[projectKey]?.[language] ?? {
-    projectCardImageUrl: "",
-    name: "",
-    projectTimeRange: "",
-    overview: [],
-  };
+  const project = PROJECTS[projectKey]?.[language] 
 
-  const { projectCardImageUrl, name, projectTimeRange, overview } = project;
+  const { projectCardImageUrl , name, projectTimeRange, overview } = project;
+  
+  const noProjectInfo = projectKey === "default" ? true : false
   return (
-    <div className="border border-gray-500 shadow-lg max-w-md overflow-hidden lg:max-w-4xl lg:min-h-[200px] max-lg:h-[500px]">
+    <div 
+      className="border border-gray-500 shadow-lg max-w-md overflow-hidden lg:max-w-4xl lg:min-h-[200px] max-lg:h-[500px]"
+      style={{
+        opacity: noProjectInfo ? 0.4 : 1,
+        pointerEvents: noProjectInfo ? "none" : "auto",
+      }}
+    >
       <div className="lg:grid lg:grid-cols-3">
         <div className="flex justify-center items-center">
           <img
-            className="h-full w-full object-cover max-lg:h-48"
+            className="h-full w-full object-cover max-lg:h-48 max-h-[250px]"
             src={projectCardImageUrl}
             alt={name}
           />
@@ -48,6 +51,7 @@ const ProjectCard = ({ projectKey }: { projectKey: string }): JSX.Element => {
               className="text-sm min-h-[100px] pt-3 leading-relaxed tracking-wide hyphens-auto break-normal"
               style={{
                 color: themes[mode].secondaryText,
+                height: noProjectInfo ? "132px" : "auto",
               }}
             >
               {overview}
@@ -58,15 +62,17 @@ const ProjectCard = ({ projectKey }: { projectKey: string }): JSX.Element => {
                 color: themes[mode].primaryText,
               }}
             >
-              <button
-                onClick={() => setProjectKey(projectKey)}
-                className={`${styles.linkButton} max-lg:w-full leading-relaxed tracking-wide`}
-                style={{
-                  border: "solid 1px",
-                }}
-              >
-                {wordLocales[language].viewDetail}
-              </button>
+              {!noProjectInfo && 
+                <button
+                  onClick={() => setProjectKey(projectKey ?? "default")}
+                  className={`${styles.linkButton} max-lg:w-full leading-relaxed tracking-wide`}
+                  style={{
+                    border: "solid 1px",
+                  }}
+                >
+                  {wordLocales[language].viewDetail}
+                </button>
+              }
             </div>
           </div>
         </div>
