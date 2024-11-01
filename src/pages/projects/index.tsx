@@ -1,5 +1,5 @@
 import { WebHeader } from "@/components/WebHeader"
-import { ProjectBody } from "./components/ProjectBody"
+import  ProjectBody  from "./components/ProjectBody"
 import PageLayout from "@/components/layout/PageLayout"
 import { useProfileContext } from "@/context/ProfileContext"
 import pageLocales from "@/constants/locales/page"

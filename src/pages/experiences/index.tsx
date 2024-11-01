@@ -1,5 +1,5 @@
 import { WebHeader } from "@/components/WebHeader";
-import { ExperienceBody } from "./components/ExperienceBody";
+import ExperienceBody  from "./components/ExperienceBody";
 import PageLayout from "@/components/layout/PageLayout";
 import { useProfileContext } from "@/context/ProfileContext";
 import pageLocales from "@/constants/locales/page";

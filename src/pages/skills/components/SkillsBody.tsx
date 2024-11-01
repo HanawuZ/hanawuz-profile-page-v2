@@ -42,4 +42,4 @@ const SkillsBody = () => {
   );
 };
 
-export { SkillsBody };
+export default SkillsBody;

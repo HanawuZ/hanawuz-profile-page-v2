@@ -1,5 +1,5 @@
 
-import { AcknowledgementBody } from "./components/AcknowledgementBody";
+import AcknowledgementBody  from "./components/AcknowledgementBody";
 import { WebHeader } from "@/components/WebHeader";
 import PageLayout from "@/components/layout/PageLayout";
 import { useProfileContext } from "@/context/ProfileContext";

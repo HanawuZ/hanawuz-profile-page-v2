@@ -1,4 +1,4 @@
-import { ExperienceContainer } from "./ExperienceContainer";
+import  ExperienceContainer from "./ExperienceContainer";
 import ListItem from "@/components/ui/Listing/ListItem";
 import { useProfileContext } from "@/context/ProfileContext";
 import experiences from "@/constants/locales/experiences";
@@ -37,4 +37,4 @@ const ExperienceBody = () => {
   );
 };
 
-export { ExperienceBody };
+export default ExperienceBody;

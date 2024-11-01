@@ -38,4 +38,4 @@ const AcknowledgementBody = () => {
   );
 };
 
-export { AcknowledgementBody };
+export default AcknowledgementBody;

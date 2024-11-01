@@ -81,4 +81,4 @@ const ProjectCard = ({ projectKey = "default" }: { projectKey?: string }): JSX.E
   );
 };
 
-export { ProjectCard };
+export default ProjectCard;

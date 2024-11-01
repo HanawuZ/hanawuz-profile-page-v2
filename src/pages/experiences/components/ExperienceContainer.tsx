@@ -40,4 +40,4 @@ const ExperienceContainer = (props: ExperienceContainerProps) => {
   );
 };
 
-export { ExperienceContainer };
+export default ExperienceContainer;

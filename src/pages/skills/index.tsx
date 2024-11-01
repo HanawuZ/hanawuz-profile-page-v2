@@ -1,5 +1,5 @@
 import { WebHeader } from "@/components/WebHeader";
-import { SkillsBody } from "./components/SkillsBody";
+import SkillsBody from "./components/SkillsBody";
 import PageLayout from "@/components/layout/PageLayout";
 import { useProfileContext } from "@/context/ProfileContext";
 import pageLocales from "@/constants/locales/page";
