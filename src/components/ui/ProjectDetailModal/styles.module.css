@@ -1,0 +1,83 @@
+.viewProjectButton {
+  text-align: center;
+  border-radius: 2rem;
+  transition: all 0.15s;
+}
+
+.viewProjectButton:hover {
+  color: white;
+  border: 1px solid white;
+  background-image: linear-gradient(45deg, #e52e71, #ff8a00);
+}
+
+.icon {
+  transition: all 0.15s;
+}
+.icon:hover {
+  color: #ff8a00;
+}
+
+@keyframes fadeInAndGrow {
+  from {
+    opacity: 0;
+    /* Start opacity */
+    transform: scale(0.8);
+    /* Start shrink effect */
+  }
+
+  to {
+    opacity: 1;
+    /* End opacity */
+    transform: scale(1);
+    /* End growth effect */
+  }
+}
+
+@keyframes fadeOutAndShrink {
+  from {
+    opacity: 1;
+    /* Start with 1 opacity */
+    transform: scale(1);
+    /* Start with no shrink effect */
+  }
+
+  to {
+    opacity: 0;
+    /* End with 0 opacity */
+    transform: scale(0.8);
+    /* End with slight shrink effect */
+  }
+}
+.projectCarouselContainer {
+  height: 10rem;
+}
+
+@media (min-width: 425px) and (max-width: 1024px) {
+  .projectCarouselContainer {
+    height: 15rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .projectCarouselContainer {
+    height: 20rem;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1600px) {
+  .projectCarouselContainer {
+    height: 28rem;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 2000px) {
+  .projectCarouselContainer {
+    height: 35rem;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .projectCarouselContainer {
+    height: 720px;
+  }
+}

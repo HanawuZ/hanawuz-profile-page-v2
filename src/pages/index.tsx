@@ -1,237 +1,371 @@
-import { IoPerson } from "react-icons/io5";
-import { FaBookOpen } from "react-icons/fa";
-import { BsFillTelephoneFill, BsFillCake2Fill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
-import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
-import { useState } from "react";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaMedium,
+  FaPhoneAlt,
+  FaBirthdayCake,
+} from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-import Head from 'next/head'
+import { WebHeader } from "@/components/WebHeader";
+import Badge from "@/components/Badge";
+import ListItem from "@/components/ui/Listing/ListItem";
+import calculateAge from "@/utils/ageCalculator";
+import PageLayout from "@/components/layout/PageLayout";
+import { useProfileContext } from "@/context/ProfileContext";
+import { aboutMeList } from "@/constants/locales/aboutMe/list";
+import { education } from "@/constants/locales/aboutMe/education";
+import { aboutMe } from "@/constants/locales/aboutMe";
+import wordLocales from "@/constants/locales/word";
+import themes from "@/theme";
+import styles from "./styles.module.css";
+import { MdOutlineDownload } from "react-icons/md";
+import { FaUserClock } from "react-icons/fa6";
+
+/**
+ * The homepage of the website, rendering the main components of the website,
+ * including the web header, personal information section, about me section,
+ * education section, and a call-to-action section to contact the author.
+ *
+ * @returns {React.ReactElement} The JSX element representing the homepage.
+ */
+const Home = (): React.ReactElement => {
+  return (
+    <>
+      <WebHeader title="Thanawut - My website" />
+      <PageLayout title="THANAWUT TUAMPRAJAK">
+        <ImageSection />
+        <PersonalInfoSection />
+        <AboutMeSection />
+        <EducationSection />
+        <LetsConnect />
+      </PageLayout>
+    </>
+  );
+};
 
 const ImageSection = () => (
-  <div className="items-center slide-top grid p-3"
-    style={{
-      marginTop: "1rem",
-      marginBottom: "1rem"
-    }}
-  >
-    <Image
-      // className="rounded-full"
-      src={"/images/me-2.png"}
-      alt="image"
-      width={300}
-      height={300}
-      style={{
-        zIndex: 2,
-        // clipPath:"polygon(0 0, 100% 0, 100% 85%, 75% 100%, 25% 100%, 0 85%)"
-      }}
-    />
-    <div
-      className="relative max-sm:w-[200px] w-[200px] h-[200px]"
-      style={{
-        background: "rgba(0, 0, 0, 0.15)",
-        marginTop: "-30rem",
-        zIndex: 0
-      }}>
-    </div>
-    <div
-      className="relative w-[70px] h-[70px]"
-      style={{
-        background: "rgba(0, 0, 0, 0.15)",
-        marginTop: "-10rem",
-        marginLeft: "-4rem",
-        zIndex: 0
-      }}>
-    </div>
-    <div
-      className="relative w-[200px] h-[200px]"
-      style={{
-        background: "rgba(0, 0, 0, 0.15)",
-        marginTop: "-40rem",
-        marginLeft: "5rem",
-        zIndex: 0
-      }}>
-    </div>
-    <div
-      className="relative w-[100px] h-[100px]"
-      style={{
-        background: "rgba(0, 0, 0, 0.15)",
-        marginTop: "-10rem",
-        marginLeft: "12rem",
-        zIndex: 0
-      }}>
-    </div>
-    <div
-      className="relative w-[70px] h-[70px]"
-      style={{
-        background: "rgba(0, 0, 0, 0.15)",
-        marginTop: "-60rem",
-        marginLeft: "12rem",
-        zIndex: 0
-      }}>
-    </div>
-    <div
-      className="relative w-[40px] h-[40px]"
-      style={{
-        background: "rgba(0, 0, 0, 0.15)",
-        marginTop: "-62rem",
-        marginLeft: "5rem",
-        zIndex: 0
-      }}>
-    </div>
-    <div
-      className="relative w-[20px] h-[20px]"
-      style={{
-        background: "rgba(0, 0, 0, 0.15)",
-        marginTop: "-65rem",
-        marginLeft: "8rem",
-        zIndex: 0
-      }}>
-    </div>
+  <div className="items-center grid p-3 justify-items-center z-[2]">
+    <Image src="/images/me/me-1.png" alt="image" width={300} height={300} />
   </div>
 );
-const InfoCard = ({ icon, label, value, href }: { icon: JSX.Element, label: string, value: string, href: string }) => {
+
+const PersonalInfoSection = () => {
+  const { language, mode } = useProfileContext();
   return (
-    <div className="w-full ps-5 flex items-center">
-      <div className="me-2">
-        {icon}
+    <div
+      id="personal-info-section"
+      style={{
+        color: themes[mode].primaryText,
+      }}
+    >
+      <div className="max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-all">
+        <div className="flex flex-wrap gap-2 mt-2 w-full justify-center">
+          <div className="flex items-center gap-3 p-1 px-3">
+            <FaPhoneAlt size={20} />
+            +66 99 434 5245
+          </div>
+          <div className="flex items-center gap-3 p-1 px-3">
+            <FaBirthdayCake size={20} />
+            <text> {aboutMe[language].birthDate}</text>
+          </div>
+          <div className="flex items-center gap-3 p-1 px-3">
+            <FaUserClock size={20} />
+            {calculateAge(new Date(2000, 11, 10))} {aboutMe[language].ageUnit}
+          </div>
+        </div>
       </div>
-      <div
-        style={{
-          marginRight: "0.5rem",
-          width: "2px",
-          height: "80%",
-          background: 'black',
-        }}
-      />
-      <div className="grid">
-        <span className="text-sm">{label}</span>
-        {href ?
-          <Link
-            className={`link`}
-            href={href}
-          // Add hover effeect
-          >{value}</Link>
-          :
-          <span className="text-sm text-slate-700">{value}</span>
-        }
+      <div className="w-full flex justify-center mt-4">
+        <button
+          className={`px-2 p-1 flex gap-2 items-center ${styles.downloadButton} opacity-40 pointer-events-none`}
+          style={{
+            borderColor: mode === "dark" ? "#f9f9f9" : "#000000",
+            border: "1px solid",
+            borderRadius: "2rem",
+            transition: "all 0.15s ease-in-out",
+          }}
+        >
+          <MdOutlineDownload size={20} />
+          {language === "th" ? "CV ยังเขียนไม่เสร็จจ้า" : "CV not finished yet"}
+        </button>
       </div>
     </div>
   );
 };
 
-const Home = () => {
-  const [showBio, setShowBio] = useState<boolean>(true)
-
-  function toggleBio() {
-    setShowBio(!showBio)
-  }
+const AboutMeSection = () => {
+  const { language, mode } = useProfileContext();
 
   return (
-    <>
-      <Head>
-        <title>Thanawut</title>
-      </Head>
-      <div className="max-md:mt-5 z-10 h-screen grid items-center">
-        <div className="container mx-auto grid md:grid-cols-6"
-          style={{
-            zIndex: 1
-          }}
-        >
-          <div className=""> </div>
-          <div className="justify-self-center md:col-span-2">
-            <ImageSection />
-          </div>
-          <div className="homePage md:col-span-3 ms-2" style={{ zIndex: 1 }}>
-            <div className="">
-              <div className="flex mt-5 justify-between px-4 py-1"
+    <div
+      id="about-me"
+      className="mt-8"
+      style={{
+        color: themes[mode].primaryText,
+      }}
+    >
+      <div className="max-sm:ms-5 ms-8">
+        <span className="uppercase font-bold text-2xl">
+          {" "}
+          {aboutMeList[language].title}{" "}
+        </span>
+        <div
+          className="h-[3.5px] w-1/6 mt-1"
+          style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }}
+        />
+      </div>
+      <ul className="tracking-wide max-md:text-sm mt-3 list-disc mx-8 break-normal hyphens-auto sm:ms-16 ms-12">
+        {language === "en" && (
+          <>
+            <ListItem className="leading-relaxed">
+              Hello world! I am &quot;Gop&quot;, currently working as{" "}
+              <code
+                className="p-[3px] rounded text-slate-600"
                 style={{
-                  backgroundColor: "rgba(0, 0, 0, 0.15)",
+                  background: mode === "dark" ? "#4e4e4e" : "#ececec",
+                  color: themes[mode].primaryText,
                 }}
               >
-                <text className="text-2xl self-center"> Thanawut Tuamprajak</text>
-                <div className="text-sm text-gray-400 font-bold">
-                  <div>BIRTHDATE</div>
-                  <div className="flex w-full justify-end">11/10</div>
-                </div>
-              </div>
-              <div className="mt-2">
-                <div className="text-xl px-4 flex">
-                  <span> Position:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                  <span> N/A </span>
-                </div>
-              </div>
-              <div>
-                <div className="mt-4 w-full md:px-4 px-3">
-                  <div className="border border-slate-500 rounded-2xl grid grid-cols-2 gap-2">
-                    <button
-                      className="linkButton"
-                      style={{
-                        pointerEvents: "none",
-                        background: showBio
-                          ? 'linear-gradient(45deg, #e52e71, #ff8a00)'
-                          : 'linear-gradient(45deg, #ff8a00, #e52e71)',
-                        color: 'white',
-                        transform: !showBio ? 'translateX(105%)' : 'translateX(0)',
-                      }}
-                    >
-                      {showBio ? 'Personal Info' : 'About Me'}
-                    </button>
-                    <button
-                      onClick={toggleBio}
-                      style={{
-                        width: "100%", fontSize: "16px",
-                        transform: !showBio ? 'translateX(-100%)' : 'translateX(0)',
-                      }}
-                    >
-                      {showBio ? 'About Me' : 'Personal Info'}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              {showBio ?
-                <div className="h-80">
-                  <div className="mt-5">
-                    <div className="grid md:grid-cols-2 justify-items-center">
-                      <InfoCard icon={<IoPerson size={30} />} label="Age" value="10111" href="" />
-                      <InfoCard icon={<FaBookOpen size={30} />} label="Education" value="Computer Engineering" href="" />
-                      <InfoCard icon={<BsFillTelephoneFill size={30} />} label="Phone" value="+669-9434-5245" href="" />
-                      <InfoCard icon={<BsFillCake2Fill size={30} />} label="Date of birth" value="10/11/2000" href="" />
-                      <InfoCard icon={<MdEmail size={30} />} label="Email" value="thanawut.tuam@gmail.com" href="" />
-                    </div>
-                  </div>
-                  <div className="mt-5 max-md:pb-5">
-                    <text className="ps-3 font-bold text-2xl"> Links </text>
-                    <div className="grid md:grid-cols-2 justify-items-center">
-                      <InfoCard icon={<FaGithub size={30} />} label="Github" value="HanawuZ" href="https://github.com/HanawuZ" />
-                      <InfoCard icon={<FaLinkedin size={30} />} label="Linkedin" value="Thanawut Tuamprajak" href="www.linkedin.com/in/thanawut-tuamprajak-479144262" />
-                      <InfoCard icon={<FaMedium size={30} />} label="Medium" value="Thanawut Tuamprajak" href="https://medium.com/@thanawut.tuam" />
-                    </div>
-                  </div>
-                </div>
-                :
-                <div id="about-me" className="h-80 mt-5 px-5 text-justify">
-                  <text className="font-bold text-2xl"> About me </text>
-                  <p
-                    className="p-2 mt-2 py-3"
-                    style={{
-                      background: 'rgba(255, 255, 255, 0.3)',
-                      clipPath: "polygon(0 0, 95% 0, 100% 5%, 100% 100%, 5% 100%, 0 95%)"
-                    }}
-                  >
-                    As a novice developer with experience in the agile development process, I possess knowledge of software design,
-                    development, and testing. Proficient in implementing complex backend systems and creating intuitive, responsive
-                    websites, I am seeking for a back-end developer position which encompasses developing back-end application
-                    using Golang.
-                  </p>
-                </div>
-              }
-            </div>
-          </div>
-        </div>
-      </div >
-    </>
+                Application Developer Associate
+              </code>{" "}
+              at{" "}
+              <Link
+                className="text-blue-500 font-bold underline underline-offset-2 hover:text-blue-300"
+                href="https://www.tcc-technology.com"
+                style={{
+                  transition: "all 0.15s",
+                }}
+              >
+                T.C.C. Technology Co., Ltd.
+              </Link>
+            </ListItem>
+            <ListItem className="leading-relaxed">
+              I have 1 year experience in maintaining{" "}
+              <text className="font-bold">
+                {" "}
+                Distribution Management System &#40;DMS&#41;
+              </text>
+              , mainly refining for promotion calculation, sale target
+              management, and warehousing.
+            </ListItem>
+            <ListItem className="leading-relaxed">
+              Have a strong background in both front-end and back-end
+              development. I am presently deep diving into back-end development
+              by coding ♨️{" "}
+              <text className="font-bold" style={{ color: "#ED8B00" }}>
+                Java Spring Boot
+              </text>{" "}
+              and{" "}
+              <text className="font-bold" style={{ color: "#00ADD8" }}>
+                Golang
+              </text>{" "}
+              with widely-used web frameworks. Moreover, I am learning software
+              development practices like Clean architecture, React design
+              patterns and Behavior-driven development.
+            </ListItem>
+          </>
+        )}
+        {language === "th" && (
+          <>
+            <ListItem className="leading-relaxed">
+              สวัสดีครับทุกคน ผมชื่อ &quot;ก๊อป&quot; ครับ
+              ปัจจุบันทำงานในตำแหน่ง{" "}
+              <code
+                className="p-[3px] rounded text-slate-600"
+                style={{
+                  background: mode === "dark" ? "#4e4e4e" : "#ececec",
+                  color: themes[mode].primaryText,
+                }}
+              >
+                ผู้ช่วยนักพัฒนาแอพพลิเคชัน
+              </code>{" "}
+              ที่บริษัท{" "}
+              <Link
+                className="text-blue-500 font-bold underline underline-offset-2 hover:text-blue-300"
+                href="https://www.tcc-technology.com"
+                style={{
+                  transition: "all 0.15s",
+                }}
+              >
+                T.C.C. Technology Co., Ltd.
+              </Link>
+            </ListItem>
+            <ListItem className="leading-relaxed">
+              มีประสบการณ์ 1 ปีในการช่วยดูแลระบบ
+              <text className="font-bold">
+                {" "}
+                จัดการการกระจายสินค้า &#40;DMS&#41;{" "}
+              </text>
+              โดยรับหน้าที่ในการปรับปรุงระบบคำนวนโปรโมชัน
+              จัดการเป้ายอดขายของร้านค้า และจัดการสินค้าคงคลัง
+            </ListItem>
+            <ListItem className="leading-relaxed">
+              สามารถเขียนโค๊ดแบบ Full stack ได้ ก็คือเขียนได้ทั้งหน้าบ้าน
+              &#40;Frontend&#41; และหลังบ้าน &#40;Backend&#41; โดยฝั่ง Frontend
+              จะเขียน <strong style={{ color: "#88dded" }}>React</strong>{" "}
+              เป็นหลัก ส่วน Backend คุ้นเคยกับการเขียน
+              <span className="font-bold" style={{ color: "#00ADD8" }}>
+                {" "}
+                ภาษา Go
+              </span>{" "}
+              ตอนนี้กำลังลงลึกการพัฒนา Backend ด้วย{" "}
+              <text className="font-bold" style={{ color: "#8BC34A" }}>
+                Java Spring Boot
+              </text>{" "}
+              นอกจากนี้กำลังศึกษาและนำแนวทางปฏิบัติเพิ่มเติมเกี่ยวกับการพัฒนาซอฟต์แวร์มาใช้ระหว่างทำงานด้วย
+              เช่น Clean Architecture, React Design Patterns และ Behavior-driven
+              Development.
+            </ListItem>
+          </>
+        )}
+        <ListItem className="leading-relaxed">
+          💤 {aboutMeList[language].sleep}
+        </ListItem>
+      </ul>
+    </div>
   );
-}
+};
 
-export default Home
+const EducationSection = () => {
+  const { language, mode } = useProfileContext();
+  return (
+    <div
+      id="education-info-section"
+      className="mt-12"
+      style={{
+        color: themes[mode].primaryText,
+      }}
+    >
+      <div className="max-sm:ms-5 ms-8">
+        <span className="uppercase font-bold text-2xl">
+          {" "}
+          {education[language].title}{" "}
+        </span>
+        <div
+          className="h-[3.5px] w-1/6 mt-1"
+          style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }}
+        />
+      </div>
+      <div className="tracking-wide max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
+        {language === "en" && (
+          <div className="leading-relaxed">
+            I graduated from{" "}
+            <text className={styles.gradientText}>
+              {education[language].university}
+            </text>{" "}
+            with
+            <text
+              style={{ fontStyle: "italic", color: themes[mode].secondaryText }}
+            >
+              {" "}
+              Bachelor&#39;s degree in Computer Engineering
+            </text>
+            , completing my studies in{" "}
+            <text> {education[language].graduatedDate}.</text>
+          </div>
+        )}
+        {language === "th" && (
+          <div className="leading-relaxed">
+            จบการศึกษาในระดับ{" "}
+            <text
+              className="italic"
+              style={{ color: themes[mode].secondaryText }}
+            >
+              {education[language].degree}, {education[language].major}
+            </text>{" "}
+            จาก{" "}
+            <text className={styles.gradientText}>
+              {" "}
+              {education[language].university}{" "}
+            </text>
+            เมื่อเดิอน <text> {education[language].graduatedDate} </text>
+          </div>
+        )}
+      </div>
+
+      <div className="tracking-wide max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
+        <text className="max-md:text-sm font-bold">
+          {education[language].relevantCourse.title}:
+        </text>
+        <ul className="max-md:text-sm list-disc max-sm:mx-6 mx-8">
+          {education[language].relevantCourse.list?.map((course, index) => {
+            return (
+              <ListItem
+                key={index}
+                className="break-normal hyphens-auto leading-relaxed"
+              >
+                <text className="italic me-1" lang="en">
+                  {course?.name}&#58;{" "}
+                </text>
+                {course?.description}
+              </ListItem>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const LetsConnect = () => {
+  const { language, mode } = useProfileContext();
+  return (
+    <div
+      className="mt-12"
+      id="lets-connect"
+      style={{
+        color: themes[mode].primaryText,
+      }}
+    >
+      <div className="max-sm:ms-5 ms-8">
+        <span className="uppercase font-bold text-2xl">
+          {" "}
+          {wordLocales[language].letConnect}{" "}
+        </span>
+        <div
+          className="h-[3.5px] w-1/6 mt-1"
+          style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }}
+        />
+      </div>
+      <div className="flex justify-center m-5 mt-8">
+        <div className="grid gap-3 max-sm:grid-cols-1 max-lg:grid-cols-2 grid-cols-3">
+          <Badge
+            icon={<FaGithub color="#FFFFFF" size={24} />}
+            title="HanawuZ"
+            backgroundColor="#2b3137"
+            textColor="#FFFFFF"
+            link="https://github.com/HanawuZ"
+            border="none"
+          />
+          <Badge
+            icon={<FaLinkedin color="#FFFFFF" size={24} />}
+            title="Thanawut Tuamprajak"
+            backgroundColor="#0077B5"
+            textColor="#FFFFFF"
+            link="https://linkedin.com/in/thanawut-tuamprajak-479144262"
+            border="none"
+          />
+          <Badge
+            icon={<MdEmail color="#FFFFFF" size={24} />}
+            backgroundColor="#d44638"
+            textColor="#FFFFFF"
+            title="thanawut.tuam@gmail.com"
+            link="mailto:thanawut.tuam@gmail.com"
+            border="none"
+          />
+          <Badge
+            icon={<FaMedium color="#FFFFFF" size={24} />}
+            title="Thanawut Tuamprajak"
+            backgroundColor="#24292e"
+            textColor="#FFFFFF"
+            border="none"
+            link="https://medium.com/@thanawut.tuam"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
