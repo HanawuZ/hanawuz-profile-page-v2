@@ -13,7 +13,11 @@ type SkillList = {
   tech: BadgeProps[];
 };
 
-const currentlyLearning: BadgeProps[] = [badge.SPRING_BOOT, badge.DOCKER];
+const currentlyLearning: BadgeProps[] = [
+  badge.SPRING_BOOT, 
+  badge.DOCKER,
+  badge.DOTNET
+];
 
 const programmingLanguages: BadgeProps[] = [
   badge.GO,
@@ -66,16 +70,27 @@ const skillList: Record<string, SkillList[]> = {
       title: "Currently Learning",
       tech: currentlyLearning,
       description: (
-        <>
-          I am currently spending little free time to learn{" "}
-          <strong style={{ color: "#8BC34A" }}>Java Spring Boot</strong> from
-          official documents. I grasp knowledges of backend development
-          including learning authentication with JWT, using Open
-          authentication &#40;OAuth&#41; for GitHub and Google login and caching with{" "}
-          <strong style={{ color: "#E33E2D" }}>Redis</strong>. Moreover, I am
-          learning basic skill of{" "}
-          <strong style={{ color: "#0DB7ED" }}>Docker</strong> to containize
-          database rather than installing on my own machine.
+        <>  
+          I am currently using my free time to improve my backend development skills by 
+          learning microservices architecture, authentication with JWT,
+          implementing OAuth for GitHub and Google login, and caching with {" "}
+          <strong style={{ color: "#E33E2D" }}>Redis</strong>.
+          For microservices, I use <strong style={{ color: "#8BC34A" }}>Java Spring Boot</strong>,
+          {" "}<strong style={{ color: "#512BD4" }}>C# .NET</strong>{" "}and{" "}
+          <strong style={{ color: "#00ADD8" }}>Go Fiber</strong>{" "}for each service 
+          and develop services connection with the basics of gRPC. Additionally, I use basic skills in{" "}
+          <strong style={{ color: "#0DB7ED" }}>Docker</strong>{" "}to containize databases for each service.
+
+         {/* OLD
+
+         I am currently using my free time to study{" "}
+         <strong style={{ color: "#8BC34A" }}>Java Spring Boot</strong> {" "} 
+         through official documentation. I have gained knowledge in backend development, 
+         focusing on authentication with JWT, implementing OAuth for GitHub and Google login, 
+         and caching with <strong style={{ color: "#E33E2D" }}>Redis</strong>.
+         Moreover, I am learning basic skills in <strong style={{ color: "#0DB7ED" }}>Docker</strong>
+         {" "} to containize databases instead of instailling them locally.
+           */}
         </>
       ),
     },
@@ -85,12 +100,18 @@ const skillList: Record<string, SkillList[]> = {
       tech: programmingLanguages,
       description: (
         <>
-          During time in university, I learned various programming languages. As
+          During my time at university, I started programming with{" "}
+          <strong style={{ color: "#3776AB" }}>Python</strong>{" "} in my freshman year.
+          In my sophomore year, I expanded my skills to various languages such as C++, Java, Go, JavaScript
+          and TypeScript. My favourite languages are{" "}
+          <strong style={{ color: "#3776AB" }}>Python</strong> &amp;{" "}
+          <strong style={{ color: "#007ACC" }}>TypeScript</strong>.
+          {/* During time in university, I learned various programming languages. As
           a freshman, Python was my first programming language, then followed by
           C++, Java, Go, JavaScript and TypeScript in sophomore year. My two
           favourite languages are{" "}
           <strong style={{ color: "#3776AB" }}>Python</strong> and{" "}
-          <strong style={{ color: "#007ACC" }}>TypeScript</strong>
+          <strong style={{ color: "#007ACC" }}>TypeScript</strong> */}
         </>
       ),
     },
@@ -100,14 +121,14 @@ const skillList: Record<string, SkillList[]> = {
       tech: frontendDevelopment,
       description: (
         <>
-          When entered 3<sup>rd</sup> year of university,{" "}
+          When I entered my 3<sup>rd</sup> year of university,{" "}
           <strong>System Analysis &amp; Design &#40;SA&#41;</strong> and{" "}
-          <strong>Software Engineering &#40;SE&#41;</strong> introduced me the{" "}
-          <strong style={{ color: "#88dded" }}>React Typescript</strong> as
-          front-end library and{" "}
+          <strong>Software Engineering &#40;SE&#41;</strong> introduced me to {" "}
+          <strong style={{ color: "#88dded" }}>React with TypeScript</strong> as
+          frontend library and{" "}
           <strong style={{ color: "#1FA6CA" }}>Material UI</strong> as CSS
-          framework. After completing <strong>SE</strong> class, I decided to
-          develop web project with senior using <strong>Next.js</strong> and{" "}
+          framework. After completing <strong>SE</strong> course, I collaborated with a senior to
+          develop a web project using <strong>Next.js</strong> and{" "}
           <strong>Bootstrap.</strong>
         </>
       ),
@@ -120,11 +141,11 @@ const skillList: Record<string, SkillList[]> = {
         <>
           <strong>SA</strong> and <strong>SE</strong> also led me into a realm
           of back-end development.{" "}
-          <strong style={{ color: "#00ADD8" }}>Go with Gin</strong> becomes a
-          first back-end framework I have touched. Subsequently, I learned{" "}
-          <strong>Express.js</strong> from class Advanced Web Application,{" "}
+          <strong style={{ color: "#00ADD8" }}>Gin</strong> was the
+          first backend framework I have touched. Later, in Advanced Web Application,  
+          I learned{" "}<strong>Express.js</strong>,{" "}
           <strong style={{ color: "#8BC34A" }}>Java Spring Boot</strong> and
-          other Go web frameworks such as <strong>Echo</strong> and{" "}
+          other Go web frameworks like <strong>Echo</strong> and{" "}
           <strong>Fiber</strong>.
         </>
       ),
@@ -135,16 +156,16 @@ const skillList: Record<string, SkillList[]> = {
       description: (
         <>
           <strong style={{ color: "#4479A1" }}>MySQL</strong> is a first
-          database I have learned. I practiced database management by doing
-          small project in Database Design class and project in{" "}
-          <strong>SA</strong> and <strong>SE</strong>. After that, I had a
-          chance to explore <strong>NoSQL</strong> databases like{" "}
-          <strong style={{ color: "#47A248" }}>MongoDB</strong>, and learned
+          database I have learned. I practiced database management by working on
+          small project in Database Design class, as well as projects in {" "}          
+          <strong>SA</strong> and <strong>SE</strong>. I also explored {" "} 
+          <strong>NoSQL</strong> databases like{" "}
+          <strong style={{ color: "#47A248" }}>MongoDB</strong> and gained experience with
           caching by utilizing{" "}
           <strong style={{ color: "#E33E2D" }}>Redis</strong>. Trying out
           different databases helped me understand their
           strengths and limitations, so now I know which type fits best in
-          various scenarios.
+          different scenarios.
         </>
       ),
       tech: databases,
@@ -155,11 +176,11 @@ const skillList: Record<string, SkillList[]> = {
       tech: tools,
       description: (
         <>
-          Version control is one of most interesting things I have learned in
+          Version control is one of most interesting things I have learned in my
           software development journey. <strong>SA</strong> and{" "}
           <strong>SE</strong> taught me how to use{" "}
-          <strong style={{ color: "#F05033" }}>Git</strong> to maintain a source
-          code of project with a team such as managing branches, resolving code
+          <strong style={{ color: "#F05033" }}>Git</strong> to maintain the source
+          code of a project within a team, including managing branches, resolving code
           conflicts and tracking changes from previous commits.
         </>
       ),
@@ -170,9 +191,9 @@ const skillList: Record<string, SkillList[]> = {
       tech: others,
       description: (
         <>
-          I have also tried using <strong>LaTeX</strong> to write my CV and{" "}
-          <strong>Markdown</strong> for documentation. There was a time at work
-          when a senior developer assigned me to perform data analysis, which gave me hands-on
+          I have used <strong>LaTeX</strong> to write my CV and{" "}
+          <strong>Markdown</strong> for documentation. At work, a senior developer
+          assigned me a data analysis task, which gave me hands-on
           experience with{" "}
           <strong style={{ color: "#20A7C9" }}>Apache Superset</strong>
         </>

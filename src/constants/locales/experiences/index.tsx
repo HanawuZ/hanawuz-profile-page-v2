@@ -1,67 +1,354 @@
+import { TbTargetArrow } from "react-icons/tb";
+import { BiTestTube } from "react-icons/bi";
 type Experience = {
   workplace?: string;
   location?: string;
   position?: string;
   period?: string;
-  detail?: string[] | JSX.Element[];
+  details: ExperienceDetail[];
 };
+
+export type ExperienceDetail = {
+  title?: string;
+  titleIcon?: JSX.Element;
+  type: "introduction" | "body" | "summary";
+  list: ExperienceDetailList[];
+};
+
+export type ExperienceDetailList = {
+  description: string | JSX.Element;
+  sublist: string[] | JSX.Element[];
+};
+
+/* 
+  {
+    title = 'title test'
+    icon = icon
+    type = 'body'
+    list = [
+      {
+        description: 'Sale promotion bra,bra,bra,bra'
+        sublist: [
+          'first, second, third',
+          <> Hello test </>
+        ]
+      }
+    ]
+  }
+*/
 
 const experiences: Record<string, Experience[]> = {
   en: [
     {
       workplace: "T.C.C. Technology Co. Ltd.",
       location: "Bangkok, Thailand",
-      position: "Application Developer Associate",
+      position: "Application Developer",
       period: "March 2024 - Present",
-      detail: [
-        <>
-          Worked with team to develop <strong>DMS backoffice</strong> for
-          managing distribution process such as managing sales orders, products,
-          sales promotions, sales targets, warehousing, sales report, and
-          tracking sales.
-        </>,
-        <>
-          Refined features involving sales promotion such as
-          improving promotion calculation logic to support new promotion
-          patterns, developing <strong>campaign system</strong> to manage sales
-          target for each retailer, and{" "}
-          <strong>coupon management system</strong> to manage coupons for
-          retailers.
-        </>,
-        <>
-          Implemented a coupon management feature for the backend application,
-          consisting of handling coupons data and calculating discounts when
-          retailers apply coupons during sales order creation.
-        </>,
-        <>
-          Created a user role and permission system on backoffice website for
-          managing user access to features of each role.
-        </>,
-        <>
-          Experienced in querying sales order data from the database and visualizng reports in{" "}
-          <strong style={{ color: "#20A7C9" }}>Apache Superset</strong> to
-          display sales data of each agent or retailer that improved data accessibility and decision-making.
-        </>,
+      details: [
+        {
+          title: "",
+          type: "introduction",
+          list: [
+            {
+              description: (
+                <>
+                  Collaborated with team to develop a web-based e-commerce
+                  platform for wholesale and retail distribution of food and
+                  beverage products. My role focused on backend development for
+                  the back-office system, supporting product, order, sales
+                  promotion, coupon, and report management features to
+                  streamline operations for business users.
+                </>
+              ),
+              sublist: [],
+            },
+          ],
+        },
+        {
+          title: "Key Contributions",
+          titleIcon: <TbTargetArrow color="red" size={22} />,
+          type: "body",
+          list: [
+            {
+              description: (
+                <strong>
+                  Contributed improvements of sales promotion features:
+                </strong>
+              ),
+              sublist: [
+                <>
+                  Refined the business logic of promotion calculations to
+                  support new promotion patterns including point-based rewards
+                  promotion and bundle promotion with fixed-value discounts.
+                </>,
+                <>
+                  Refactored backend logic for managing promotions to improve
+                  code readability and maintainability.
+                </>,
+              ],
+            },
+            {
+              description: (
+                <>
+                  <strong> Created campaign feature: </strong> a purchase
+                  accumulation tracking feature that records retailers total
+                  purchases within a specified campaign period.
+                </>
+              ),
+              sublist: [
+                <>Implemented backend APIs for managing campaign data.</>,
+                <>
+                  Built complex business logic for accurately counting campaign
+                  progress, allowing retailer purchase data to be counted by
+                  total price or product quantity, based on predefined campaign
+                  rules.
+                </>,
+                <>
+                  Designed a tiered reward system, enabling retailers to earn
+                  free products, discount coupons, or order-wide discounts upon
+                  reaching accumulation milestones.
+                </>,
+                <>
+                  Collected and organized campaign purchase data, enabling the
+                  data visualization team to create effective reports for
+                  strategic decision-making.
+                </>,
+              ],
+            },
+            {
+              description: (
+                <strong>
+                  Designed and implemented coupon managements features:
+                </strong>
+              ),
+              sublist: [
+                <>
+                  Built logic for creating and updating coupons, allowing user
+                  to set predefined products or brands to enable coupon usage,
+                  and define either fixed-value or percentage-based from order
+                  total price discount.
+                </>,
+                <>
+                  Created API documentation to facilitate integration and
+                  collaboration with team members.
+                </>,
+              ],
+            },
+            {
+              description: <strong>Created APIs for Banner management</strong>,
+              sublist: [
+                <>
+                  Built APIs to support banner creation and management, enabling
+                  wholesalers to promote their ongoing campaigns, promotions and
+                  marketing content.
+                </>,
+                <>
+                  Provided API documentation to assist team members in feature
+                  integration and usage.
+                </>,
+              ],
+            },
+            {
+              description: (
+                <strong> Improved inventory adjustment logic: </strong>
+              ),
+              sublist: [
+                <>
+                  Improved backend logic to support product stock adjustments,
+                  allowing users to add new items or update quantities across
+                  multiple stock.
+                </>,
+              ],
+            },
+            {
+              description: (
+                <strong>Worked on sales report visualization:</strong>
+              ),
+              sublist: [
+                <>
+                  Experienced in querying sales order data, and built reports
+                  using{" "}
+                  <strong style={{ color: "#20A7C9" }}>Apache Superset</strong>{" "}
+                  , improving visibility into wholesaler and retailer
+                  performance for decision-making.
+                </>,
+              ],
+            },
+          ],
+        },
+        //+----------------------------------------------------------------
+        // NEW.
+        // <>
+        //   Collaborated with team to develop an e-commerce platform used for distributing
+        //   food products and beverages to wholesalers and retailers. My role is contributed to the
+        //   development of the back-office system, enabling wholesalers to
+        //   efficiently manage products, orders, sale promotions, coupons, and sales reports.
+        // </>,
+        // <>
+        //   Contributed improvements of sales promotion features including:
+        //   - refined the business logic for promotion calculations to support new promotion patterns.
+        //   - refactored functions for managing promotion data, make codes more readable and understandable.
+        // </>,
+        // <>
+        //   Developed campaign feature, a purchase accumulation tracking feature that records retailers total purchases within a specified campaign period.
+        //   - Implemented backend APIs for managing campaign data.
+        //   - Built complex business logic for accurately counting campaign progress,
+        //     allowing retailer purchase data to be counted by total price or product quantity, based on predefined campaign rules.
+        //   - Designed a tiered reward system, enabling retailers to earn free products, discount coupons, or order-wide discounts upon reaching accumulation milestones.
+        //   - Collected and organized campaign purchase data, enabling the data visualization team to create effective reports for strategic decision-making
+        // </>,
+        // <>
+        //   Designed coupon managements features for back-office website,
+        //   especially creating business logic of create/update coupon,
+        //   allowing user to set predefined products or brands to allow coupon usage and
+        //   define discount with either exact value or percentage of order total price.
+        // </>,
+        // <>
+        //   Collaborated with cross-functional teams, including frontend developers,
+        //   product managers, and QA testers, to design features and
+        //   ensure seamless integration between backend services and frontend applications.
+        // </>,
+        // <>
+        //   Experienced in querying sales order data from the database and visualizng reports in{" "}
+        //   <strong style={{ color: "#20A7C9" }}>Apache Superset</strong> to
+        //   display sales data of each agent or retailer that improved data accessibility and decision-making.
+        // </>,
+
+        //+------------------------------------------------------------------------
+        // Old.
+        // <>
+        //   Worked with team to develop <strong>DMS backoffice</strong> for
+        //   managing distribution process such as managing sales orders, products,
+        //   sales promotions, sales targets, warehousing, sales report, and
+        //   tracking sales.
+        // </>,
+        // <>
+        //   Refined features involving sales promotion such as
+        //   improving promotion calculation logic to support new promotion
+        //   patterns, developing <strong>campaign system</strong> to manage sales
+        //   target for each retailer, and{" "}
+        //   <strong>coupon management system</strong> to manage coupons for
+        //   retailers.
+        // </>,
+        // <>
+        //   Implemented a coupon management feature for the backend application,
+        //   consisting of handling coupons data and calculating discounts when
+        //   retailers apply coupons during sales order creation.
+        // </>,
+        // <>
+        //   Created a user role and permission system on backoffice website for
+        //   managing user access to features of each role.
+        // </>,
+        // <>
+        //   Experienced in querying sales order data from the database and visualizng reports in{" "}
+        //   <strong style={{ color: "#20A7C9" }}>Apache Superset</strong> to
+        //   display sales data of each agent or retailer that improved data accessibility and decision-making.
+        // </>,
       ],
     },
     {
-      position: "Cooperative Operation Student",
+      position: "Co-operative Education Student",
       period: "November 2023 - March 2024",
-      detail: [
-        <>
-          Assisted team to create new features for Ordering website. My first
-          assignment was to create Shopping cart system.
-        </>,
-        <>
-          Developed the business logic for calculating promotions when order is
-          created, consisting of discounting on each product and giving free
-          products.
-        </>,
-        <>
-          Ensured code functionality by utilizing Ginkgo for integration test on
-          back-end application and perform web automation test on DMS backoffice
-          website along with Jest library.
-        </>,
+      details: [
+        {
+          type: "introduction",
+          list: [
+            {
+              description: (
+                <>
+                  Assisted a team of 8 developers in building core features for
+                  an e-commerce platform, including a shopping cart, coupon
+                  system, payment gateway integration and sales promotions,
+                  leading to an improved user experience for retailers.
+                </>
+              ),
+              sublist: [],
+            },
+          ],
+        },
+        {
+          title: "Key Contributions",
+          titleIcon: <TbTargetArrow color="red" size={22} />,
+          type: "body",
+          list: [
+            {
+              description: (
+                <>
+                  {" "}
+                  <strong>Developed Shopping cart system:</strong> Built it for
+                  an ordering platform, enabling retailers to place orders
+                  seamlessly.{" "}
+                </>
+              ),
+              sublist: [],
+            },
+            {
+              description: (
+                <>
+                  {" "}
+                  <strong>Designed and Implemented Coupon system:</strong>{" "}
+                  Created core features of the coupon system, including coupon
+                  listing and discount calculations during the order checkout
+                  process.{" "}
+                </>
+              ),
+              sublist: [],
+            },
+            {
+              description: (
+                <strong> Collaborated on Sales Promotions Feature: </strong>
+              ),
+              sublist: [
+                <>
+                  Developed the first version of sales promotions feature,
+                  defining requirements from wholesalers and developing the
+                  business logic for promotion calculation.
+                </>,
+                <>
+                  Created business logics for promotion calculation including
+                  per-product discounts and free product offers to help
+                  wholesalers attract more retailers.
+                </>,
+              ],
+            },
+          ],
+        },
+        {
+          title: "Testing & Automation",
+          titleIcon: <BiTestTube color="skyblue" size={22} />,
+          type: "body",
+          list: [
+            {
+              description: (
+                <>
+                  <strong> Automated Back-Office Testing: </strong> Ensured code
+                  functionality of back-office website by conducting automation
+                  tests using Jest, achieving 80.22% on Statement coverage,
+                  59.44% on Branch coverage, 80.36% on Functional coverage and
+                  80.15% on Line coverage.
+                </>
+              ),
+              sublist: [],
+            },
+          ],
+        },
+
+        // ----------------------------------------------
+        // Old
+        // <>
+        //   Assisted team to create new features for Ordering website. My first
+        //   assignment was to create Shopping cart system.
+        // </>,
+        // <>
+        //   Developed the business logic for calculating promotions when order is
+        //   created, consisting of discounting on each product and giving free
+        //   products.
+        // </>,
+        // <>
+        //   Ensured code functionality by utilizing Ginkgo for integration test on
+        //   back-end application and perform web automation test on DMS backoffice
+        //   website along with Jest library.
+        // </>,
       ],
     },
   ],
@@ -71,56 +358,58 @@ const experiences: Record<string, Experience[]> = {
       location: "กรุงเทพมหานคร, ประเทศไทย",
       position: "ผู้ช่วยนักพัฒนาแอพพลิเคชัน",
       period: "มีนาคม 2024 - ปัจจุบัน",
-      detail: [
-        <>
-          เป็นหนึ่งในทีมพัฒนา
-          <strong>
-            ระบบหลังบ้าน DMS &#40;Distributed Management System&#41;
-          </strong>{" "}
-          สำหรับบริหารจัดการกระบวนการขายระหว่างเอเจ้นต์และร้านค้า เช่น
-          จัดการข้อมูลคำสั่งซื้อ สินค้า โปรโมชัน เป้ายอดขายของร้านค้า
-          แคมเปญยอดขาย การควบคุมสต๊อก รายงานข้อมูลการขาย
-          และติดตามการสั่งซื้อของร้านค้า
-        </>,
-        <>
-          รับผิดชอบในการพัฒนาและปรับปรุง API ของฟีเจอร์เกี่ยวกับส่งเสริมการขาย
-          เช่น ปรับปรุง logic การคำนวนโปรโมชันเพื่อรองรับโปรโมชันรูปแบบใหม่
-          พัฒนาฟีเจอร์จัดการเป้ายอดขายของร้านค้า และคูปองสำหรับร้านค้า
-        </>,
-        <>
-          ออกแบบ API ของฟีเจอร์คูปอง ได้แก่ จัดการข้อมูลคูปอง
-          แสดงคูปองที่สามารถใช้ได้เมื่อสั่งซื้อตามเงื่อนไข
-          และคำนวนส่วนลดเมื่อร้านค้าใช้คูปองในการสั่งซื้อ
-        </>,
-        <>
-          พัฒนาระบบจัดการสิทธิ์ผู้ใช้ เพื่อควบคุมการเข้าถึงฟีเจอร์ต่าง ๆ ในระบบ
-          DMS ทั้งฝั่ง Frontend และ Backend
-        </>,
-        <>
-          มีประสบการณ์ในการดึงข้อมูลการสั่งซื้อจากฐานข้อมูล มาแสดงผลเป็นรายงานบน{" "}
-          <strong style={{ color: "#20A7C9" }}>Apache Superset</strong>{" "}
-          เพื่อแสดงยอดขายของแต่ละร้านค้า หรือเอเจ้นต์
-        </>,
-      ],
+      details: [],
+      // detail: [
+      //   <>
+      //     เป็นหนึ่งในทีมพัฒนา
+      //     <strong>
+      //       ระบบหลังบ้าน DMS &#40;Distributed Management System&#41;
+      //     </strong>{" "}
+      //     สำหรับบริหารจัดการกระบวนการขายระหว่างเอเจ้นต์และร้านค้า เช่น
+      //     จัดการข้อมูลคำสั่งซื้อ สินค้า โปรโมชัน เป้ายอดขายของร้านค้า
+      //     แคมเปญยอดขาย การควบคุมสต๊อก รายงานข้อมูลการขาย
+      //     และติดตามการสั่งซื้อของร้านค้า
+      //   </>,
+      //   <>
+      //     รับผิดชอบในการพัฒนาและปรับปรุง API ของฟีเจอร์เกี่ยวกับส่งเสริมการขาย
+      //     เช่น ปรับปรุง logic การคำนวนโปรโมชันเพื่อรองรับโปรโมชันรูปแบบใหม่
+      //     พัฒนาฟีเจอร์จัดการเป้ายอดขายของร้านค้า และคูปองสำหรับร้านค้า
+      //   </>,
+      //   <>
+      //     ออกแบบ API ของฟีเจอร์คูปอง ได้แก่ จัดการข้อมูลคูปอง
+      //     แสดงคูปองที่สามารถใช้ได้เมื่อสั่งซื้อตามเงื่อนไข
+      //     และคำนวนส่วนลดเมื่อร้านค้าใช้คูปองในการสั่งซื้อ
+      //   </>,
+      //   <>
+      //     พัฒนาระบบจัดการสิทธิ์ผู้ใช้ เพื่อควบคุมการเข้าถึงฟีเจอร์ต่าง ๆ ในระบบ
+      //     DMS ทั้งฝั่ง Frontend และ Backend
+      //   </>,
+      //   <>
+      //     มีประสบการณ์ในการดึงข้อมูลการสั่งซื้อจากฐานข้อมูล มาแสดงผลเป็นรายงานบน{" "}
+      //     <strong style={{ color: "#20A7C9" }}>Apache Superset</strong>{" "}
+      //     เพื่อแสดงยอดขายของแต่ละร้านค้า หรือเอเจ้นต์
+      //   </>,
+      // ],
     },
     {
       position: "นักศึกษาสหกิจศึกษา",
       period: "พฤศจิกายน 2023 - มีนาคม 2024",
-      detail: [
-        <>
-          ช่วยทีมพัฒนาฟีเจอร์ใหม่บนเว็บสั่งซื้อสินค้า &#40;Ordering web&#41;
-          โดยงานแรกคือพัฒนาระบบตะกร้าสินค้า
-        </>,
-        <>
-          เขียน Business logic สำหรับคำนวณโปรโมชัน
-          ซึ่งครอบคลุมการคำนวณส่วนลดสำหรับแต่ละสินค้า
-          และการเพิ่มสินค้าฟรีในคำสั่งซื้อ
-        </>,
-        <>
-          เขียน integration tests บนระบบหลังบ้านโดยใช้ไลบรารี Ginkgo และทำ web
-          automation บนระบบหลังบ้าน DMS ด้วย Jest
-        </>,
-      ],
+      details: [],
+      // detail: [
+      //   <>
+      //     ช่วยทีมพัฒนาฟีเจอร์ใหม่บนเว็บสั่งซื้อสินค้า &#40;Ordering web&#41;
+      //     โดยงานแรกคือพัฒนาระบบตะกร้าสินค้า
+      //   </>,
+      //   <>
+      //     เขียน Business logic สำหรับคำนวณโปรโมชัน
+      //     ซึ่งครอบคลุมการคำนวณส่วนลดสำหรับแต่ละสินค้า
+      //     และการเพิ่มสินค้าฟรีในคำสั่งซื้อ
+      //   </>,
+      //   <>
+      //     เขียน integration tests บนระบบหลังบ้านโดยใช้ไลบรารี Ginkgo และทำ web
+      //     automation บนระบบหลังบ้าน DMS ด้วย Jest
+      //   </>,
+      // ],
     },
   ],
 };
