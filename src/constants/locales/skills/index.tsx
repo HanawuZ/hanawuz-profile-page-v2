@@ -61,6 +61,7 @@ const others: BadgeProps[] = [
   badge.FIGMA,
   badge.PANDAS,
   badge.SUPERSET,
+  badge.GOOGLE_MAP,
 ];
 
 const skillList: Record<string, SkillList[]> = {

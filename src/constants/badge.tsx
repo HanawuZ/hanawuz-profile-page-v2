@@ -27,6 +27,8 @@ import { FaCss3 } from "react-icons/fa";
 import { SiOverleaf } from "react-icons/si";
 import { SiSequelize } from "react-icons/si";
 import { SiDotnet } from "react-icons/si";
+import { SiGooglemaps } from "react-icons/si";
+
 // -----------+ Currently Learning +--------------------
 const SPRING_BOOT: BadgeProps = {
   title: "Spring Boot",
@@ -550,6 +552,14 @@ const SUPERSET: BadgeProps = {
   border: "none",
 };
 
+const GOOGLE_MAP: BadgeProps = {
+  title: "Google map",
+  icon: <SiGooglemaps  color="#FFFFFF" size={24} />,
+  textColor: "#FFFFFF",
+  backgroundColor: "#FF3E30",
+  border: "none",
+};
+
 export {
   DOTNET,
   SPRING_BOOT,
@@ -585,5 +595,6 @@ export {
   CPP,
   GITHUB,
   FIBER,
-  ECHO
+  ECHO,
+  GOOGLE_MAP
 };

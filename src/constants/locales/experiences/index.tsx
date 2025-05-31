@@ -57,7 +57,8 @@ const experiences: Record<string, Experience[]> = {
                   beverage products. My role focused on backend development for
                   the back-office system, supporting product, order, sales
                   promotion, coupon, and report management features to
-                  streamline operations for business users.
+                  streamline operations for business users. I later helped seniors to 
+                  review feature implementations by developers and perform tests to check possible use case. 
                 </>
               ),
               sublist: [],
@@ -90,12 +91,14 @@ const experiences: Record<string, Experience[]> = {
             {
               description: (
                 <>
-                  <strong> Created campaign feature: </strong> a purchase
-                  accumulation tracking feature that records retailers total
-                  purchases within a specified campaign period.
+                  <strong> Created campaign feature: </strong>
                 </>
               ),
               sublist: [
+                <>I, with front-end developer teammate, continued a purchase
+                  accumulation tracking feature that records retailers total
+                  purchases within a specified campaign period.
+                </>,
                 <>Created backend APIs for campaign management being used in backoffice website.</>,
                 <>
                   Built complex business logic for accurately counting campaign
@@ -168,6 +171,25 @@ const experiences: Record<string, Experience[]> = {
             },
             {
               description: (
+                <strong> Involved in enhancing features in Van sale app: </strong>
+              ),
+              sublist: [
+                <>
+                  I have involved in team of mobile application developers in a short period. My responsibility is to enhanced
+                  some features in Van sale application to meet requirements.
+                </>,
+                <>
+                  Enhanced uploading image feature used by user when checkin and checkout retailer shop by 
+                  allowing user to upload multiple images.   
+                </>,
+                <>
+                  Fixed crash caused by fetching retailer informations at once by adding pagination on
+                  retailer page and add search by their name or phone number.
+                </>,
+              ],
+            },
+            {
+              description: (
                 <strong>Worked on sales report visualization:</strong>
               ),
               sublist: [
@@ -198,73 +220,6 @@ const experiences: Record<string, Experience[]> = {
           ],
         },
         //+----------------------------------------------------------------
-        // NEW.
-        // <>
-        //   Collaborated with team to develop an e-commerce platform used for distributing
-        //   food products and beverages to wholesalers and retailers. My role is contributed to the
-        //   development of the back-office system, enabling wholesalers to
-        //   efficiently manage products, orders, sale promotions, coupons, and sales reports.
-        // </>,
-        // <>
-        //   Contributed improvements of sales promotion features including:
-        //   - refined the business logic for promotion calculations to support new promotion patterns.
-        //   - refactored functions for managing promotion data, make codes more readable and understandable.
-        // </>,
-        // <>
-        //   Developed campaign feature, a purchase accumulation tracking feature that records retailers total purchases within a specified campaign period.
-        //   - Implemented backend APIs for managing campaign data.
-        //   - Built complex business logic for accurately counting campaign progress,
-        //     allowing retailer purchase data to be counted by total price or product quantity, based on predefined campaign rules.
-        //   - Designed a tiered reward system, enabling retailers to earn free products, discount coupons, or order-wide discounts upon reaching accumulation milestones.
-        //   - Collected and organized campaign purchase data, enabling the data visualization team to create effective reports for strategic decision-making
-        // </>,
-        // <>
-        //   Designed coupon managements features for back-office website,
-        //   especially creating business logic of create/update coupon,
-        //   allowing user to set predefined products or brands to allow coupon usage and
-        //   define discount with either exact value or percentage of order total price.
-        // </>,
-        // <>
-        //   Collaborated with cross-functional teams, including frontend developers,
-        //   product managers, and QA testers, to design features and
-        //   ensure seamless integration between backend services and frontend applications.
-        // </>,
-        // <>
-        //   Experienced in querying sales order data from the database and visualizng reports in{" "}
-        //   <strong style={{ color: "#20A7C9" }}>Apache Superset</strong> to
-        //   display sales data of each agent or retailer that improved data accessibility and decision-making.
-        // </>,
-
-        //+------------------------------------------------------------------------
-        // Old.
-        // <>
-        //   Worked with team to develop <strong>DMS backoffice</strong> for
-        //   managing distribution process such as managing sales orders, products,
-        //   sales promotions, sales targets, warehousing, sales report, and
-        //   tracking sales.
-        // </>,
-        // <>
-        //   Refined features involving sales promotion such as
-        //   improving promotion calculation logic to support new promotion
-        //   patterns, developing <strong>campaign system</strong> to manage sales
-        //   target for each retailer, and{" "}
-        //   <strong>coupon management system</strong> to manage coupons for
-        //   retailers.
-        // </>,
-        // <>
-        //   Implemented a coupon management feature for the backend application,
-        //   consisting of handling coupons data and calculating discounts when
-        //   retailers apply coupons during sales order creation.
-        // </>,
-        // <>
-        //   Created a user role and permission system on backoffice website for
-        //   managing user access to features of each role.
-        // </>,
-        // <>
-        //   Experienced in querying sales order data from the database and visualizng reports in{" "}
-        //   <strong style={{ color: "#20A7C9" }}>Apache Superset</strong> to
-        //   display sales data of each agent or retailer that improved data accessibility and decision-making.
-        // </>,
       ],
     },
     {
@@ -294,24 +249,20 @@ const experiences: Record<string, Experience[]> = {
           list: [
             {
               description: (
+                 <strong>Built core features used in e-commerce platform:</strong>
+              ),
+              sublist: [
                 <>
                   {" "}
-                  <strong>Developed Shopping cart system:</strong> Built it for
+                  Developed Shopping cart system for
                   an ordering platform, enabling retailers to place orders
                   seamlessly.{" "}
-                </>
-              ),
-              sublist: [],
-            },
-            {
-              description: (
+                </>,
                 <>
-                  <strong>Built core coupon system:</strong> Developed logic for
-                  coupon listing and discount calculation during checkout,
-                  supporting both fixed and percentage-based discounts.
+                  Create logic for coupon listing and discount calculation 
+                  during checkout, supporting both fixed and percentage-based discounts.
                 </>
-              ),
-              sublist: [],
+              ],
             },
             {
               description: (

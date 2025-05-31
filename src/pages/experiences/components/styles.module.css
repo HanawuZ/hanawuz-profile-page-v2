@@ -1,0 +1,19 @@
+.experienceDivider
+{
+	position: relative;
+	margin-top: 60px;
+	height: 1px;
+}
+
+.experienceDividerTransparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(255, 255, 255), transparent);
+}
+
