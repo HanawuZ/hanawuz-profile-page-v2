@@ -35,7 +35,7 @@ const Home = (): React.ReactElement => {
     <>
       <WebHeader title="Thanawut - My website" />
       <PageLayout title="THANAWUT TUAMPRAJAK">
-        <ImageSection />
+        {/* <ImageSection /> */}
         <PersonalInfoSection />
         <AboutMeSection />
         <EducationSection />
@@ -115,11 +115,11 @@ const AboutMeSection = () => {
           style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }}
         />
       </div>
-      <ul className="tracking-wide max-md:text-sm mt-3 list-disc mx-8 break-normal hyphens-auto sm:ms-16 ms-12">
+      <ul className="tracking-wide mt-3 list-disc mx-8 break-normal hyphens-auto sm:ms-16 ms-12">
         {language === "en" && (
           <>
             <ListItem className="leading-relaxed">
-              Hello world! I am &quot;Gop&quot;, currently working as{" "}
+              Greeting visitors! I am &quot;Gop&quot;, currently working as{" "}
               <code
                 className="p-[3px] rounded text-slate-600"
                 style={{
@@ -127,7 +127,7 @@ const AboutMeSection = () => {
                   color: themes[mode].primaryText,
                 }}
               >
-                Application Developer Associate
+                Application Developer
               </code>{" "}
               at{" "}
               <Link
@@ -141,12 +141,9 @@ const AboutMeSection = () => {
               </Link>
             </ListItem>
             <ListItem className="leading-relaxed">
-              I have 1 year experience in maintaining{" "}
-              <text className="font-bold">
-                {" "}
-                Distribution Management System &#40;DMS&#41;
-              </text>
-              , mainly refining for promotion calculation, sale target
+              I have 1 year experience in maintaining e-commerce 
+              platform for wholesale and retail distribution of food and beverage products.
+              My role mainly focused on refining for promotion calculation, sale target
               management, and warehousing.
             </ListItem>
             <ListItem className="leading-relaxed">
@@ -247,7 +244,7 @@ const EducationSection = () => {
           style={{ background: mode === "dark" ? "#FFFFFF" : "#000000" }}
         />
       </div>
-      <div className="tracking-wide max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
+      <div className="tracking-wide mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
         {language === "en" && (
           <div className="leading-relaxed">
             I graduated from{" "}
@@ -284,11 +281,11 @@ const EducationSection = () => {
         )}
       </div>
 
-      <div className="tracking-wide max-md:text-sm mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
-        <text className="max-md:text-sm font-bold">
+      <div className="tracking-wide  mt-5 max-sm:mx-6 mx-8 break-normal hyphens-auto">
+        <text className="font-bold">
           {education[language].relevantCourse.title}:
         </text>
-        <ul className="max-md:text-sm list-disc max-sm:mx-6 mx-8">
+        <ul className=" list-disc max-sm:mx-6 mx-8">
           {education[language].relevantCourse.list?.map((course, index) => {
             return (
               <ListItem

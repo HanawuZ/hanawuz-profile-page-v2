@@ -9,10 +9,11 @@ const Navbar = () => {
     <div
       className="w-full sticky top-0 flex gap-4 justify-end shadow-md"
       style={{
+        height: "56.98px",
         backgroundColor: mode === "dark" ? "rgba(0, 0, 0, 0.5)" : "#f9f9f9", // 50% opacity
       }}
     >
-      <div className="flex items-center">
+      <div className="flex items-center me-4">
         <button
           className="hover:bg-slate-700 rounded-full p"
           onClick={changeTheme}
@@ -24,7 +25,7 @@ const Navbar = () => {
           )}
         </button>
       </div>
-      <LanguageSelect />
+      {/* <LanguageSelect /> */}
     </div>
   );
 };

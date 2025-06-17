@@ -157,7 +157,7 @@ const ProjectDetailModal = () => {
                   color: themes[mode].secondaryText,
                 }}
               >
-                <ul className="mx-10 list-disc text-base max-lg:text-sm">
+                <ul className="mx-10 list-disc text-base">
                   {description?.map((desc, index) => (
                     <ListItem
                       className="leading-relaxed tracking-wide break-normal hyphens-auto"

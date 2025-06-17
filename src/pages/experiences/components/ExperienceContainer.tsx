@@ -24,14 +24,14 @@ const ExperienceContainer = (props: ExperienceContainerProps) => {
         }}
       >
         <div className="sm:flex mt-2">
-          <div className="font-bold w-full">{workplace?.toUpperCase()}</div>
+          <div className="font-bold w-full text-lg">{workplace?.toUpperCase()}</div>
           <div className="font-bold w-full sm:text-end">{location}</div>
         </div>
-        <div className="sm:flex max-md:text-sm max-sm:mt-2">
+        <div className="sm:flex  max-sm:mt-2">
           <div className="italic w-full">{position}</div>
-          <div className="max-sm:mt-2 flex gap-3 w-full sm:justify-end items-center">
+          <div className="max-sm:mt-2 flex gap-3 w-full sm:justify-end items-center text-gray-400">
             <FaCalendarAlt size={16}/>
-            <div>{period}</div>
+            <div className="">{period}</div>
           </div>
         </div>
       </div>
