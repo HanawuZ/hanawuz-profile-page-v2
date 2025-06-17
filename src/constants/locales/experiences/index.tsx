@@ -190,6 +190,20 @@ const experiences: Record<string, Experience[]> = {
             },
             {
               description: (
+                <strong>
+                  Integrate chat platform into Ordering mobile application:
+                </strong>
+              ),
+              sublist: [
+                <>
+                  I participated in integrating Sendbird chat platform into e-commerce system, providing seamless chat communication between wholesaler and retailers. 
+                  I am responsible to integrate chat into Ordering mobile application using built-in UI for React Native
+                </>,
+                
+              ],
+            },
+            {
+              description: (
                 <strong>Worked on sales report visualization:</strong>
               ),
               sublist: [
