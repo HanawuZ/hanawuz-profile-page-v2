@@ -44,7 +44,7 @@ const DOTNET: BadgeProps = {
   backgroundColor: "#512BD4",
   textColor: "#FFFFFF",
   border: "none",
-}; 
+};
 
 // ------------+ Programming Language +-----------------------
 const GO: BadgeProps = {
@@ -554,11 +554,32 @@ const SUPERSET: BadgeProps = {
 
 const GOOGLE_MAP: BadgeProps = {
   title: "Google map",
-  icon: <SiGooglemaps  color="#FFFFFF" size={24} />,
+  icon: <SiGooglemaps color="#FFFFFF" size={24} />,
   textColor: "#FFFFFF",
   backgroundColor: "#FF3E30",
   border: "none",
 };
+
+const SENDBIRD: BadgeProps = {
+  title: "Sendbird",
+  icon:
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="20 35 152 134"
+      width="24"
+      height="24"
+    >
+      <path
+        fill="#FFFFFF"
+        d="M102.8,51.4c28.3,0,51.3,23.2,51.3,51.4s-23.1,51.3-51.4,51.3S51.4,131,51.4,102.7l0,0h25.2
+        C62.6,102.4,51.4,91,51.4,77l0,0V51.4H102.8z"
+      />
+    </svg>
+  ,
+  textColor: "#FFFFFF",
+  backgroundColor: "#6210CC",
+  border: "none",
+}
 
 export {
   DOTNET,
@@ -596,5 +617,6 @@ export {
   GITHUB,
   FIBER,
   ECHO,
-  GOOGLE_MAP
+  GOOGLE_MAP,
+  SENDBIRD
 };

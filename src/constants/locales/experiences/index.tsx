@@ -54,13 +54,16 @@ const experiences: Record<string, Experience[]> = {
             {
               description: (
                 <>
-                  Collaborated with team to develop a web-based e-commerce
-                  platform for wholesale and retail distribution of food and
-                  beverage products. My role focused on backend development for
-                  the back-office system, supporting product, order, sales
-                  promotion, coupon, and report management features to
-                  streamline operations for business users. I later helped seniors to
-                  review feature implementations by developers and perform tests to check possible use case.
+                  Collaborated with a cross-functional team to build and enhance a large-scale B2B e-commerce 
+                  platform in the food and beverage industry, serving thousands of retailers and handling purchase 
+                  volumes exceeding a billion baht annually.
+                  Focused on backend development of the back-office system, 
+                  implementing and refining features for sales promotions, 
+                  loyalty programs, coupons, and reporting to streamline business operations.
+                  Contributed to API design, system reliability improvements, 
+                  and chat integration in the mobile ordering app, while also 
+                  supporting code reviews, deployment coordination, and 
+                  mentorship of junior developers.
                 </>
               ),
               sublist: [],
@@ -318,7 +321,7 @@ const experiences: Record<string, Experience[]> = {
             },
             {
               description: (
-                <strong> Collaborated on Sales Promotions Feature: </strong>
+                <strong> Collaborated on sales promotions feature: </strong>
               ),
               sublist: [
                 <>
@@ -327,7 +330,7 @@ const experiences: Record<string, Experience[]> = {
                   business logic for promotion calculation.
                 </>,
                 <>
-                  Created business logics for promotion calculation including
+                  Created business logic for promotion calculation including
                   per-product discounts and free product offers to help
                   wholesalers attract more retailers.
                 </>,
@@ -335,7 +338,7 @@ const experiences: Record<string, Experience[]> = {
             },
             {
               description: (
-                <strong> Testing and automation on backoffice website: </strong>
+                <strong> Testing and automation on back-office website: </strong>
               ),
               sublist: [
                 <>
@@ -348,22 +351,6 @@ const experiences: Record<string, Experience[]> = {
             },
           ],
         },
-        // ----------------------------------------------
-        // Old
-        // <>
-        //   Assisted team to create new features for Ordering website. My first
-        //   assignment was to create Shopping cart system.
-        // </>,
-        // <>
-        //   Developed the business logic for calculating promotions when order is
-        //   created, consisting of discounting on each product and giving free
-        //   products.
-        // </>,
-        // <>
-        //   Ensured code functionality by utilizing Ginkgo for integration test on
-        //   back-end application and perform web automation test on DMS backoffice
-        //   website along with Jest library.
-        // </>,
       ],
     },
   ],

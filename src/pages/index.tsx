@@ -141,14 +141,15 @@ const AboutMeSection = () => {
               </Link>
             </ListItem>
             <ListItem className="leading-relaxed">
-              I have 1 year experience in maintaining e-commerce 
-              platform for wholesale and retail distribution of food and beverage products.
-              My role mainly focused on refining for promotion calculation, sale target
-              management, and warehousing.
+              I have 2 year experience in maintained a large-scale e-commerce platform in the 
+              food and beverage distribution industry, serving nationwide wholesalers and 
+              retailers, with total purchase volume exceeding a billion baht annually.
+              My role focused on focused on backend development of the platform, while also 
+              supporting code reviews, and mentorship of junior developers.
             </ListItem>
             <ListItem className="leading-relaxed">
-              Have a strong background in both front-end and back-end
-              development. I am presently deep diving into back-end development
+              Have a strong background in full-stack development. 
+              I am presently deep diving into back-end development
               by coding ♨️{" "}
               <text className="font-bold" style={{ color: "#ED8B00" }}>
                 Java Spring Boot
@@ -158,8 +159,8 @@ const AboutMeSection = () => {
                 Golang
               </text>{" "}
               with widely-used web frameworks. Moreover, I am learning software
-              development practices like Clean architecture, React design
-              patterns and Behavior-driven development.
+              development practices like Clean architecture, Design
+              patterns, Behavior-driven development and Web security.
             </ListItem>
           </>
         )}

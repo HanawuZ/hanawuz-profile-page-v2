@@ -53,15 +53,20 @@ const databases: BadgeProps[] = [
   badge.REDIS,
 ];
 
-const tools: BadgeProps[] = [badge.GIT, badge.GITHUB, badge.GITLAB];
+const tools: BadgeProps[] = [
+  badge.GIT, 
+  badge.GITHUB, 
+  badge.GITLAB,
+  badge.FIGMA
+];
 
 const others: BadgeProps[] = [
   badge.LATEX,
   badge.MARKDOWN,
-  badge.FIGMA,
   badge.PANDAS,
   badge.SUPERSET,
   badge.GOOGLE_MAP,
+  badge.SENDBIRD
 ];
 
 const skillList: Record<string, SkillList[]> = {
@@ -183,6 +188,8 @@ const skillList: Record<string, SkillList[]> = {
           <strong style={{ color: "#F05033" }}>Git</strong> to maintain the source
           code of a project within a team, including managing branches, resolving code
           conflicts and tracking changes from previous commits.
+          Additionally, I have used <strong style={{ color: "#f24e1e"}}> Figma </strong> 
+          with basic skills to design UI/UX of chat screen in e-commerce system.
         </>
       ),
     },
@@ -192,11 +199,10 @@ const skillList: Record<string, SkillList[]> = {
       tech: others,
       description: (
         <>
-          I have used <strong>LaTeX</strong> to write my CV and{" "}
-          <strong>Markdown</strong> for documentation. At work, a senior developer
-          assigned me a data analysis task, which gave me hands-on
-          experience with{" "}
-          <strong style={{ color: "#20A7C9" }}>Apache Superset</strong>
+          I have touched <strong style={{ color: "#20A7C9" }}>Apache Superset</strong> to build reports, which is a tool for data visualization and analysis.
+          And also experienced in integrating <strong style={{ color: "#6210CC"}}>Sendbird </strong> chat platform and <strong style={{ color: "#FF3E30"}}> Google map </strong> into e-commerce system.
+          Additionally, I have used <strong>LaTeX</strong> to write my CV{" "}
+          <strong>Markdown</strong> for documentation 
         </>
       ),
     },
