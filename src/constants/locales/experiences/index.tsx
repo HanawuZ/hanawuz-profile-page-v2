@@ -1,5 +1,7 @@
 import { TbTargetArrow } from "react-icons/tb";
 import { BiTestTube } from "react-icons/bi";
+import { FaPersonArrowUpFromLine } from "react-icons/fa6";
+
 type Experience = {
   workplace?: string;
   location?: string;
@@ -57,8 +59,8 @@ const experiences: Record<string, Experience[]> = {
                   beverage products. My role focused on backend development for
                   the back-office system, supporting product, order, sales
                   promotion, coupon, and report management features to
-                  streamline operations for business users. I later helped seniors to 
-                  review feature implementations by developers and perform tests to check possible use case. 
+                  streamline operations for business users. I later helped seniors to
+                  review feature implementations by developers and perform tests to check possible use case.
                 </>
               ),
               sublist: [],
@@ -91,28 +93,30 @@ const experiences: Record<string, Experience[]> = {
             {
               description: (
                 <>
-                  <strong> Created campaign feature: </strong>
+                  <strong> Created loyalty feature: </strong>
                 </>
               ),
               sublist: [
-                <>I, with front-end developer teammate, continued a purchase
-                  accumulation tracking feature that records retailers total
-                  purchases within a specified campaign period.
-                </>,
-                <>Created backend APIs for campaign management being used in backoffice website.</>,
                 <>
-                  Built complex business logic for accurately counting campaign
-                  progress, allowing retailer purchase data to be counted by
-                  total price or product quantity, based on predefined campaign
-                  rules.
+                  I, with front-end developer, collaborated to create a loyalty program
+                  feature that records retailers total purchases and give rewards if
+                  retailer reach purchase milestones within a specified period.
                 </>,
                 <>
-                  Designed a tiered reward system, enabling retailers to earn
-                  free products, discount coupons, or order-wide discounts upon
-                  reaching accumulation milestones.
+                  Developed CRUD backend APIs for loyalty program management,
+                  integrated into the wholesaler back-office website.
                 </>,
                 <>
-                  Collected and organized campaign purchase data, enabling the
+                  Built business logic to calculate reward progress based on total spend or product quantity,
+                  following configurable program rules
+                  e.g. retailer will gain progress if order has defined products or brands in the program.
+                </>,
+                <>
+                  Designed a tiered reward system, enabling retailers to gain reward e.g. merchandise,
+                  discount coupons, or order-wide discounts as they reach purchase milestones.
+                </>,
+                <>
+                  Collected and organized orders data from loyalty program, enabling the
                   data visualization team to create effective reports for
                   strategic decision-making.
                 </>,
@@ -121,18 +125,18 @@ const experiences: Record<string, Experience[]> = {
             {
               description: (
                 <strong>
-                  Designed and implemented coupon managements features:
+                  Implemented coupon managements features:
                 </strong>
               ),
               sublist: [
                 <>
-                  Built logic for creating and updating coupons, allowing user
+                  Built APIs for managing coupon data, allowing user
                   to set predefined products or brands to enable coupon usage,
-                  and define either fixed-value or percentage-based from order
-                  total price discount.
+                  and define either fixed-value discount or discount
+                  based on percentage-based from order total purchase.
                 </>,
                 <>
-                  Created API documentation to facilitate integration and
+                  Provided API documentation to facilitate integration and
                   collaboration with team members.
                 </>,
               ],
@@ -142,18 +146,18 @@ const experiences: Record<string, Experience[]> = {
               sublist: [
                 <>
                   Built APIs to support banner creation and management, enabling
-                  wholesalers to promote their ongoing campaigns, promotions and
+                  wholesalers to promote their ongoing loyalty programs, promotions and
                   marketing content.
                 </>,
                 <>
-                  Provided API documentation to assist team members in feature
+                  Wrote API documentation to assist team members in feature
                   integration and usage.
                 </>,
               ],
             },
             {
               description: (
-                <strong> Improved several features in Backoffice website: </strong>
+                <strong> Enhanced several features in back-office website: </strong>
               ),
               sublist: [
                 <>
@@ -162,16 +166,23 @@ const experiences: Record<string, Experience[]> = {
                   multiple stock.
                 </>,
                 <>
-                  Integrated Google map platform into features using map including
-                  van vehicle visiting and purchase report. Additionally,
-                  I have added configuration to determine what map platforms supplier used between 
-                  Longdo map or Google map. 
+                  Integrated online maps platform into features using map including
+                  vansales visiting, displaying retailer location that will be visited and purchase report,
+                  displaying orders location on map. Additionally,
+                  I have added configuration to determine what map platforms wholesaler used between
+                  Longdo map or Google map.
+                </>,
+                <>
+                  Enhanced the order scheduling system that sends orders to the
+                  Van Sales and Merchandising System (VSMS) by adding an automatic retry mechanism to handle sending errors
+                  and implemented a logging system to record request and response data,
+                  track processing time, and monitor sending status — improving system reliability and visibility.
                 </>
               ],
             },
             {
               description: (
-                <strong> Involved in enhancing features in Van sale app: </strong>
+                <strong> Involved in enhancing features in Van sale application: </strong>
               ),
               sublist: [
                 <>
@@ -179,11 +190,12 @@ const experiences: Record<string, Experience[]> = {
                   some features in Van sale application to meet requirements.
                 </>,
                 <>
-                  Enhanced uploading image feature used by user when checkin and checkout retailer shop by 
-                  allowing user to upload multiple images.   
+                  Improved user experience of uploading image feature by adding uploading multiple images,
+                  enabling sale representatives to upload multiple images of sale procress when checkin
+                  and checkout retailer shop.
                 </>,
                 <>
-                  Fixed crash caused by fetching retailer informations at once by adding pagination on
+                  Fixed application crash caused by fetching all retailer informations at once by adding pagination on
                   retailer page and add search by their name or phone number.
                 </>,
               ],
@@ -191,15 +203,22 @@ const experiences: Record<string, Experience[]> = {
             {
               description: (
                 <strong>
-                  Integrate chat platform into Ordering mobile application:
+                  Integrated chat platform into sale ordering mobile application:
                 </strong>
               ),
               sublist: [
                 <>
-                  I participated in integrating Sendbird chat platform into e-commerce system, providing seamless chat communication between wholesaler and retailers. 
-                  I am responsible to integrate chat into Ordering mobile application using built-in UI for React Native
+                  I participated in integrating Sendbird chat platform into e-commerce system. My focus was to
+                  integrate chat functionality into React Native sales ordering app using built-in UI.
                 </>,
-                
+                <>
+                  Developed custom chat screens for wholesalers, featuring a retailer
+                  list and one-on-one chat interface
+                </>,
+                <>
+                  Designed the UI to follow modern chat experience standards,
+                  inspired by popular messaging apps, ensuring familiarity and ease of use.
+                </>
               ],
             },
             {
@@ -208,7 +227,7 @@ const experiences: Record<string, Experience[]> = {
               ),
               sublist: [
                 <>
-                  Experienced in querying sales order data, and built reports
+                  Experienced in querying sales orders data, and built reports
                   using{" "}
                   <strong style={{ color: "#20A7C9" }}>Apache Superset</strong>{" "}
                   , improving visibility into wholesaler and retailer
@@ -216,23 +235,42 @@ const experiences: Record<string, Experience[]> = {
                 </>,
               ],
             },
+          ],
+        },
+        {
+          title: "Leadership & Mentorship",
+          titleIcon: <FaPersonArrowUpFromLine color="cyan" size={22} />,
+          type: "body",
+          list: [
             {
               description: (
                 <strong>Reviewed and maintained code quality across the team:</strong>
               ),
               sublist: [
-               <>
-                Reviewed feature implementations by other developers, validating database schema changes and perform some tests
-                in feature.
-               </>,
-               <>
-                Assisted in resolving conflicts between main and developer branches by collaborating with task owners
-                to ensure smooth integration and reduce issues in deployment.
-               </>
+                <>
+                  Reviewed feature implementations by other developers, validating database schema changes and perform some tests
+                  in feature.
+                </>,
+                <>
+                  Assisted in resolving conflicts between main and development branches by collaborating with task owners
+                  to ensure smooth integration and reduce issues in deployment.
+                </>
               ],
             },
-          ],
-        },
+            {
+              description: (
+                <strong>Mentorship Experience:</strong>
+              ),
+              sublist: [
+                <>
+                  Acted as a mentor for 3 application development interns, providing guidance
+                  on application development, testing practices, and collaborative workflows
+                  to help them contribute effectively to production-level projects.
+                </>,
+              ],
+            },
+          ]
+        }
         //+----------------------------------------------------------------
       ],
     },
@@ -263,7 +301,7 @@ const experiences: Record<string, Experience[]> = {
           list: [
             {
               description: (
-                 <strong>Built core features used in e-commerce platform:</strong>
+                <strong>Built core features used in e-commerce platform:</strong>
               ),
               sublist: [
                 <>
@@ -273,7 +311,7 @@ const experiences: Record<string, Experience[]> = {
                   seamlessly.{" "}
                 </>,
                 <>
-                  Create logic for coupon listing and discount calculation 
+                  Create logic for coupon listing and discount calculation
                   during checkout, supporting both fixed and percentage-based discounts.
                 </>
               ],
